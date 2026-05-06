@@ -967,7 +967,7 @@ li{margin:4px 0}
       <table>
         <thead><tr><th>Tipo</th><th>Diodos Necessários</th><th>Tensão Média Saída</th><th>Ripple (f=60Hz)</th><th>Uso</th></tr></thead>
         <tbody>
-          <tr><td>Meia Onda</td><td>1</td><td>V_pico/π ≈ 0,318 V_p</td><td>120 Hz (grande)</td><td>Carregadores simples, retificadores de baixo custo</td></tr>
+          <tr><td>Meia Onda</td><td>1</td><td>V_pico/π ≈ 0,318 V_p</td><td>60 Hz (grande)</td><td>Carregadores simples, retificadores de baixo custo</td></tr>
           <tr><td>Onda Completa (centro)</td><td>2 + transformador CT</td><td>2V_pico/π ≈ 0,636 V_p</td><td>120 Hz (menor)</td><td>Amplificadores de áudio com fonte dual</td></tr>
           <tr><td>Ponte de Graetz</td><td>4</td><td>2V_pico/π ≈ 0,636 V_p</td><td>120 Hz (menor)</td><td>Fontes de alimentação gerais, carregadores</td></tr>
         </tbody>
@@ -1395,7 +1395,7 @@ li{margin:4px 0}
       <table>
         <thead><tr><th>Porta</th><th>Símbolo Lógico</th><th>Expressão</th><th>Tabela Verdade (A,B→Y)</th><th>Descrição</th></tr></thead>
         <tbody>
-          <tr><td>AND</td><td>A ⊕ B</td><td>Y = A · B</td><td>0,0→0 · 0,1→0 · 1,0→0 · 1,1→1</td><td>Saída 1 somente se A E B = 1</td></tr>
+          <tr><td>AND</td><td>A · B</td><td>Y = A · B</td><td>0,0→0 · 0,1→0 · 1,0→0 · 1,1→1</td><td>Saída 1 somente se A E B = 1</td></tr>
           <tr><td>OR</td><td>A + B</td><td>Y = A + B</td><td>0,0→0 · 0,1→1 · 1,0→1 · 1,1→1</td><td>Saída 1 se A OU B = 1</td></tr>
           <tr><td>NOT</td><td>Ā</td><td>Y = Ā</td><td>0→1 · 1→0</td><td>Inversão (complemento)</td></tr>
           <tr><td>NAND</td><td>Y = (A·B)̄</td><td>Y = ¬(A·B)</td><td>0,0→1 · 0,1→1 · 1,0→1 · 1,1→0</td><td>AND invertido (universal)</td></tr>
