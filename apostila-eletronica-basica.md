@@ -215,7 +215,7 @@ O transistor, inventado em 1947 nos Bell Labs, é considerado **a invenção mai
 
 **1.** Por que a corrente alternada venceu a corrente contínua para transmissão de energia?
 
-**2.** Qual foi o impacto da invenção do transistor na indústria eletrónica?
+**2.** Qual foi o impacto da invenção do transistor na indústria eletrônica?
 
 **3.** Se a Lei de Moore continuar, em quantos anos o número de transistores por chip quadruplicará?
 
