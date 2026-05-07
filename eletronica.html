@@ -18,6 +18,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;font-size:16px;line-height:1.7;colo
 /* ===== NAV/TOC ===== */
 .toc{max-width:900px;margin:40px auto;background:#fff;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:40px 50px;page-break-after:always}
 .toc h2{color:#0f3460;border-bottom:3px solid #e94560;padding-bottom:10px;margin-bottom:24px;font-size:1.8rem}
+.toc-note{margin-bottom:18px;color:#555}
 .toc ol{padding-left:20px}
 .toc li{padding:4px 0;color:#333}
 .toc a{color:#0f3460;text-decoration:none;font-weight:600}
@@ -123,7 +124,7 @@ li{margin:4px 0}
 <!-- ============================================================ TOC -->
 <div class="toc" id="sumario">
   <h2>📋 Sumário</h2>
-  <p style="margin-bottom:18px;color:#555"><strong>Organização da apostila:</strong> os exercícios e as atividades práticas aparecem integrados ao final de cada módulo, acompanhando a sequência linear das aulas.</p>
+  <p class="toc-note"><strong>Organização da apostila:</strong> os exercícios e as atividades práticas aparecem integrados ao final de cada módulo, acompanhando a sequência linear das aulas.</p>
   <ol>
     <li><a href="#mod1">Módulo 1 — Fundamentos: Eletricidade &amp; Eletrônica</a>
       <ol class="sub">
@@ -385,13 +386,13 @@ li{margin:4px 0}
     <p>A <strong>carga elétrica</strong> é a propriedade física responsável pelas forças de atração e repulsão entre corpos. Cargas de sinais opostos se atraem; cargas de mesmo sinal se repelem. Em materiais condutores, alguns elétrons ficam mais livres e podem se deslocar, formando corrente quando existe diferença de potencial.</p>
 
     <div class="callout info">
-      <span class="icon">☁️</span><strong>Nuvem de elétrons</strong>
+      <span class="icon" aria-hidden="true">☁️</span><strong>Nuvem de elétrons</strong>
       No modelo atômico mais moderno, os elétrons não são tratados como pequenas esferas girando em órbitas fixas. Eles ocupam regiões de maior probabilidade ao redor do núcleo, chamadas de <em>nuvem eletrônica</em>. Para o ensino técnico inicial, usar camadas eletrônicas continua útil porque ajuda a entender valência, condução e semicondutores.
     </div>
 
     <h4>Lei de Coulomb</h4>
     <p>A <strong>Lei de Coulomb</strong> descreve a força elétrica entre duas cargas puntiformes. Essa força aumenta quando as cargas são maiores e diminui quando a distância entre elas aumenta.</p>
-    <div class="formula">F = k · |q₁·q₂| / r²<span class="formula-label">F = força elétrica [N] · k ≈ 9 × 10⁹ N·m²/C² · q = carga [C] · r = distância [m]</span></div>
+    <div class="formula" aria-label="Fórmula da Lei de Coulomb: força elétrica igual à constante eletrostática multiplicada pelo módulo de q1 vezes q2, dividido pela distância ao quadrado.">F = k · |q₁·q₂| / r²<span class="formula-label">F = força elétrica [N] · k ≈ 9 × 10⁹ N·m²/C² · q = carga [C] · r = distância [m]</span></div>
     <p>Na prática didática, essa lei ajuda a entender por que elétrons são atraídos pelo núcleo, por que ocorre repulsão entre cargas de mesmo sinal e como surgem efeitos eletrostáticos observados em isolantes, capacitores e campos elétricos.</p>
 
     <h4>Camadas Eletrônicas (Regra de Ocupação)</h4>
