@@ -105,7 +105,7 @@ li{margin:4px 0}
     de potência, sensores, instrumentação e Indústria 4.0.
   </p>
   <div class="meta">
-    Conforme ABNT NBR 5410 · IEC 61131 · IEC 61800<br>
+    Com referências a ABNT NBR 5410 · IEC 61131 · IEC 61800<br>
     2ª Edição — 2024/2025
   </div>
 </div>
@@ -213,6 +213,11 @@ li{margin:4px 0}
   </div>
   <div class="module-body">
 
+    <div class="callout danger">
+      <span class="icon">⛔</span><strong>Segurança antes da prática</strong>
+      Atividades com rede elétrica, fontes chaveadas, capacitores de alta tensão ou equipamentos ligados à tomada devem ser feitas apenas com orientação qualificada. Para exercícios iniciais, use baixa tensão isolada (pilhas, baterias ou fontes didáticas), desligue a alimentação antes de alterar circuitos e confira a polaridade dos componentes.
+    </div>
+
     <h3>1.1 Eletricidade × Eletrônica × Eletrônica de Potência</h3>
     <p>A <strong>eletricidade</strong> lida com o transporte e uso de grandes quantidades de energia (usinas, motores, redes de distribuição). A <strong>eletrônica</strong> controla e processa <em>informação</em> usando sinais elétricos de baixa potência. Já a <strong>eletrônica de potência</strong> une as duas áreas — converte e controla energia elétrica com alta eficiência usando dispositivos semicondutores.</p>
 
@@ -233,7 +238,7 @@ li{margin:4px 0}
           <tr><td>Frequência</td><td>50/60 Hz</td><td>CC – MHz (áudio/digital)</td><td>10 – 100 kHz comutação</td></tr>
           <tr><td>Componentes</td><td>Motores, cabos Cu, disjuntores</td><td>Diodos sinal, op-amps, CIs</td><td>IGBT, SCR, MOSFET pot.</td></tr>
           <tr><td>Eficiência</td><td>85 – 95% (perdas I²R)</td><td>&gt; 98%</td><td>95 – 99% (PWM)</td></tr>
-          <tr><td>Normas</td><td>NBR 5410</td><td>IEC 61131</td><td>IEC 61800</td></tr>
+          <tr><td>Normas/referências</td><td>NBR 5410 (instalações)</td><td>IEC 61000 (EMC)</td><td>IEC 61800 (acionamentos)</td></tr>
           <tr><td>Exemplos</td><td>Motor trifásico 5 HP</td><td>Placa de som de PC</td><td>Inversor solar 10 kW</td></tr>
         </tbody>
       </table>
@@ -285,7 +290,7 @@ li{margin:4px 0}
           <tr><td><strong>1950–1980</strong></td><td>Redes de 500 kV, motores trifásicos eficientes</td><td>Transistor bipolar Bell Labs (1947), CI Kilby/Noyce (1958), MOSFET (1960), µP Intel 4004 (1971)</td><td>Computadores viáveis e automação</td></tr>
           <tr><td><strong>1980–2000</strong></td><td>IGBT (1982) — eletrônica de potência moderna; redes inteligentes</td><td>PC IBM (1981), Windows, Internet, celular, GPS</td><td>Revolução digital e global</td></tr>
           <tr><td><strong>2000–2020</strong></td><td>Renováveis (solar + eólica), smart grid, carros elétricos</td><td>Smartphones, SoC nanométrico, IoT, Machine Learning</td><td>Era mobile e conectada</td></tr>
-          <tr><td><strong>2020+</strong></td><td>Baterias de estado sólido, hidrogênio verde, 1 TW solar</td><td>3 nm TSMC, IA generativa, 5G/6G, computação quântica</td><td>Indústria 4.0 / EVs / IA</td></tr>
+          <tr><td><strong>2020+</strong></td><td>Baterias avançadas, hidrogênio verde, expansão solar</td><td>Processos nanométricos, IA generativa, 5G/6G em pesquisa, computação quântica</td><td>Indústria 4.0 / EVs / IA</td></tr>
         </tbody>
       </table>
     </div>
@@ -353,9 +358,9 @@ li{margin:4px 0}
           <tr><td>2ª</td><td>L</td><td>8</td><td>—</td></tr>
           <tr><td>3ª</td><td>M</td><td>18</td><td>—</td></tr>
           <tr><td>4ª</td><td>N</td><td>32</td><td>—</td></tr>
-          <tr><td>5ª</td><td>O</td><td>32</td><td>—</td></tr>
-          <tr><td>6ª</td><td>P</td><td>18</td><td>—</td></tr>
-          <tr><td>7ª</td><td>Q</td><td>2</td><td>Mais distante (mais livre)</td></tr>
+          <tr><td>5ª</td><td>O</td><td>50</td><td>—</td></tr>
+          <tr><td>6ª</td><td>P</td><td>72</td><td>—</td></tr>
+          <tr><td>7ª</td><td>Q</td><td>98</td><td>Mais distante (mais livre)</td></tr>
         </tbody>
       </table>
     </div>
@@ -405,7 +410,7 @@ li{margin:4px 0}
         <thead><tr><th>Aplicação</th><th>Potência</th><th>Frequência</th><th>Componente Destaque</th><th>Exemplo Real</th></tr></thead>
         <tbody>
           <tr><td>🔊 Áudio</td><td>1 – 100 W</td><td>20 Hz – 20 kHz</td><td>Op-amp, Classe D</td><td>Caixa Bluetooth JBL</td></tr>
-          <tr><td>�� Vídeo</td><td>5 – 50 W</td><td>MHz (pixels)</td><td>Sensor CMOS, LED driver</td><td>Smart TV Samsung</td></tr>
+          <tr><td>🎬 Vídeo</td><td>5 – 50 W</td><td>MHz (pixels)</td><td>Sensor CMOS, LED driver</td><td>Smart TV Samsung</td></tr>
           <tr><td>💻 Informática</td><td>10 – 500 W</td><td>2 – 5 GHz (clock)</td><td>SoC CMOS, DDR5</td><td>Notebook Dell</td></tr>
           <tr><td>📡 Telecom</td><td>0,1 – 10 W</td><td>MHz – GHz (RF)</td><td>Mixer, PLL, PA</td><td>Roteador Wi-Fi 6E</td></tr>
           <tr><td>🏭 Automação</td><td>100 W – MW</td><td>50 Hz – kHz</td><td>IGBT, PLC, Encoder</td><td>Inversor ABB ACS880</td></tr>
@@ -510,7 +515,7 @@ li{margin:4px 0}
       <p><strong>Solução:</strong></p>
       <p>a) I = P/V = 5500 / 220 = <strong>25 A</strong></p>
       <p>b) R = V/I = 220 / 25 = <strong>8,8 Ω</strong> (ou R = V²/P = 220²/5500 = 8,8 Ω ✔)</p>
-      <p>⚡ Por isso o disjuntor deve ser de pelo menos <strong>30 A</strong> e o fio de <strong>6 mm²</strong> (conforme NBR 5410).</p>
+      <p>⚡ Em uma instalação típica, pode-se usar disjuntor de <strong>30 A</strong> e condutor de <strong>6 mm²</strong>, mas o dimensionamento final deve considerar método de instalação, temperatura, agrupamento, queda de tensão e tabelas aplicáveis da NBR 5410.</p>
     </div>
 
     <h3>2.3 Leis de Kirchhoff</h3>
@@ -605,7 +610,7 @@ li{margin:4px 0}
       <div class="ex-item">
         <strong>3.</strong> Um circuito tem fonte de 9 V com resistência interna de 1 Ω e carga externa de 8 Ω. Calcule: corrente, tensão na carga e potência na carga.
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">I = 9/(1+8) = <strong>1 A</strong> · V_carga = 1×8 = <strong>8 V</strong> · P_carga = 1²×8 = <strong>8 W</strong> · Nota: 1 W é disipado na resistência interna da fonte (perdas).</div>
+        <div class="answer">I = 9/(1+8) = <strong>1 A</strong> · V_carga = 1×8 = <strong>8 V</strong> · P_carga = 1²×8 = <strong>8 W</strong> · Nota: 1 W é dissipado na resistência interna da fonte (perdas).</div>
       </div>
     </div>
   </div>
@@ -680,7 +685,7 @@ li{margin:4px 0}
         <thead><tr><th>Tipo</th><th>Tecnologia</th><th>Tolerância</th><th>Potência</th><th>Aplicação Típica</th></tr></thead>
         <tbody>
           <tr><td>Filme de Carbono</td><td>Carbono depositado</td><td>±5%</td><td>0,125–2 W</td><td>Uso geral em eletrônica</td></tr>
-          <tr><td>Filme Metálico</td><td>Níquel-crômio</td><td>±1% / ±0,1%</td><td>0,1–2 W</td><td>Circuitos de precisão, audio</td></tr>
+          <tr><td>Filme Metálico</td><td>Níquel-crômio</td><td>±1% / ±0,1%</td><td>0,1–2 W</td><td>Circuitos de precisão, áudio</td></tr>
           <tr><td>Fio Bobinado</td><td>Fio Nichrome</td><td>±1%</td><td>5–100 W</td><td>Cargas resistivas de potência</td></tr>
           <tr><td>SMD (0402–2512)</td><td>Filme fino/espesso</td><td>±1%</td><td>0,063–1 W</td><td>PCBs de montagem superficial</td></tr>
           <tr><td>Termistor NTC</td><td>Óxido metálico</td><td>±5%</td><td>—</td><td>Sensor de temperatura</td></tr>
@@ -754,7 +759,7 @@ li{margin:4px 0}
           <tr><td>Eletrolítico Al</td><td>1 µF – 100.000 µF</td><td>6,3 – 500 V</td><td>✅ Sim</td><td>Filtro de fonte de alimentação</td></tr>
           <tr><td>Tântalo</td><td>0,1 µF – 1000 µF</td><td>2 – 50 V</td><td>✅ Sim</td><td>Filtro em equipamentos compactos</td></tr>
           <tr><td>Poliéster (MKT)</td><td>1 nF – 10 µF</td><td>63 – 400 V</td><td>Não</td><td>Acoplamento, filtros de áudio</td></tr>
-          <tr><td>Supercapacitor (EDLC)</td><td>0,1 F – 3000 F</td><td>2,7 – 5 V</td><td>Não</td><td>Armazenamento de energia, backup</td></tr>
+          <tr><td>Supercapacitor (EDLC)</td><td>0,1 F – 3000 F</td><td>2,7 – 5 V</td><td>✅ Geralmente sim</td><td>Armazenamento de energia, backup</td></tr>
         </tbody>
       </table>
     </div>
@@ -871,7 +876,7 @@ li{margin:4px 0}
         <tbody>
           <tr><td><strong>Direta (Forward)</strong></td><td>V_AK &gt; 0,6–0,7 V (Si)<br>V_AK &gt; 0,3 V (Ge)</td><td>Conduz (mA – A)</td><td>✅ ON — curto virtual</td><td>Retificação, lógica de diodo</td></tr>
           <tr><td><strong>Inversa (Reverse)</strong></td><td>V_AK &lt; 0</td><td>Corrente de fuga &lt;1 µA</td><td>❌ OFF — circuito aberto</td><td>Bloqueio de tensão reversa</td></tr>
-          <tr><td><strong>Ruptura (Breakdown)</strong></td><td>V_AK &lt; -V_BR</td><td>Alta corrente (destrutiva)</td><td>⛔ Destruído (diodo comum)</td><td>Evitar! (exceto Zener)</td></tr>
+          <tr><td><strong>Ruptura (Breakdown)</strong></td><td>V_AK &lt; -V_BR</td><td>Alta corrente se não limitada</td><td>⛔ Pode destruir diodo comum</td><td>Evitar em diodos comuns; controlada em Zener/TVS</td></tr>
         </tbody>
       </table>
     </div>
@@ -984,7 +989,7 @@ li{margin:4px 0}
       <div class="ex-item">
         <strong>2.</strong> Qual a diferença entre um diodo retificador comum (1N4007) e um diodo Schottky (1N5819) em termos de queda de tensão direta?
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">O 1N4007 (junção PN de silício) tem V_F ≈ <strong>0,7 V</strong>; o 1N5819 (Schottky, junção metal-semicondutor) tem V_F ≈ <strong>0,3 V</strong>. Em fontes eficientes e retificadores síncronos de carregadores rápidos, a menor queda do Schottky reduz as perdas térmicas pela metade, aumentando a eficiência.</div>
+        <div class="answer">O 1N4007 (junção PN de silício) tem V_F ≈ <strong>0,7 V</strong>; o 1N5819 (Schottky, junção metal-semicondutor) tem V_F ≈ <strong>0,3 V</strong>. Em retificadores não síncronos, a menor queda do Schottky reduz perdas térmicas. Em fontes modernas de alta eficiência, a retificação síncrona normalmente usa MOSFETs controlados.</div>
       </div>
     </div>
   </div>
@@ -1060,7 +1065,7 @@ li{margin:4px 0}
 
     <div class="example">
       <h5>✏️ Exemplo 5.1 — Transistor como Chave para LED de Potência</h5>
-      <p>Controlar um LED de 100 mA com saída digital de Arduino (5V, máx 40mA).</p>
+      <p>Controlar um LED de 100 mA com saída digital de Arduino (5V; limite absoluto por pino 40 mA, projetar preferencialmente para até 20 mA).</p>
       <p>Usando BC337 (β_min=100): I_B_min = I_C / β = 100mA / 100 = <strong>1 mA</strong></p>
       <p>Use I_B = 2×I_B_min = 2 mA (saturação garantida)</p>
       <p>R_B = (V_Arduino - V_BE) / I_B = (5 - 0,7) / 0,002 = <strong>2,15 kΩ → usar 2,2 kΩ</strong></p>
@@ -1094,7 +1099,7 @@ li{margin:4px 0}
         <tbody>
           <tr><td><strong>SCR</strong> (Silicon Controlled Rectifier)</td><td>PNPN — 4 camadas</td><td>Pulso positivo em G com A→K</td><td>Corrente de holding &lt; I_H</td><td>Retificadores controlados, soft-starters</td></tr>
           <tr><td><strong>TRIAC</strong></td><td>Par de SCRs em antiparalelo</td><td>Pulso em G (ambas semiciclos)</td><td>Passagem por zero da corrente</td><td>Dimmers de lâmpada, controle de velocidade de motores CA</td></tr>
-          <tr><td><strong>DIAC</strong></td><td>Diodo bidirecional de disparo</td><td>Tensão de ruptura ±V_BO (~32V)</td><td>Automático</td><td>Rede de disparo do TRIAC (UJT equivalente)</td></tr>
+          <tr><td><strong>DIAC</strong></td><td>Diodo bidirecional de disparo</td><td>Tensão de ruptura ±V_BO (~32V)</td><td>Automático</td><td>Rede de disparo do TRIAC em dimmers e controles CA</td></tr>
         </tbody>
       </table>
     </div>
@@ -1114,7 +1119,7 @@ li{margin:4px 0}
       <div class="ex-item">
         <strong>2.</strong> Por que um MOSFET de potência dissipa menos que um BJT ao conduzir corrente?
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">O MOSFET em condução se comporta como um resistor R_DS(on) (tipicamente 1–100 mΩ), então P = I²×R_DS(on). Por exemplo, IRF540 com R_DS(on)=77 mΩ a 10A dissipa apenas 7,7W. Um BJT equivalente teria V_CE(sat)≈0,5V×10A = 5W, mas sem capacidade de redução com R_DS(on) menor. Além disso, o MOSFET não precisa de corrente de base, eliminando a perda P = V_BE × I_B.</div>
+        <div class="answer">O MOSFET em condução se comporta como um resistor R_DS(on), então P = I²×R_DS(on). Por exemplo, um MOSFET moderno com R_DS(on)=10 mΩ a 10A dissipa 1W. Um BJT equivalente com V_CE(sat)≈0,5V dissiparia 0,5×10 = 5W. Além disso, o MOSFET não precisa de corrente contínua de base, eliminando a perda P = V_BE × I_B.</div>
       </div>
     </div>
   </div>
@@ -1203,14 +1208,14 @@ li{margin:4px 0}
     <h3>6.3 Op-Amps Reais — Parâmetros Importantes</h3>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Parâmetro</th><th>Símbolo</th><th>LM741 (clássico)</th><th>TL071 (FET)</th><th>OPA2134 (audio)</th><th>Impacto</th></tr></thead>
+        <thead><tr><th>Parâmetro</th><th>Símbolo</th><th>LM741 (clássico)</th><th>TL071 (FET)</th><th>OPA2134 (áudio)</th><th>Impacto</th></tr></thead>
         <tbody>
           <tr><td>Ganho malha aberta</td><td>A_OL</td><td>200.000 (106 dB)</td><td>200.000</td><td>1.000.000 (120 dB)</td><td>Precisão do ganho com realimentação</td></tr>
           <tr><td>Slew Rate</td><td>SR</td><td>0,5 V/µs</td><td>13 V/µs</td><td>20 V/µs</td><td>Velocidade máxima de variação da saída</td></tr>
           <tr><td>Largura de banda</td><td>GBW</td><td>1 MHz</td><td>3 MHz</td><td>8 MHz</td><td>Frequência máxima com ganho 1</td></tr>
           <tr><td>Corrente de bias</td><td>I_B</td><td>80 nA</td><td>30 pA</td><td>5 pA</td><td>Erro de offset em altas impedâncias</td></tr>
           <tr><td>Tensão de offset</td><td>V_OS</td><td>2 mV</td><td>3 mV</td><td>0,5 mV</td><td>Erro CC na saída</td></tr>
-          <tr><td>THD</td><td>THD+N</td><td>—</td><td>0,003%</td><td>0,00008%</td><td>Distorção harmônica (crítica em audio)</td></tr>
+          <tr><td>THD</td><td>THD+N</td><td>—</td><td>0,003%</td><td>0,00008%</td><td>Distorção harmônica (crítica em áudio)</td></tr>
         </tbody>
       </table>
     </div>
@@ -1231,7 +1236,7 @@ li{margin:4px 0}
 
     <div class="callout info">
       <span class="icon">🎵</span><strong>Por que os amplificadores Classe D dominam o mercado?</strong>
-      Em caixas Bluetooth, soundbars e autofalantes ativos, a bateria é limitada. Um amp Classe D de 20W como o TPA3116 tem 90% de eficiência (18W na carga, 2W de calor), dispensando dissipadores. Um Classe AB equivalente teria 55% de eficiência (11W na carga, 9W de calor) exigindo dissipadores grandes e consumindo mais bateria.
+      Em caixas Bluetooth, soundbars e alto-falantes ativos, a bateria é limitada. Um amp Classe D de 20W como o TPA3116 tem 90% de eficiência (18W na carga, 2W de calor), dispensando dissipadores. Um Classe AB equivalente teria 55% de eficiência (11W na carga, 9W de calor) exigindo dissipadores grandes e consumindo mais bateria.
     </div>
 
     <div class="exercises">
@@ -1318,8 +1323,8 @@ li{margin:4px 0}
         <tbody>
           <tr><td><strong>Buck (Step-Down)</strong></td><td>V_out &lt; V_in</td><td>V_out = D × V_in (D=duty cycle 0-1)</td><td>92–97%</td><td>Carregadores USB, reguladores de placa</td></tr>
           <tr><td><strong>Boost (Step-Up)</strong></td><td>V_out &gt; V_in</td><td>V_out = V_in / (1-D)</td><td>88–95%</td><td>LED drivers, conversores de bateria</td></tr>
-          <tr><td><strong>Buck-Boost</strong></td><td>V_out ≷ V_in</td><td>V_out = −V_in × D/(1-D)</td><td>85–92%</td><td>UPS, fontes de alimentação versáteis</td></tr>
-          <tr><td><strong>Flyback</strong></td><td>Isolado</td><td>n × D × V_in (n=relação de espiras)</td><td>80–90%</td><td>Fontes chaveadas compactas (&lt;150W)</td></tr>
+          <tr><td><strong>Buck-Boost inversor</strong></td><td>|V_out| pode ser &lt; ou &gt; V_in</td><td>V_out = −V_in × D/(1-D)</td><td>85–92%</td><td>UPS, fontes de alimentação versáteis</td></tr>
+          <tr><td><strong>Flyback</strong></td><td>Isolado</td><td>Depende da relação de espiras e do modo de condução</td><td>80–90%</td><td>Fontes chaveadas compactas (&lt;150W)</td></tr>
           <tr><td><strong>LLC Resonante</strong></td><td>Isolado</td><td>Controle de frequência</td><td>95–98%</td><td>Fontes ATX, carregadores de EV</td></tr>
         </tbody>
       </table>
@@ -1348,7 +1353,7 @@ li{margin:4px 0}
       <div class="ex-item">
         <strong>1.</strong> Um regulador LM7805 está recebendo 12V na entrada e fornecendo 5V/500mA. Calcule: a) potência disipada no LM7805; b) eficiência da fonte linear.
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">a) P_disipada = (V_in − V_out) × I = (12 − 5) × 0,5 = 7 × 0,5 = <strong>3,5 W</strong> (quente — precisa de dissipador!). b) P_saída = 5 × 0,5 = 2,5 W. η = P_saída/P_entrada = 2,5/(12×0,5) = 2,5/6 = <strong>41,7%</strong>. Comparação: SMPS Buck equivalente teria η≈95% → 5,7W de entrada para 5W de saída.</div>
+        <div class="answer">a) P_disipada = (V_in − V_out) × I = (12 − 5) × 0,5 = 7 × 0,5 = <strong>3,5 W</strong> (quente — precisa de dissipador!). b) P_saída = 5 × 0,5 = 2,5 W. η = P_saída/P_entrada = 2,5/(12×0,5) = 2,5/6 = <strong>41,7%</strong>. Comparação: SMPS Buck equivalente com η≈95% teria P_entrada ≈ 2,5/0,95 = <strong>2,63 W</strong>.</div>
       </div>
       <div class="ex-item">
         <strong>2.</strong> Um conversor Buck deve gerar 3,3V a partir de 12V. Qual o duty cycle D necessário?
@@ -1475,7 +1480,7 @@ li{margin:4px 0}
           <tr><td>RAM</td><td>2 KB</td><td>520 KB</td><td>192 KB – 1 MB</td><td>4–8 GB LPDDR4</td></tr>
           <tr><td>ADC</td><td>10-bit, 6 canais</td><td>12-bit, 18 canais</td><td>12-bit, 16 canais</td><td>Nenhum (externo)</td></tr>
           <tr><td>Wireless</td><td>Não</td><td>Wi-Fi + BLE 5.0</td><td>Não (variantes sim)</td><td>Wi-Fi 5 + BT 5.0</td></tr>
-          <tr><td>Tensão I/O</td><td>5V / 3,3V</td><td>3,3V (tolerante 5V)</td><td>3,3V</td><td>3,3V</td></tr>
+          <tr><td>Tensão I/O</td><td>5V / 3,3V</td><td>3,3V (não tolerante a 5V)</td><td>3,3V</td><td>3,3V</td></tr>
           <tr><td>Custo (aprox)</td><td>~R$ 30</td><td>~R$ 40</td><td>~R$ 25 (STM32F103)</td><td>~R$ 450</td></tr>
           <tr><td>Ideal para</td><td>Iniciantes, projetos simples</td><td>IoT, automação Wi-Fi</td><td>Controle industrial, tempo real</td><td>Linux embarcado, IA de borda</td></tr>
         </tbody>
@@ -1730,7 +1735,7 @@ li{margin:4px 0}
           <tr><td>NTC (Termistor)</td><td>Temperatura</td><td>Resistência ↓ com temperatura ↑</td><td>Resistência (kΩ)</td><td>Termostatos, impressoras 3D</td></tr>
           <tr><td>Pt100 / Pt1000</td><td>Temperatura (precisão)</td><td>Platina: R cresce linearmente</td><td>Resistência (100Ω a 0°C)</td><td>Indústria alimentícia, farmacêutica</td></tr>
           <tr><td>Termopar K</td><td>Temperatura (alta)</td><td>Efeito Seebeck (dois metais)</td><td>Tensão (µV/°C) — amplificar</td><td>Fornos, motores, soldas</td></tr>
-          <tr><td>DHT22 / BME280</td><td>Temperatura + Umidade</td><td>Capacitivo + termistor</td><td>Digital (1-wire, I²C)</td><td>IoT, estações meteorológicas</td></tr>
+          <tr><td>DHT22 / BME280</td><td>Temperatura + Umidade</td><td>Capacitivo + termistor</td><td>Digital (single-bus proprietário, I²C)</td><td>IoT, estações meteorológicas</td></tr>
           <tr><td>Sensor Ultrassônico (HC-SR04)</td><td>Distância</td><td>Eco ultrassônico</td><td>Pulso PWM (µs)</td><td>Robótica, estacionamento, nível de tanque</td></tr>
           <tr><td>MPU-6050 (IMU)</td><td>Aceleração + giroscópio</td><td>MEMS capacitivo</td><td>Digital I²C (±2g, ±2000°/s)</td><td>Drones, wearables, sistemas de estabilização</td></tr>
           <tr><td>Sensor Indutivo</td><td>Presença de metal</td><td>Campo magnético variável</td><td>Digital ON/OFF ou analógico</td><td>Fim de curso em CNC, contagem de peças</td></tr>
@@ -1755,7 +1760,7 @@ li{margin:4px 0}
 
 <span style="color:#27ae60">void</span> loop() {
   <span style="color:#e94560">float</span> rawADC = analogRead(THERMISTOR_PIN);
-  <span style="color:#e94560">float</span> R_ntc = R_SERIES * (1023.0 / rawADC - 1.0);
+  <span style="color:#e94560">float</span> R_ntc = R_SERIES * rawADC / (1023.0 - rawADC);
   <span style="color:#555">// Steinhart-Hart simplificado (equação de Beta)</span>
   <span style="color:#e94560">float</span> steinhart = R_ntc / R_NOMINAL;
   steinhart = log(steinhart);
@@ -1942,7 +1947,7 @@ function toggleAnswer(btn) {
 <!-- ============================================================ FOOTER -->
 <footer style="text-align:center;padding:40px 20px;color:#888;font-size:.9rem;background:#1a1a2e;color:#aaa;margin-top:40px">
   <p>⚡ <strong style="color:#e94560">Apostila de Eletrônica — Curso Técnico</strong> ⚡</p>
-  <p style="margin-top:8px">Conteúdo de domínio didático-técnico · Conforme ABNT NBR 5410, IEC 61131, IEC 61800</p>
+  <p style="margin-top:8px">Conteúdo de domínio didático-técnico · Com referências a ABNT NBR 5410, IEC 61131, IEC 61800</p>
   <p style="margin-top:8px">Módulos: Fundamentos · Grandezas · Passivos · Semicondutores · Transistores · Op-Amps · Fontes · Digital · Potência · Sensores</p>
   <p style="margin-top:16px;font-size:.8rem;color:#666">Para uso educacional em cursos técnicos de eletrônica · 2024/2025</p>
 </footer>
