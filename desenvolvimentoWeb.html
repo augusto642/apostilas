@@ -646,6 +646,31 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
         </div>
       </div>
 
+      <h3>2.5 Tabelas e organização de dados</h3>
+      <p>Tabelas HTML servem para dados tabulares: horários, notas, estoque, cronogramas e comparações. Não devem ser usadas para montar layout da página.</p>
+      <pre><code>&lt;table&gt;
+  &lt;caption&gt;Horários do laboratório&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Turma&lt;/th&gt;
+      &lt;th scope="col"&gt;Dia&lt;/th&gt;
+      &lt;th scope="col"&gt;Horário&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Informática A&lt;/td&gt;
+      &lt;td&gt;Segunda&lt;/td&gt;
+      &lt;td&gt;19h às 20h40&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      <ul class="checklist">
+        <li>Use <code>&lt;caption&gt;</code> para dar contexto ao conteúdo.</li>
+        <li>Prefira <code>&lt;th scope="col"&gt;</code> e <code>&lt;th scope="row"&gt;</code> para facilitar leitura por tecnologias assistivas.</li>
+        <li>Em telas pequenas, pense em rolagem horizontal ou reorganização visual, em vez de reduzir demais o texto.</li>
+      </ul>
+
       <div class="lab">
         <h4>Atividade prática: página de apresentação profissional</h4>
         <ol>
@@ -834,6 +859,62 @@ body {
 .lista li:nth-child(odd) {
   background: rgba(37, 99, 235, 0.06);
 }</code></pre>
+
+      <h3>3.4 Flexbox, Grid e animações modernas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Técnica</th>
+              <th>Propriedades centrais</th>
+              <th>Cenário comum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Flexbox</td>
+              <td><code>justify-content</code>, <code>align-items</code>, <code>gap</code>, <code>flex-wrap</code></td>
+              <td>Menus, grupos de botões, cartões em linha e alinhamento vertical</td>
+            </tr>
+            <tr>
+              <td>Grid</td>
+              <td><code>grid-template-columns</code>, <code>grid-template-areas</code>, <code>fr</code>, <code>place-items</code></td>
+              <td>Dashboards, galerias, páginas com várias regiões e layouts mais rígidos</td>
+            </tr>
+            <tr>
+              <td>Transições</td>
+              <td><code>transition</code>, <code>duration</code>, <code>timing-function</code></td>
+              <td>Hover em botões, foco de campos, menus e cartões</td>
+            </tr>
+            <tr>
+              <td>Animações</td>
+              <td><code>@keyframes</code>, <code>animation-name</code>, <code>animation-duration</code></td>
+              <td>Entradas suaves, indicadores de carregamento e destaques visuais</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.painel {
+  animation: surgir .4s ease-out;
+}</code></pre>
+      <p><strong>Critério de qualidade:</strong> efeitos devem comunicar estado ou reforçar hierarquia. Quando usados sem propósito, só distraem e podem prejudicar acessibilidade.</p>
 
       <div class="callout info">
         <div class="icon">📱</div>
@@ -1079,6 +1160,65 @@ form.addEventListener('submit', (evento) =&gt; {
   }
 });</code></pre>
       <p><strong>Observação:</strong> esse exemplo usa uma checagem simplificada apenas para fins didáticos. Em projetos reais, a validação de e-mail precisa ser mais criteriosa no cliente e também no servidor, porque a checagem feita no navegador pode ser contornada e não protege contra entradas maliciosas.</p>
+
+      <h3>5.4 Tipos de campo, métodos de envio e iframes</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Recurso</th>
+              <th>Quando usar</th>
+              <th>Exemplo prático</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>type="tel"</code>, <code>date</code>, <code>number</code></td>
+              <td>Quando o navegador pode ajudar com teclado e validação adequados</td>
+              <td>Telefone, data de nascimento, quantidade</td>
+            </tr>
+            <tr>
+              <td><code>checkbox</code> e <code>radio</code></td>
+              <td>Escolhas múltiplas ou exclusivas</td>
+              <td>Interesses do aluno, turno preferido</td>
+            </tr>
+            <tr>
+              <td><code>&lt;select&gt;</code>, <code>&lt;datalist&gt;</code>, <code>&lt;output&gt;</code></td>
+              <td>Listas guiadas, sugestões e resultados calculados</td>
+              <td>Escolha de curso, autocomplete de cidade, total de inscrição</td>
+            </tr>
+            <tr>
+              <td><code>method="get"</code> e <code>method="post"</code></td>
+              <td>GET para consultas; POST para envio de dados mais sensíveis ou extensos</td>
+              <td>Busca interna do site e formulário de cadastro</td>
+            </tr>
+            <tr>
+              <td><code>&lt;iframe&gt;</code></td>
+              <td>Conteúdo externo complementar</td>
+              <td>Mapa da escola, vídeo tutorial, formulário publicado em outro serviço</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>&lt;form action="/busca" method="get"&gt;
+  &lt;label for="termo"&gt;Pesquisar&lt;/label&gt;
+  &lt;input id="termo" name="q" type="search"&gt;
+  &lt;button type="submit"&gt;Buscar&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;iframe
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Vídeo de apoio"
+  loading="lazy"
+  allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+      <div class="callout warning">
+        <div class="icon">🧾</div>
+        <div>
+          <strong>Decisão rápida</strong>
+          Se o formulário só consulta informações, GET costuma ser suficiente. Se ele grava dados, faz login ou envia informações pessoais, POST é a escolha mais adequada. Em <code>iframe</code>, revise origem, permissões e impacto no carregamento.
+        </div>
+      </div>
 
       <div class="lab">
         <h4>Atividade prática: formulário de inscrição para minicurso</h4>
