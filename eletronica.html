@@ -412,7 +412,7 @@ li{margin:4px 0}
 
     <h4>📡 2. Telecomunicações</h4>
     <ul>
-        <li><strong>5G NR:</strong> Frequências de 700 MHz a 28 GHz (mmWave), antenas MIMO massivo (64T64R); em cenários específicos a latência pode cair para poucos milissegundos, mas na prática costuma ser maior</li>
+        <li><strong>5G NR:</strong> Frequências de 700 MHz a 28 GHz (mmWave), antenas MIMO massivo (64T64R); em cenários específicos a latência pode cair para poucos milissegundos, enquanto em uso real costuma ficar na faixa de aproximadamente 5–20 ms, dependendo da rede e da aplicação</li>
       <li><strong>Fibra óptica:</strong> Lasers DFB 1550 nm + fotodiodos PIN + EDFAs (amplificadores a érbio) → 100 Gbps por fibra</li>
       <li><strong>Wi-Fi 6E:</strong> Banda 6 GHz, OFDMA, MU-MIMO 8×8, throughput 9,6 Gbps</li>
     </ul>
@@ -791,7 +791,7 @@ li{margin:4px 0}
     <h4>Transformador Ideal</h4>
     <p>No <strong>transformador ideal</strong>, tensão e corrente se transformam sem perdas, mantendo potência constante (<strong>η = 100%</strong>):</p>
     <div class="formula">V₁/V₂ = N₁/N₂ = I₂/I₁<span class="formula-label">V=tensão · N=número de espiras · I=corrente (primário=1, secundário=2)</span></div>
-    <p>Na prática, transformadores reais apresentam perdas no cobre, no núcleo e por dispersão magnética; por isso, a eficiência costuma ficar tipicamente entre <strong>95% e 99%</strong>, dependendo do porte, material e ponto de operação.</p>
+    <p>Na prática, transformadores reais apresentam perdas no cobre, no núcleo e por dispersão magnética; por isso, a eficiência depende do porte, material e ponto de operação. Transformadores pequenos e adaptadores simples podem ficar em torno de <strong>80% a 90%</strong>, enquanto transformadores maiores e melhor projetados podem atingir cerca de <strong>95% a 99%</strong>.</p>
 
     <div class="example">
       <h5>✏️ Exemplo Resolvido 3.1 — Transformador</h5>
@@ -1502,7 +1502,7 @@ li{margin:4px 0}
           <tr><td>CPU</td><td>8-bit, 16 MHz</td><td>32-bit dual-core 240 MHz</td><td>32-bit, até 168 MHz</td><td>8-bit, até 48 MHz</td></tr>
           <tr><td>Flash</td><td>32 KB</td><td>4 MB</td><td>512 KB – 2 MB</td><td>32 KB</td></tr>
           <tr><td>RAM</td><td>2 KB</td><td>520 KB</td><td>192 KB – 1 MB</td><td>2 KB</td></tr>
-          <tr><td>ADC</td><td>10-bit, 6 canais</td><td>12-bit, até 18 canais</td><td>12-bit, até 16 canais</td><td>10-bit, até 13 canais</td></tr>
+          <tr><td>ADC</td><td>10-bit, 6 canais</td><td>12-bit, até 18 canais (nem todos disponíveis externamente)</td><td>12-bit, até 16 canais</td><td>10-bit, até 13 canais</td></tr>
           <tr><td>Wireless</td><td>Não</td><td>Wi-Fi + BLE 5.0</td><td>Não (variantes sim)</td><td>Não</td></tr>
           <tr><td>Tensão I/O</td><td>5 V</td><td>3,3 V (não tolerante a 5 V)</td><td>3,3 V</td><td>5 V</td></tr>
           <tr><td>Recurso de destaque</td><td>Ecossistema didático amplo</td><td>Conectividade integrada</td><td>Maior desempenho e periféricos avançados</td><td>USB embarcado e ampla tradição em ensino de PIC</td></tr>
@@ -1626,7 +1626,7 @@ li{margin:4px 0}
         <tbody>
           <tr><td>Dimmer LED</td><td>100 Hz – 20 kHz</td><td>MOSFET / TRIAC</td><td>Controle de brilho sem perda de eficiência</td></tr>
           <tr><td>Controle de motor CC</td><td>1 kHz – 50 kHz</td><td>MOSFET / H-Bridge</td><td>Velocidade e torque variáveis</td></tr>
-          <tr><td>Servo motor (posição)</td><td>~50 Hz (pulsos de 1–2 ms)</td><td>MCU + driver interno do servo</td><td>Posição angular 0–180°</td></tr>
+          <tr><td>Servo motor (posição)</td><td>~50 Hz de repetição (período ~20 ms, com pulsos de 1–2 ms)</td><td>MCU + driver interno do servo</td><td>Posição angular 0–180°</td></tr>
           <tr><td>Inversor solar</td><td>16 – 50 kHz</td><td>IGBT / SiC MOSFET</td><td>CA senoidal sintética 60 Hz</td></tr>
           <tr><td>DAC (Conversor Digital-Analógico)</td><td>&gt;100 kHz + filtro RC</td><td>MCU + RC</td><td>Tensão analógica de baixo custo</td></tr>
         </tbody>
@@ -1732,7 +1732,7 @@ li{margin:4px 0}
     <p>O osciloscópio exibe a forma de onda dos sinais elétricos no tempo — ferramenta indispensável para diagnóstico de circuitos digitais, fontes PWM, sinais de áudio e RF.</p>
     <div class="callout danger">
       <span class="icon">⚡</span><strong>Atenção ao terra da sonda</strong>
-      Em muitos osciloscópios de bancada, o jacaré de GND da sonda está ligado ao terra de proteção da rede elétrica. Nunca prenda esse GND diretamente no primário de fontes ligadas à tomada ou em pontos energizados da rede sem isolamento adequado. Para essas medições, use transformador de isolamento, sonda diferencial ou procedimento apropriado de segurança.
+      Em muitos osciloscópios de bancada, o jacaré de GND da sonda está ligado ao terra de proteção da rede elétrica. Nunca prenda esse GND diretamente no primário de fontes ligadas à tomada ou em pontos energizados da rede sem isolamento adequado. Também evite conectar o jacaré entre dois pontos com potenciais diferentes, pois isso pode criar um curto-circuito pelo terra da sonda. Para essas medições, use transformador de isolamento, sonda diferencial ou procedimento apropriado de segurança.
     </div>
 
     <div class="table-wrap">
