@@ -894,7 +894,7 @@ li{margin:4px 0}
       <table>
         <thead><tr><th>Polarização</th><th>Tensão V_AK</th><th>Corrente</th><th>Estado</th><th>Aplicação</th></tr></thead>
         <tbody>
-          <tr><td><strong>Direta (Forward)</strong></td><td>V_AK &gt; ~0,6–0,9 V (Si)<br>V_AK &gt; ~0,2–0,4 V (Schottky)</td><td>Conduz (mA – A)</td><td>✅ ON — com queda de tensão direta</td><td>Retificação, proteção, lógica de diodo</td></tr>
+          <tr><td><strong>Direta (Forward)</strong></td><td>V_AK &gt; 0,6–0,9 V (Si)<br>V_AK &gt; 0,2–0,4 V (Schottky)</td><td>Conduz (mA – A)</td><td>✅ ON — com queda de tensão direta</td><td>Retificação, proteção, lógica de diodo</td></tr>
           <tr><td><strong>Inversa (Reverse)</strong></td><td>V_AK &lt; 0</td><td>Corrente de fuga muito pequena, dependente do diodo e da temperatura</td><td>❌ OFF — bloqueio reverso</td><td>Bloqueio de tensão reversa</td></tr>
           <tr><td><strong>Ruptura (Breakdown)</strong></td><td>V_AK &lt; -V_BR</td><td>Alta corrente se não limitada</td><td>⛔ Pode destruir diodo comum</td><td>Evitar em diodos comuns; controlada em Zener/TVS</td></tr>
         </tbody>
@@ -1000,7 +1000,7 @@ li{margin:4px 0}
     </div>
     <div class="callout info">
       <span class="icon">📌</span><strong>Observação importante sobre retificadores</strong>
-      As fórmulas da tabela representam o <em>caso ideal</em>. Em circuitos reais, a tensão de saída é menor por causa da queda direta nos diodos. Em uma ponte de Graetz, dois diodos conduzem em cada semiciclo; por isso, a saída real fica aproximadamente reduzida em <strong>2 × V<sub>F</sub></strong>.
+      As fórmulas da tabela representam o <em>caso ideal</em>. Em circuitos reais, a tensão de saída é menor por causa da queda direta nos diodos. Em uma ponte de Graetz, dois diodos conduzem em cada semiciclo; por isso, a <strong>tensão de pico</strong> de saída real fica aproximadamente reduzida em <strong>2 × V<sub>F</sub></strong>.
     </div>
 
     <div class="exercises">
