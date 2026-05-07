@@ -267,7 +267,7 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
     <div class="hero-top">
       <span class="badge">💻 CURSO TÉCNICO</span>
       <span class="badge">🌐 HTML + CSS + JavaScript</span>
-      <span class="badge">📚 Apostila Profissional 2026</span>
+      <span class="badge">📚 Material didático 2026</span>
     </div>
     <h1>Apostila de Desenvolvimento Web</h1>
     <h2>Fundamentos, prática guiada e trilha de carreira para estudantes do ensino técnico</h2>
@@ -791,7 +791,7 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
       <div class="grid grid-2">
         <div class="card">
           <h4>Variáveis e tipos</h4>
-          <p><code>let</code> cria variáveis que podem mudar; <code>const</code> define referências fixas. Tipos comuns: string, number, boolean, array e object.</p>
+          <p><code>let</code> cria variáveis que podem mudar; <code>const</code> impede reatribuição da variável, embora objetos e arrays ainda possam ter conteúdo alterado. Tipos primitivos comuns: string, number e boolean; além de estruturas frequentes como array e object.</p>
         </div>
         <div class="card">
           <h4>Condições</h4>
@@ -896,7 +896,7 @@ botao.addEventListener('click', () =&gt; {
         <div class="ex-item">
           <p><strong>3.</strong> Diferencie <code>const</code> e <code>let</code>.</p>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
-          <div class="answer"><code>const</code> é usada quando a referência não deve ser reatribuída; <code>let</code> permite mudança de valor ao longo do programa.</div>
+          <div class="answer"><code>const</code> é usada quando a variável não deve ser reatribuída; <code>let</code> permite mudança de valor ao longo do programa. Em objetos e arrays declarados com <code>const</code>, o conteúdo ainda pode ser alterado.</div>
         </div>
       </div>
     </div>
@@ -976,6 +976,7 @@ form.addEventListener('submit', (evento) =&gt; {
     alert('Digite um e-mail válido.');
   }
 });</code></pre>
+      <p><strong>Observação:</strong> esse exemplo usa uma checagem simplificada apenas para fins didáticos. Em projetos reais, a validação de e-mail precisa ser mais criteriosa no cliente e também no servidor.</p>
 
       <div class="lab">
         <h4>Atividade prática: formulário de inscrição para minicurso</h4>
