@@ -583,6 +583,69 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
         <li>Evite depender apenas de cor para indicar erro ou sucesso.</li>
       </ul>
 
+      <h3>2.4 Imagens, mídias e conteúdo incorporado</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Recurso</th>
+              <th>Quando faz sentido</th>
+              <th>Boa prática essencial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JPG / JPEG</td>
+              <td>Fotos e imagens com muitas cores</td>
+              <td>Comprimir para não deixar a página pesada</td>
+            </tr>
+            <tr>
+              <td>PNG</td>
+              <td>Imagens com transparência e elementos gráficos simples</td>
+              <td>Evitar arquivos maiores do que o necessário</td>
+            </tr>
+            <tr>
+              <td>WebP</td>
+              <td>Imagens modernas com bom equilíbrio entre qualidade e tamanho</td>
+              <td>Usar sempre que houver suporte no projeto</td>
+            </tr>
+            <tr>
+              <td>SVG</td>
+              <td>Ícones, logotipos e ilustrações vetoriais</td>
+              <td>Preferir para elementos que precisam escalar sem perder qualidade</td>
+            </tr>
+            <tr>
+              <td><code>&lt;audio&gt;</code> e <code>&lt;video&gt;</code></td>
+              <td>Aulas, entrevistas, demonstrações e conteúdo multimídia</td>
+              <td>Fornecer controles, texto de apoio e formatos adequados</td>
+            </tr>
+            <tr>
+              <td><code>&lt;iframe&gt;</code></td>
+              <td>Incorporar mapas, vídeos e serviços externos</td>
+              <td>Usar com critério, observando desempenho e privacidade</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <pre><code>&lt;picture&gt;
+  &lt;source srcset="capa.webp" type="image/webp"&gt;
+  &lt;img src="capa.jpg" alt="Banner do projeto da turma"&gt;
+&lt;/picture&gt;
+
+&lt;video controls width="640"&gt;
+  &lt;source src="apresentacao.mp4" type="video/mp4"&gt;
+  Seu navegador não suportou o vídeo.
+&lt;/video&gt;</code></pre>
+
+      <div class="callout info">
+        <div class="icon">🖼️</div>
+        <div>
+          <strong>Ponto importante</strong>
+          Além de saber inserir arquivos, o estudante precisa observar direitos de uso de imagens, nomear arquivos com clareza, criar favicons e preferir mídias leves para melhorar o carregamento.
+        </div>
+      </div>
+
       <div class="lab">
         <h4>Atividade prática: página de apresentação profissional</h4>
         <ol>
@@ -731,6 +794,45 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
   body {
     font-size: 15px;
   }
+}</code></pre>
+
+      <h3>3.3 Cores, tipografia e efeitos que elevam a interface</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Cores e contraste</h4>
+          <p>Além de hexadecimal, CSS aceita <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code> e gradientes. Escolher paletas coerentes melhora identidade visual e leitura.</p>
+        </div>
+        <div class="card">
+          <h4>Tipografia</h4>
+          <p>Fontes definem tom e legibilidade. É comum combinar uma fonte para títulos e outra para texto corrido, usando serviços como Google Fonts ou arquivos locais com <code>@font-face</code>.</p>
+        </div>
+        <div class="card">
+          <h4>Pseudo-classes e pseudo-elementos</h4>
+          <p><code>:hover</code>, <code>:focus</code> e <code>:nth-child()</code> ajudam na interação e organização visual. Já <code>::before</code> e <code>::after</code> servem para detalhes decorativos sem poluir o HTML.</p>
+        </div>
+        <div class="card">
+          <h4>Fundos, transições e microefeitos</h4>
+          <p>Planos de fundo, sombras, transições suaves e pequenas animações podem destacar elementos importantes sem exagero. O foco deve continuar sendo clareza e usabilidade.</p>
+        </div>
+      </div>
+
+      <pre><code>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: linear-gradient(180deg, #eff6ff, #ffffff);
+}
+
+.btn {
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.lista li:nth-child(odd) {
+  background: rgba(37, 99, 235, 0.06);
 }</code></pre>
 
       <div class="callout info">
@@ -1037,6 +1139,21 @@ form.addEventListener('submit', (evento) =&gt; {
         <li><strong>Versionar:</strong> registrar mudanças com commits claros.</li>
         <li><strong>Publicar:</strong> disponibilizar em GitHub Pages, Netlify ou Vercel.</li>
       </ol>
+
+      <h3>6.3 Git, GitHub e publicação passo a passo</h3>
+      <p>Uma rotina muito usada em cursos introdutórios é criar o projeto localmente, versionar cada etapa e depois publicar uma versão navegável. Esse fluxo ajuda a organizar o portfólio e a demonstrar evolução.</p>
+      <pre><code>git init
+git add .
+git commit -m "Estrutura inicial da página"
+git branch -M main
+git remote add origin https://github.com/seu-usuario/seu-repo.git
+git push -u origin main</code></pre>
+      <ul class="checklist">
+        <li>Faça commits pequenos, por exemplo: <code>estrutura HTML</code>, <code>estilos iniciais</code>, <code>validação do formulário</code>.</li>
+        <li>Use o GitHub para guardar histórico, compartilhar o projeto e receber feedback.</li>
+        <li>Ative o GitHub Pages quando quiser transformar o repositório em site estático acessível por link.</li>
+        <li>Depois de publicar, revise links, imagens, responsividade e ortografia como se fosse uma entrega real.</li>
+      </ul>
 
       <div class="table-wrap">
         <table>
@@ -1349,6 +1466,14 @@ form.addEventListener('submit', (evento) =&gt; {
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="callout info">
+        <div class="icon">▶️</div>
+        <div>
+          <strong>Trilha sugerida com as playlists indicadas</strong>
+          As playlists do Curso em Vídeo formam uma sequência didática consistente: <strong>Módulo 1</strong> para história da web, HTML básico e primeiras páginas; <strong>Módulo 2</strong> para design visual, tipografia e box model; <strong>Módulo 3</strong> para Git/GitHub, planos de fundo, tabelas e publicação; <strong>Módulo 4</strong> para formulários completos, iframes e media queries; e <strong>Módulo 5</strong> para recursos modernos como transições, animações, Flexbox e Grid. Use essa ordem para aprofundar cada parte desta apostila.
+        </div>
       </div>
 
       <h3>8.4 Repositórios públicos para estudar código real</h3>
