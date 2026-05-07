@@ -2243,28 +2243,63 @@ li{margin:4px 0}
         <thead><tr><th>Vídeo</th><th>Link</th><th>Conhecimento a extrair para a apostila</th><th>Aplicação prática</th></tr></thead>
         <tbody>
           <tr>
-            <td>Vídeo 1</td>
-            <td><a href="https://www.youtube.com/watch?v=YtTJQVVbJts" target="_blank">youtube.com/watch?v=YtTJQVVbJts</a></td>
-            <td>Identificar o problema apresentado, reconhecer grandezas elétricas envolvidas e relacionar tensão, corrente, resistência e potência aos resultados observados.</td>
-            <td>Montar uma ficha de estudo com esquema simplificado, valores medidos e explicação do comportamento do circuito.</td>
+            <td>Vídeo 1 — fundamentos e observação do circuito</td>
+            <td><a href="https://www.youtube.com/watch?v=zI-SefGdszU" target="_blank">youtube.com/watch?v=zI-SefGdszU</a></td>
+            <td>Identificar o objetivo da montagem, os blocos de entrada, processamento, saída e alimentação, relacionando-os à estrutura universal de um sistema eletrônico.</td>
+            <td>Produzir um diagrama simples do circuito, indicar o caminho da corrente e listar quais grandezas precisam ser medidas antes de energizar.</td>
           </tr>
           <tr>
-            <td>Vídeo 2</td>
-            <td><a href="https://www.youtube.com/watch?v=eimdSDR70b4" target="_blank">youtube.com/watch?v=eimdSDR70b4</a></td>
-            <td>Observar componentes eletrônicos, suas funções, polaridade, limites de operação e cuidados de ligação antes de energizar uma montagem.</td>
-            <td>Comparar o circuito do vídeo com os módulos de resistores, capacitores, diodos, LEDs, transistores ou fontes de alimentação.</td>
+            <td>Vídeo 2 — componentes, valores e polaridade</td>
+            <td><a href="https://www.youtube.com/watch?v=D32ZAMEoefI" target="_blank">youtube.com/watch?v=D32ZAMEoefI</a></td>
+            <td>Observar resistores, capacitores, diodos, LEDs, transistores ou CIs, anotando função, valor nominal, tolerância, polaridade e limites de operação.</td>
+            <td>Comparar os componentes do vídeo com os módulos de componentes passivos, semicondutores, transistores e fontes de alimentação da apostila.</td>
           </tr>
           <tr>
-            <td>Vídeo 3</td>
-            <td><a href="https://www.youtube.com/watch?v=YQ1EJe5ylGA" target="_blank">youtube.com/watch?v=YQ1EJe5ylGA</a></td>
-            <td>Analisar procedimentos de teste: continuidade, tensão, corrente, resistência, queda de tensão em diodos/LEDs, ripple ou sinais digitais, conforme o experimento apresentado.</td>
+            <td>Vídeo 3 — medições e diagnóstico</td>
+            <td><a href="https://www.youtube.com/watch?v=Ukvfi2bSIv0" target="_blank">youtube.com/watch?v=Ukvfi2bSIv0</a></td>
+            <td>Analisar procedimentos de teste: continuidade, tensão, corrente, resistência, queda de tensão em diodos/LEDs, ripple, PWM ou sinais digitais, conforme o experimento apresentado.</td>
             <td>Reproduzir a lógica de diagnóstico em bancada usando multímetro, fonte limitada em corrente e, quando disponível, osciloscópio.</td>
           </tr>
           <tr>
-            <td>Vídeo 4</td>
-            <td><a href="https://www.youtube.com/watch?v=OEYApiCiSOk" target="_blank">youtube.com/watch?v=OEYApiCiSOk</a></td>
-            <td>Extrair boas práticas de montagem, organização de bancada, segurança, documentação e validação final do funcionamento.</td>
+            <td>Vídeo 4 — montagem, validação e boas práticas</td>
+            <td><a href="https://www.youtube.com/watch?v=IGOkoU5Hf3A" target="_blank">youtube.com/watch?v=IGOkoU5Hf3A</a></td>
+            <td>Extrair boas práticas de montagem, organização de bancada, segurança, documentação, identificação de falhas e validação final do funcionamento.</td>
             <td>Criar um checklist antes/depois da montagem: alimentação desligada, polaridade conferida, conexões revisadas, medições registradas e falhas corrigidas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Síntese dos conhecimentos para incorporar ao estudo</h4>
+    <p>Ao transformar vídeos práticos em conteúdo técnico, o estudante deve ir além de "ver o circuito funcionando". A análise precisa mostrar por que o circuito funciona, quais condições podem causar falha e como comprovar o resultado com medições.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tema observado</th><th>Conteúdo técnico consolidado</th><th>Pergunta-guia para o aluno</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Alimentação</td>
+            <td>Verificar tensão nominal, corrente disponível, polaridade, ripple, aquecimento e necessidade de regulador ou capacitor de filtro.</td>
+            <td>A fonte suporta a carga sem queda excessiva de tensão?</td>
+          </tr>
+          <tr>
+            <td>Proteção de componentes</td>
+            <td>Usar resistores limitadores, diodos de roda livre, dissipadores, fusíveis e margem de tensão/corrente para evitar danos.</td>
+            <td>Qual componente protege o circuito se houver ligação incorreta ou surto?</td>
+          </tr>
+          <tr>
+            <td>Chaveamento e controle</td>
+            <td>Entender transistores, MOSFETs, relés e PWM como formas de controlar cargas maiores a partir de sinais de baixa potência.</td>
+            <td>O estágio de controle consegue acionar a carga com segurança?</td>
+          </tr>
+          <tr>
+            <td>Medições</td>
+            <td>Escolher escala correta do multímetro, medir em paralelo para tensão, em série para corrente e usar continuidade apenas com o circuito desligado.</td>
+            <td>A medição foi feita no ponto correto e com o instrumento configurado corretamente?</td>
+          </tr>
+          <tr>
+            <td>Diagnóstico</td>
+            <td>Comparar valor esperado e valor medido, isolar blocos do circuito, procurar mau contato, polaridade invertida, curto, componente aberto ou solda fria.</td>
+            <td>O defeito está na alimentação, no sinal, na carga ou na montagem?</td>
           </tr>
         </tbody>
       </table>
