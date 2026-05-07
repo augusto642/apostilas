@@ -185,7 +185,7 @@ li{margin:4px 0}
         <li>Sistemas Numéricos (Binário, Hex, BCD)</li>
         <li>Portas Lógicas e Álgebra Booleana</li>
         <li>Flip-Flops, Registradores e Contadores</li>
-        <li>Microcontroladores — Arduino, ESP32, PIC</li>
+        <li>Microcontroladores — Arduino, ESP32, STM32 e PIC</li>
       </ol>
     </li>
     <li><a href="#mod9">Módulo 9 — Eletrônica de Potência</a>
@@ -315,7 +315,7 @@ li{margin:4px 0}
     </div>
 
     <h3>1.3 Estrutura Atômica e Materiais Elétricos</h3>
-    <p>Toda propriedade elétrica dos materiais tem origem na <strong>estrutura do átomo</strong>. O átomo é formado por:</p>
+    <p>Toda propriedade elétrica dos materiais tem origem na <strong>estrutura do átomo</strong>. Para fins didáticos, esta apostila usa um <strong>modelo simplificado</strong> baseado em camadas eletrônicas. O átomo é formado por:</p>
     <ul>
       <li><strong>Núcleo:</strong> Prótons (carga +) e Nêutrons (neutros) — concentra quase toda a massa</li>
       <li><strong>Elétrons (–):</strong> Orbitam em camadas (K, L, M, N, O, P, Q) ao redor do núcleo</li>
@@ -365,7 +365,7 @@ li{margin:4px 0}
         <text x="435" y="197" text-anchor="middle" fill="#555" font-size="10">Elétrons: 2 8 4 = 14</text>
         <text x="435" y="217" text-anchor="middle" fill="#e94560" font-size="10" font-weight="bold">4 valência → Semicondutor</text>
       </svg>
-      <figcaption>Figura 1.2 — Modelo atômico do Silício (Si, Z=14). Destaque para os 4 elétrons de valência que tornam o Si um semicondutor ideal para fabricação de chips e diodos.</figcaption>
+      <figcaption>Figura 1.2 — Modelo simplificado do átomo de Silício (Si, Z=14). Destaque para os 4 elétrons de valência, úteis para entender ligações covalentes e dopagem em semicondutores.</figcaption>
     </div>
 
     <h4>Camadas Eletrônicas (Regra de Ocupação)</h4>
@@ -387,18 +387,18 @@ li{margin:4px 0}
     <h4>Condutores, Semicondutores e Isolantes</h4>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Tipo</th><th>Valência</th><th>Elétrons Livres</th><th>Exemplos</th><th>Resistividade ρ</th><th>Uso Principal</th></tr></thead>
+        <thead><tr><th>Tipo</th><th>Característica dominante</th><th>Band gap / portadores</th><th>Exemplos</th><th>Resistividade ρ</th><th>Uso Principal</th></tr></thead>
         <tbody>
-          <tr><td>🔵 <strong>Condutor</strong></td><td>1 – 3 (soltos)</td><td>✅ Muitos</td><td>Cu, Ag, Au, Al</td><td>~10⁻⁸ Ω·m (Cu)</td><td>Cabos, fios, trilhas de PCB</td></tr>
-          <tr><td>🟡 <strong>Semicondutor</strong></td><td>4 (controlados)</td><td>⚠️ Poucos + dopagem</td><td>Si, Ge, GaAs, SiC</td><td>~10³ Ω·m puro</td><td>Diodos, transistores, ICs</td></tr>
-          <tr><td>🔴 <strong>Isolante</strong></td><td>5 – 7 (presos)</td><td>❌ Zero</td><td>PVC, vidro, mica, AR</td><td>&gt;10¹² Ω·m</td><td>Revestimento, capacitores</td></tr>
+          <tr><td>🔵 <strong>Condutor</strong></td><td>Muitas cargas móveis</td><td>Band gap muito pequeno ou inexistente</td><td>Cu, Ag, Au, Al</td><td>~10⁻⁸ Ω·m (Cu)</td><td>Cabos, fios, trilhas de PCB</td></tr>
+          <tr><td>🟡 <strong>Semicondutor</strong></td><td>Condução controlável</td><td>Band gap moderado; portadores aumentam com dopagem e temperatura</td><td>Si, Ge, GaAs, SiC</td><td>~10⁻³ a 10³ Ω·m (depende do material e da dopagem)</td><td>Diodos, transistores, ICs</td></tr>
+          <tr><td>🔴 <strong>Isolante</strong></td><td>Pouquíssimas cargas móveis</td><td>Band gap elevado; corrente muito baixa em condições normais</td><td>PVC, vidro, mica, ar seco</td><td>&gt;10¹² Ω·m</td><td>Revestimento, isolação, dielétricos</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="callout warning">
       <span class="icon">⚠️</span><strong>Curiosidade Industrial</strong>
-      O Carbeto de Silício (SiC) e o Nitreto de Gálio (GaN) são semicondutores de "wide bandgap" que operam em frequências mais altas e temperaturas maiores que o Si comum — por isso dominam inversores de veículos elétricos (Tesla, BYD) e carregadores rápidos USB-C.
+      O Carbeto de Silício (SiC) e o Nitreto de Gálio (GaN) são semicondutores de "wide bandgap" que operam em frequências mais altas e temperaturas maiores que o Si comum — por isso estão ganhando espaço em inversores de veículos elétricos, fontes chaveadas e carregadores rápidos USB-C.
     </div>
 
     <h3>1.4 Aplicações Industriais da Eletrônica</h3>
@@ -412,7 +412,7 @@ li{margin:4px 0}
 
     <h4>📡 2. Telecomunicações</h4>
     <ul>
-      <li><strong>5G NR:</strong> Frequências de 700 MHz a 28 GHz (mmWave), antenas MIMO massivo (64T64R), latência &lt;1 ms</li>
+        <li><strong>5G NR:</strong> Frequências de 700 MHz a 28 GHz (mmWave), antenas MIMO massivo (64T64R); em cenários específicos a latência pode cair para poucos milissegundos, enquanto em uso real costuma ficar na faixa de aproximadamente 5–20 ms, dependendo da rede e da aplicação</li>
       <li><strong>Fibra óptica:</strong> Lasers DFB 1550 nm + fotodiodos PIN + EDFAs (amplificadores a érbio) → 100 Gbps por fibra</li>
       <li><strong>Wi-Fi 6E:</strong> Banda 6 GHz, OFDMA, MU-MIMO 8×8, throughput 9,6 Gbps</li>
     </ul>
@@ -789,8 +789,9 @@ li{margin:4px 0}
     <div class="formula">V_L = L × dI/dt   |   X_L = 2πfL   |   E = ½ L I²<span class="formula-label">Tensão induzida [V] · Reatância indutiva [Ω] · Energia armazenada [J]</span></div>
 
     <h4>Transformador Ideal</h4>
-    <p>Transforma tensão e corrente mantendo potência constante (η≈98% em transformadores modernos):</p>
+    <p>No <strong>transformador ideal</strong>, tensão e corrente se transformam sem perdas, mantendo potência constante (<strong>η = 100%</strong>):</p>
     <div class="formula">V₁/V₂ = N₁/N₂ = I₂/I₁<span class="formula-label">V=tensão · N=número de espiras · I=corrente (primário=1, secundário=2)</span></div>
+    <p>Na prática, transformadores reais apresentam perdas no cobre, no núcleo e por dispersão magnética; por isso, a eficiência depende do porte, material e ponto de operação. Transformadores pequenos e adaptadores simples podem ficar em torno de <strong>80% a 90%</strong>, enquanto transformadores maiores e melhor projetados podem atingir cerca de <strong>95% a 99%</strong>.</p>
 
     <div class="example">
       <h5>✏️ Exemplo Resolvido 3.1 — Transformador</h5>
@@ -893,8 +894,8 @@ li{margin:4px 0}
       <table>
         <thead><tr><th>Polarização</th><th>Tensão V_AK</th><th>Corrente</th><th>Estado</th><th>Aplicação</th></tr></thead>
         <tbody>
-          <tr><td><strong>Direta (Forward)</strong></td><td>V_AK &gt; 0,6–0,7 V (Si)<br>V_AK &gt; 0,3 V (Ge)</td><td>Conduz (mA – A)</td><td>✅ ON — curto virtual</td><td>Retificação, lógica de diodo</td></tr>
-          <tr><td><strong>Inversa (Reverse)</strong></td><td>V_AK &lt; 0</td><td>Corrente de fuga &lt;1 µA</td><td>❌ OFF — circuito aberto</td><td>Bloqueio de tensão reversa</td></tr>
+          <tr><td><strong>Direta (Forward)</strong></td><td>V_AK &gt; 0,6–0,9 V (Si)<br>V_AK &gt; 0,2–0,4 V (Schottky)</td><td>Conduz (mA – A)</td><td>✅ ON — com queda de tensão direta</td><td>Retificação, proteção, lógica de diodo</td></tr>
+          <tr><td><strong>Inversa (Reverse)</strong></td><td>V_AK &lt; 0</td><td>Corrente de fuga muito pequena, dependente do diodo e da temperatura</td><td>❌ OFF — bloqueio reverso</td><td>Bloqueio de tensão reversa</td></tr>
           <tr><td><strong>Ruptura (Breakdown)</strong></td><td>V_AK &lt; -V_BR</td><td>Alta corrente se não limitada</td><td>⛔ Pode destruir diodo comum</td><td>Evitar em diodos comuns; controlada em Zener/TVS</td></tr>
         </tbody>
       </table>
@@ -903,7 +904,7 @@ li{margin:4px 0}
     <h3>4.3 Tipos de Diodos</h3>
 
     <h4>Diodo Zener</h4>
-    <p>Projetado para operar em <strong>ruptura controlada</strong> (zona Zener). Mantém tensão constante no catodo independente da corrente. Ideal para referências de tensão.</p>
+    <p>Projetado para operar em <strong>ruptura controlada</strong> (zona Zener). Mantém uma tensão <strong>aproximadamente constante</strong> apenas dentro da faixa de corrente recomendada pelo fabricante (<em>I<sub>Zmin</sub></em> a <em>I<sub>Zmax</sub></em>) e respeitando a potência máxima. É útil em referências simples de tensão e proteção.</p>
     <div class="example">
       <h5>✏️ Exemplo 4.1 — Regulador Zener</h5>
       <p>Zener 5,1 V / Iz_min=5 mA / Iz_max=50 mA. Fonte V_in=12 V. Calcular R_série para carga R_L=1 kΩ.</p>
@@ -991,11 +992,15 @@ li{margin:4px 0}
       <table>
         <thead><tr><th>Tipo</th><th>Diodos Necessários</th><th>Tensão Média Saída</th><th>Ripple (f=60Hz)</th><th>Uso</th></tr></thead>
         <tbody>
-          <tr><td>Meia Onda</td><td>1</td><td>V_pico/π ≈ 0,318 V_p</td><td>60 Hz (grande)</td><td>Carregadores simples, retificadores de baixo custo</td></tr>
-          <tr><td>Onda Completa (centro)</td><td>2 + transformador CT</td><td>2V_pico/π ≈ 0,636 V_p</td><td>120 Hz (menor)</td><td>Amplificadores de áudio com fonte dual</td></tr>
-          <tr><td>Ponte de Graetz</td><td>4</td><td>2V_pico/π ≈ 0,636 V_p</td><td>120 Hz (menor)</td><td>Fontes de alimentação gerais, carregadores</td></tr>
+          <tr><td>Meia Onda</td><td>1</td><td>Ideal: V_pico/π ≈ 0,318 V_p</td><td>60 Hz (grande)</td><td>Carregadores simples, retificadores de baixo custo</td></tr>
+          <tr><td>Onda Completa (centro)</td><td>2 + transformador CT</td><td>Ideal: 2V_pico/π ≈ 0,636 V_p</td><td>120 Hz (menor)</td><td>Amplificadores de áudio com fonte dual</td></tr>
+          <tr><td>Ponte de Graetz</td><td>4</td><td>Ideal: 2V_pico/π ≈ 0,636 V_p<br>Real: desconta ~2·V_F</td><td>120 Hz (menor)</td><td>Fontes de alimentação gerais, carregadores</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="callout info">
+      <span class="icon">📌</span><strong>Observação importante sobre retificadores</strong>
+      As fórmulas da tabela representam o <em>caso ideal</em>. Em circuitos reais, a tensão de saída é menor por causa da queda direta nos diodos. Em uma ponte de Graetz, dois diodos conduzem em cada semiciclo; por isso, a <strong>tensão de pico</strong> de saída real fica aproximadamente reduzida em <strong>2 × V<sub>F</sub></strong>.
     </div>
 
     <div class="exercises">
@@ -1449,7 +1454,7 @@ li{margin:4px 0}
       </table>
     </div>
 
-    <h3>8.4 Microcontroladores — Arduino, ESP32, PIC</h3>
+    <h3>8.4 Microcontroladores — Arduino, ESP32, STM32 e PIC</h3>
 
     <div class="fig">
       <svg width="580" height="200" viewBox="0 0 580 200">
@@ -1492,18 +1497,22 @@ li{margin:4px 0}
 
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Parâmetro</th><th>Arduino Uno (ATmega328P)</th><th>ESP32 (Xtensa LX6)</th><th>STM32F4 (ARM Cortex-M4)</th><th>Raspberry Pi 4 (ARM A72)</th></tr></thead>
+        <thead><tr><th>Parâmetro</th><th>Arduino Uno (ATmega328P)</th><th>ESP32 (Xtensa LX6)</th><th>STM32F4 (ARM Cortex-M4)</th><th>PIC18F4550</th></tr></thead>
         <tbody>
-          <tr><td>CPU</td><td>8-bit, 16 MHz</td><td>32-bit dual-core 240 MHz</td><td>32-bit, até 168 MHz</td><td>64-bit quad-core 1,8 GHz</td></tr>
-          <tr><td>Flash</td><td>32 KB</td><td>4 MB</td><td>512 KB – 2 MB</td><td>MicroSD (qualquer)</td></tr>
-          <tr><td>RAM</td><td>2 KB</td><td>520 KB</td><td>192 KB – 1 MB</td><td>4–8 GB LPDDR4</td></tr>
-          <tr><td>ADC</td><td>10-bit, 6 canais</td><td>12-bit, 18 canais</td><td>12-bit, 16 canais</td><td>Nenhum (externo)</td></tr>
-          <tr><td>Wireless</td><td>Não</td><td>Wi-Fi + BLE 5.0</td><td>Não (variantes sim)</td><td>Wi-Fi 5 + BT 5.0</td></tr>
-          <tr><td>Tensão I/O</td><td>5V / 3,3V</td><td>3,3V (não tolerante a 5V)</td><td>3,3V</td><td>3,3V</td></tr>
-          <tr><td>Custo (aprox)</td><td>~R$ 30</td><td>~R$ 40</td><td>~R$ 25 (STM32F103)</td><td>~R$ 450</td></tr>
-          <tr><td>Ideal para</td><td>Iniciantes, projetos simples</td><td>IoT, automação Wi-Fi</td><td>Controle industrial, tempo real</td><td>Linux embarcado, IA de borda</td></tr>
+          <tr><td>CPU</td><td>8-bit, 16 MHz</td><td>32-bit dual-core 240 MHz</td><td>32-bit, até 168 MHz</td><td>8-bit, até 48 MHz</td></tr>
+          <tr><td>Flash</td><td>32 KB</td><td>4 MB</td><td>512 KB – 2 MB</td><td>32 KB</td></tr>
+          <tr><td>RAM</td><td>2 KB</td><td>520 KB</td><td>192 KB – 1 MB</td><td>2 KB</td></tr>
+          <tr><td>ADC</td><td>10-bit, 6 canais</td><td>12-bit, até 18 canais (nem todos disponíveis externamente)</td><td>12-bit, até 16 canais</td><td>10-bit, até 13 canais</td></tr>
+          <tr><td>Wireless</td><td>Não</td><td>Wi-Fi + BLE 5.0</td><td>Não (variantes sim)</td><td>Não</td></tr>
+          <tr><td>Tensão I/O</td><td>5 V</td><td>3,3 V (não tolerante a 5 V)</td><td>3,3 V</td><td>5 V</td></tr>
+          <tr><td>Recurso de destaque</td><td>Ecossistema didático amplo</td><td>Conectividade integrada</td><td>Maior desempenho e periféricos avançados</td><td>USB embarcado e ampla tradição em ensino de PIC</td></tr>
+          <tr><td>Ideal para</td><td>Iniciantes, projetos simples</td><td>IoT, automação Wi-Fi</td><td>Controle embarcado e tempo real</td><td>Ensino de PIC, USB, automação e projetos clássicos</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="callout info">
+      <span class="icon">🧩</span><strong>Microcontrolador não é o mesmo que SBC</strong>
+      Placas como <strong>Raspberry Pi 4</strong> são <em>computadores de placa única</em> (SBCs), normalmente executam Linux e têm arquitetura diferente da de microcontroladores. Para comparação com MCUs, um exemplo mais próximo seria o <strong>Raspberry Pi Pico (RP2040)</strong>.
     </div>
 
     <h4>Exemplo de Código — Piscar LED com Arduino</h4>
@@ -1617,7 +1626,7 @@ li{margin:4px 0}
         <tbody>
           <tr><td>Dimmer LED</td><td>100 Hz – 20 kHz</td><td>MOSFET / TRIAC</td><td>Controle de brilho sem perda de eficiência</td></tr>
           <tr><td>Controle de motor CC</td><td>1 kHz – 50 kHz</td><td>MOSFET / H-Bridge</td><td>Velocidade e torque variáveis</td></tr>
-          <tr><td>Servo motor (posição)</td><td>50 Hz</td><td>MCU + amplificador</td><td>Posição angular 0–180°</td></tr>
+          <tr><td>Servo motor (posição)</td><td>~50 Hz de repetição (período ~20 ms, com pulsos de 1–2 ms)</td><td>MCU + driver interno do servo</td><td>Posição angular 0–180°</td></tr>
           <tr><td>Inversor solar</td><td>16 – 50 kHz</td><td>IGBT / SiC MOSFET</td><td>CA senoidal sintética 60 Hz</td></tr>
           <tr><td>DAC (Conversor Digital-Analógico)</td><td>&gt;100 kHz + filtro RC</td><td>MCU + RC</td><td>Tensão analógica de baixo custo</td></tr>
         </tbody>
@@ -1660,7 +1669,7 @@ li{margin:4px 0}
         <text x="200" y="18" text-anchor="middle" fill="#0f3460" font-size="10" font-weight="bold">Q1+Q4 ON → Motor Frente →</text>
         <text x="200" y="196" text-anchor="middle" fill="#0f3460" font-size="10" font-weight="bold">Q2+Q3 ON → Motor Ré ←</text>
       </svg>
-      <figcaption>Figura 9.2 — Ponte H com 4 MOSFETs. Liga Q1+Q4: motor gira em um sentido. Liga Q2+Q3: motor gira no sentido contrário. CIs prontos: L298N, DRV8833, TB6612FNG.</figcaption>
+      <figcaption>Figura 9.2 — Ponte H com 4 MOSFETs. Liga Q1+Q4: motor gira em um sentido. Liga Q2+Q3: motor gira no sentido contrário. Em projetos atuais, drivers MOSFET como DRV8833, TB6612FNG e DRV8871 costumam ser mais eficientes que soluções bipolares legadas, como o L298N.</figcaption>
     </div>
 
     <h3>9.3 Inversores e Eficiência Energética</h3>
@@ -1721,6 +1730,10 @@ li{margin:4px 0}
 
     <h3>10.2 Osciloscópio</h3>
     <p>O osciloscópio exibe a forma de onda dos sinais elétricos no tempo — ferramenta indispensável para diagnóstico de circuitos digitais, fontes PWM, sinais de áudio e RF.</p>
+    <div class="callout danger">
+      <span class="icon">⚡</span><strong>Atenção ao terra da sonda</strong>
+      Em muitos osciloscópios de bancada, o jacaré de GND da sonda está ligado ao terra de proteção da rede elétrica. Nunca prenda esse GND diretamente no primário de fontes ligadas à tomada ou em pontos energizados da rede sem isolamento adequado. Também evite conectar o jacaré entre dois pontos com potenciais diferentes, pois isso pode criar um curto-circuito pelo terra da sonda. Para essas medições, use transformador de isolamento, sonda diferencial ou procedimento apropriado de segurança.
+    </div>
 
     <div class="table-wrap">
       <table>
@@ -2179,7 +2192,7 @@ li{margin:4px 0}
           <tr><td>IEC 61000</td><td>IEC</td><td>Compatibilidade eletromagnética (EMC)</td><td>Emissões e imunidade de equipamentos eletrônicos</td></tr>
           <tr><td>IEC 61340-5-1</td><td>IEC</td><td>Proteção de dispositivos eletrônicos contra fenômenos eletrostáticos</td><td>Controle de ESD em fabricação, laboratório e manutenção</td></tr>
           <tr><td>IEC 62133</td><td>IEC</td><td>Segurança de baterias de íon de lítio</td><td>Baterias em dispositivos portáteis</td></tr>
-          <tr><td>IEC 60950 / 62368</td><td>IEC</td><td>Segurança de equipamentos de TI e AV</td><td>Computadores, fontes de alimentação, audiovisual</td></tr>
+          <tr><td>IEC / ABNT NBR IEC 62368-1</td><td>IEC / ABNT</td><td>Norma atual para segurança de equipamentos de áudio, vídeo, TI e comunicação</td><td>Computadores, fontes de alimentação, audiovisual e telecom</td></tr>
           <tr><td>IPC-2221</td><td>IPC</td><td>Padrão genérico de projeto de placas de circuito impresso</td><td>Regras de projeto, espaçamentos, trilhas e documentação de PCB</td></tr>
           <tr><td>IPC-A-610</td><td>IPC</td><td>Aceitabilidade de montagens eletrônicas</td><td>Critérios visuais de soldagem e montagem eletrônica</td></tr>
           <tr><td>IEEE 802.11 (Wi-Fi)</td><td>IEEE</td><td>Redes locais sem fio</td><td>Wi-Fi 4 (n), 5 (ac), 6 (ax), 6E, 7 (be)</td></tr>
@@ -2221,7 +2234,7 @@ li{margin:4px 0}
           <tr><td>KiCad EDA</td><td>🔧 Ferramenta EDA</td><td>kicad.org</td><td>Esquemático + layout de PCB (open source, profissional)</td></tr>
           <tr><td>LTspice XVII</td><td>🔧 Simulador SPICE</td><td>analog.com/ltspice</td><td>Simulação SPICE completa — fontes, filtros, transistores</td></tr>
           <tr><td>Wokwi</td><td>🖥️ Simulador online</td><td>wokwi.com</td><td>Arduino, ESP32, Raspberry Pi Pico — simulação online</td></tr>
-          <tr><td>Datasheet4U / Octopart</td><td>📄 Datasheets</td><td>datasheet4u.com / octopart.com</td><td>Datasheets de componentes eletrônicos</td></tr>
+          <tr><td>Fabricantes / Octopart</td><td>📄 Datasheets</td><td>ti.com · st.com · microchip.com · infineon.com · octopart.com</td><td>Datasheets oficiais, notas de aplicação e busca técnica de componentes</td></tr>
           <tr><td>All About Circuits</td><td>📖 Teoria</td><td>allaboutcircuits.com</td><td>Textbooks online gratuitos de eletrônica</td></tr>
           <tr><td>MIT OpenCourseWare 6.002</td><td>🎓 Curso universitário</td><td>ocw.mit.edu</td><td>Circuitos e Eletrônica — MIT (gratuito)</td></tr>
           <tr><td>edX / MITx Circuits and Electronics</td><td>🎓 Curso online</td><td>edx.org</td><td>Curso estruturado de circuitos, análise e eletrônica básica</td></tr>
@@ -2243,28 +2256,63 @@ li{margin:4px 0}
         <thead><tr><th>Vídeo</th><th>Link</th><th>Conhecimento a extrair para a apostila</th><th>Aplicação prática</th></tr></thead>
         <tbody>
           <tr>
-            <td>Vídeo 1</td>
-            <td><a href="https://www.youtube.com/watch?v=YtTJQVVbJts" target="_blank">youtube.com/watch?v=YtTJQVVbJts</a></td>
-            <td>Identificar o problema apresentado, reconhecer grandezas elétricas envolvidas e relacionar tensão, corrente, resistência e potência aos resultados observados.</td>
-            <td>Montar uma ficha de estudo com esquema simplificado, valores medidos e explicação do comportamento do circuito.</td>
+            <td>Vídeo 1 — fundamentos e observação do circuito</td>
+            <td><a href="https://www.youtube.com/watch?v=zI-SefGdszU" target="_blank">youtube.com/watch?v=zI-SefGdszU</a></td>
+            <td>Identificar o objetivo da montagem, os blocos de entrada, processamento, saída e alimentação, relacionando-os à estrutura universal de um sistema eletrônico.</td>
+            <td>Produzir um diagrama simples do circuito, indicar o caminho da corrente e listar quais grandezas precisam ser medidas antes de energizar.</td>
           </tr>
           <tr>
-            <td>Vídeo 2</td>
-            <td><a href="https://www.youtube.com/watch?v=eimdSDR70b4" target="_blank">youtube.com/watch?v=eimdSDR70b4</a></td>
-            <td>Observar componentes eletrônicos, suas funções, polaridade, limites de operação e cuidados de ligação antes de energizar uma montagem.</td>
-            <td>Comparar o circuito do vídeo com os módulos de resistores, capacitores, diodos, LEDs, transistores ou fontes de alimentação.</td>
+            <td>Vídeo 2 — componentes, valores e polaridade</td>
+            <td><a href="https://www.youtube.com/watch?v=D32ZAMEoefI" target="_blank">youtube.com/watch?v=D32ZAMEoefI</a></td>
+            <td>Observar resistores, capacitores, diodos, LEDs, transistores ou CIs, anotando função, valor nominal, tolerância, polaridade e limites de operação.</td>
+            <td>Comparar os componentes do vídeo com os módulos de componentes passivos, semicondutores, transistores e fontes de alimentação da apostila.</td>
           </tr>
           <tr>
-            <td>Vídeo 3</td>
-            <td><a href="https://www.youtube.com/watch?v=YQ1EJe5ylGA" target="_blank">youtube.com/watch?v=YQ1EJe5ylGA</a></td>
-            <td>Analisar procedimentos de teste: continuidade, tensão, corrente, resistência, queda de tensão em diodos/LEDs, ripple ou sinais digitais, conforme o experimento apresentado.</td>
+            <td>Vídeo 3 — medições e diagnóstico</td>
+            <td><a href="https://www.youtube.com/watch?v=Ukvfi2bSIv0" target="_blank">youtube.com/watch?v=Ukvfi2bSIv0</a></td>
+            <td>Analisar procedimentos de teste: continuidade, tensão, corrente, resistência, queda de tensão em diodos/LEDs, ripple, PWM ou sinais digitais, conforme o experimento apresentado.</td>
             <td>Reproduzir a lógica de diagnóstico em bancada usando multímetro, fonte limitada em corrente e, quando disponível, osciloscópio.</td>
           </tr>
           <tr>
-            <td>Vídeo 4</td>
-            <td><a href="https://www.youtube.com/watch?v=OEYApiCiSOk" target="_blank">youtube.com/watch?v=OEYApiCiSOk</a></td>
-            <td>Extrair boas práticas de montagem, organização de bancada, segurança, documentação e validação final do funcionamento.</td>
+            <td>Vídeo 4 — montagem, validação e boas práticas</td>
+            <td><a href="https://www.youtube.com/watch?v=IGOkoU5Hf3A" target="_blank">youtube.com/watch?v=IGOkoU5Hf3A</a></td>
+            <td>Extrair boas práticas de montagem, organização de bancada, segurança, documentação, identificação de falhas e validação final do funcionamento.</td>
             <td>Criar um checklist antes/depois da montagem: alimentação desligada, polaridade conferida, conexões revisadas, medições registradas e falhas corrigidas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Síntese dos conhecimentos para incorporar ao estudo</h4>
+    <p>Ao transformar vídeos práticos em conteúdo técnico, o estudante deve ir além de "ver o circuito funcionando". A análise precisa mostrar por que o circuito funciona, quais condições podem causar falha e como comprovar o resultado com medições.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tema observado</th><th>Conteúdo técnico consolidado</th><th>Pergunta-guia para o aluno</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Alimentação</td>
+            <td>Verificar tensão nominal, corrente disponível, polaridade, ripple, aquecimento e necessidade de regulador ou capacitor de filtro.</td>
+            <td>A fonte suporta a carga sem queda excessiva de tensão?</td>
+          </tr>
+          <tr>
+            <td>Proteção de componentes</td>
+            <td>Usar resistores limitadores, diodos de roda livre, dissipadores, fusíveis e margem de tensão/corrente para evitar danos.</td>
+            <td>Qual componente protege o circuito se houver ligação incorreta ou surto?</td>
+          </tr>
+          <tr>
+            <td>Chaveamento e controle</td>
+            <td>Entender transistores, MOSFETs, relés e PWM como formas de controlar cargas maiores a partir de sinais de baixa potência.</td>
+            <td>O estágio de controle consegue acionar a carga com segurança?</td>
+          </tr>
+          <tr>
+            <td>Medições</td>
+            <td>Escolher escala correta do multímetro, medir em paralelo para tensão, em série para corrente e usar continuidade apenas com o circuito desligado.</td>
+            <td>A medição foi feita no ponto correto e com o instrumento configurado corretamente?</td>
+          </tr>
+          <tr>
+            <td>Diagnóstico</td>
+            <td>Comparar valor esperado e valor medido, isolar blocos do circuito, procurar mau contato, polaridade invertida, curto, componente aberto ou solda fria.</td>
+            <td>O defeito está na alimentação, no sinal, na carga ou na montagem?</td>
           </tr>
         </tbody>
       </table>
