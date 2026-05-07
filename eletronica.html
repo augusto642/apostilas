@@ -73,6 +73,16 @@ ul,ol{padding-left:22px;margin:8px 0}
 li{margin:4px 0}
 /* ===== HIGHLIGHT ===== */
 .hl{background:#fff3cd;padding:1px 4px;border-radius:3px;font-weight:600}
+/* ===== PROFESSIONAL CARDS / LAB ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:20px 0}
+.card{background:#fff;border:1px solid #e3e8f0;border-radius:10px;padding:18px;box-shadow:0 2px 10px rgba(15,52,96,.06)}
+.card .tag{display:inline-block;background:#0f3460;color:#fff;border-radius:999px;padding:2px 10px;font-size:.75rem;font-weight:700;margin-bottom:8px}
+.checklist{list-style:none;padding-left:0}
+.checklist li{padding-left:28px;position:relative;margin:8px 0}
+.checklist li::before{content:"✓";position:absolute;left:0;top:0;color:#27ae60;font-weight:800}
+.lab{background:linear-gradient(135deg,#f7fbff,#fff);border:1px solid #b8d9f5;border-radius:10px;padding:22px;margin:22px 0}
+.lab h4{color:#0f3460;margin-top:0}
+.rubric td:first-child{font-weight:700;color:#0f3460}
 /* ===== GLOSSARY ===== */
 .glossary dt{font-weight:700;color:#0f3460;margin-top:12px}
 .glossary dd{color:#444;margin-left:20px;font-size:.95rem}
@@ -105,8 +115,8 @@ li{margin:4px 0}
     de potência, sensores, instrumentação e Indústria 4.0.
   </p>
   <div class="meta">
-    Com referências a ABNT NBR 5410 · IEC 61131 · IEC 61800<br>
-    2ª Edição — 2024/2025
+    Com referências a ABNT NBR 5410 · IEC 61131 · IEC 61800 · IPC · IEC 61000<br>
+    3ª Edição — 2026
   </div>
 </div>
 
@@ -190,6 +200,14 @@ li{margin:4px 0}
         <li>Sensores de Temperatura, Pressão, Movimento</li>
         <li>Multímetro Digital</li>
         <li>Osciloscópio e Gerador de Funções</li>
+      </ol>
+    </li>
+    <li><a href="#mod11">Módulo 11 — Projeto Profissional, PCB, Soldagem, EMC e Diagnóstico</a>
+      <ol class="sub">
+        <li>Fluxo de projeto e documentação técnica</li>
+        <li>Protoboard, soldagem, ESD e montagem</li>
+        <li>Layout de PCB, aterramento, trilhas e EMC</li>
+        <li>Diagnóstico de falhas e projeto integrador</li>
       </ol>
     </li>
     <li><a href="#apendice">Apêndice</a>
@@ -1790,6 +1808,283 @@ li{margin:4px 0}
 </div>
 
 
+<!-- ============================================================ MODULE 11 -->
+<div class="module" id="mod11">
+  <div class="module-header">
+    <div class="module-num">Módulo 11</div>
+    <h2>🧰 Projeto Profissional, PCB, Soldagem, EMC e Diagnóstico</h2>
+    <p>Da ideia ao circuito confiável: método de projeto, bancada, montagem, layout e solução de falhas</p>
+  </div>
+  <div class="module-body">
+
+    <div class="callout info">
+      <span class="icon">🎯</span><strong>Objetivo do módulo</strong>
+      Transformar conhecimento teórico em prática profissional. Ao final, o estudante deve conseguir especificar um circuito simples, montar um protótipo seguro, medir corretamente, documentar resultados, revisar erros e preparar uma placa de circuito impresso básica.
+    </div>
+
+    <h3>11.1 Mentalidade Profissional: Projetar é Controlar Riscos</h3>
+    <p>Um técnico não “liga para ver se funciona” sem preparação. Ele define requisitos, prevê limites, mede com método e registra evidências. Essa postura reduz componentes queimados, retrabalho, acidentes e diagnósticos imprecisos.</p>
+
+    <div class="grid">
+      <div class="card"><span class="tag">1. Requisito</span><strong>O que o circuito deve fazer?</strong><p>Tensão de entrada, carga, ambiente, precisão, custo, consumo, segurança e vida útil esperada.</p></div>
+      <div class="card"><span class="tag">2. Cálculo</span><strong>Quais valores são seguros?</strong><p>Correntes, dissipação térmica, tolerâncias, margens, frequência de operação e proteção.</p></div>
+      <div class="card"><span class="tag">3. Simulação</span><strong>O comportamento faz sentido?</strong><p>Use SPICE/Falstad/Wokwi para estimar formas de onda, corrente de pico, ripple e limites.</p></div>
+      <div class="card"><span class="tag">4. Protótipo</span><strong>O circuito real confirma a teoria?</strong><p>Monte em blocos, meça tensões antes de instalar CIs caros e avance por etapas.</p></div>
+      <div class="card"><span class="tag">5. PCB</span><strong>O layout preserva o funcionamento?</strong><p>Trilhas, retorno de corrente, desacoplamento, dissipação e separação entre sinal e potência.</p></div>
+      <div class="card"><span class="tag">6. Validação</span><strong>Há evidência objetiva?</strong><p>Checklist, fotos, medições, tabela de testes, versão do esquema e lista de componentes.</p></div>
+    </div>
+
+    <div class="fig">
+      <svg width="760" height="190" viewBox="0 0 760 190">
+        <rect width="760" height="190" fill="#f8f9fa" rx="10"/>
+        <g font-size="12" text-anchor="middle" font-weight="bold">
+          <rect x="20" y="45" width="105" height="55" rx="8" fill="#0f3460"/><text x="72" y="68" fill="#fff">REQUISITOS</text><text x="72" y="86" fill="#a8dadc" font-size="10">função + limites</text>
+          <rect x="150" y="45" width="105" height="55" rx="8" fill="#16213e"/><text x="202" y="68" fill="#fff">ESQUEMA</text><text x="202" y="86" fill="#a8dadc" font-size="10">blocos + valores</text>
+          <rect x="280" y="45" width="105" height="55" rx="8" fill="#0f3460"/><text x="332" y="68" fill="#fff">SIMULAÇÃO</text><text x="332" y="86" fill="#a8dadc" font-size="10">SPICE / Wokwi</text>
+          <rect x="410" y="45" width="105" height="55" rx="8" fill="#16213e"/><text x="462" y="68" fill="#fff">PROTÓTIPO</text><text x="462" y="86" fill="#a8dadc" font-size="10">protoboard</text>
+          <rect x="540" y="45" width="90" height="55" rx="8" fill="#0f3460"/><text x="585" y="68" fill="#fff">PCB</text><text x="585" y="86" fill="#a8dadc" font-size="10">layout</text>
+          <rect x="655" y="45" width="85" height="55" rx="8" fill="#27ae60"/><text x="697" y="68" fill="#fff">TESTE</text><text x="697" y="86" fill="#d7ffe6" font-size="10">relatório</text>
+        </g>
+        <g stroke="#e94560" stroke-width="3">
+          <line x1="125" y1="72" x2="150" y2="72"/><line x1="255" y1="72" x2="280" y2="72"/><line x1="385" y1="72" x2="410" y2="72"/><line x1="515" y1="72" x2="540" y2="72"/><line x1="630" y1="72" x2="655" y2="72"/>
+        </g>
+        <path d="M700,105 C690,160 360,165 325,105" fill="none" stroke="#f39c12" stroke-width="2.5" stroke-dasharray="6,4"/>
+        <text x="500" y="160" fill="#7d5700" font-size="12" text-anchor="middle" font-weight="bold">Se falhar no teste, volte ao bloco mais provável: requisito, cálculo, montagem ou layout</text>
+      </svg>
+      <figcaption>Figura 11.1 — Fluxo profissional de desenvolvimento: cada etapa produz evidência antes de avançar.</figcaption>
+    </div>
+
+    <h3>11.2 Leitura de Datasheets e Seleção de Componentes</h3>
+    <p>O datasheet é o contrato técnico do componente. Ele informa limites absolutos, condições recomendadas, curvas típicas, pinagem, encapsulamento, térmica e aplicações sugeridas. Nunca projete apenas pelo nome comercial do componente.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Seção do datasheet</th><th>O que observar</th><th>Erro comum de iniciante</th><th>Boa prática</th></tr></thead>
+        <tbody>
+          <tr><td>Absolute Maximum Ratings</td><td>Limites que não devem ser ultrapassados</td><td>Projetar exatamente no limite máximo</td><td>Trabalhar com margem; usar condições recomendadas</td></tr>
+          <tr><td>Recommended Operating Conditions</td><td>Faixa segura de tensão, corrente e temperatura</td><td>Ignorar temperatura ambiente</td><td>Considerar pior caso: calor, carga máxima e tolerâncias</td></tr>
+          <tr><td>Electrical Characteristics</td><td>Valores mínimos, típicos e máximos</td><td>Usar apenas valor típico</td><td>Calcular com mínimos/máximos quando segurança depender disso</td></tr>
+          <tr><td>Typical Application</td><td>Circuitos de referência do fabricante</td><td>Copiar sem entender</td><td>Usar como ponto de partida e ajustar para o projeto</td></tr>
+          <tr><td>Package / Thermal</td><td>Encapsulamento, pinagem, dissipação</td><td>Comprar componente incompatível com a placa</td><td>Confirmar footprint, polaridade e resistência térmica</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="example">
+      <h5>✏️ Exemplo 11.1 — Escolha de MOSFET para motor CC</h5>
+      <p>Motor: 12 V, corrente nominal 2 A, pico de partida 8 A. Microcontrolador: 3,3 V.</p>
+      <ul>
+        <li>Escolha MOSFET <strong>logic-level</strong> com R_DS(on) especificado em V_GS=2,5 V ou 4,5 V, não apenas em 10 V.</li>
+        <li>Corrente nominal do MOSFET deve exceder o pico do motor com margem térmica.</li>
+        <li>Use diodo de roda livre ou driver apropriado para cargas indutivas.</li>
+        <li>Calcule dissipação: se R_DS(on)=30 mΩ e I=2 A, P≈I²R=0,12 W; em 8 A, P≈1,92 W durante partida.</li>
+      </ul>
+    </div>
+
+    <h3>11.3 Bancada, ESD e Montagem em Protoboard</h3>
+    <p>Uma bancada técnica deve ser organizada como um laboratório: fonte limitada em corrente, multímetro confiável, osciloscópio quando possível, ferramentas isoladas, óculos de proteção, ventilação para soldagem e controle de ESD para CIs sensíveis.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="tag">ESD</span>
+        <strong>Descarga eletrostática</strong>
+        <p>Uma descarga que você nem sente pode danificar portas MOS, memórias e microcontroladores. Use pulseira ou toque em referência aterrada antes de manusear CIs.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Fonte</span>
+        <strong>Limite de corrente</strong>
+        <p>Ao ligar pela primeira vez, ajuste corrente baixa. Se houver curto, a fonte entra em proteção antes de destruir trilhas e componentes.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Protoboard</span>
+        <strong>Baixa frequência</strong>
+        <p>Boa para estudo, ruim para alta corrente, RF, fontes chaveadas rápidas e sinais muito sensíveis por causa de capacitâncias e contatos parasitas.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Instrumento</span>
+        <strong>Medir sem interferir</strong>
+        <p>Multímetro tem alta impedância em tensão; osciloscópio e sonda adicionam capacitância e terra. Entenda o instrumento para não alterar o circuito.</p>
+      </div>
+    </div>
+
+    <h4>Checklist antes da primeira energização</h4>
+    <ul class="checklist">
+      <li>Comparar montagem com esquema, nó por nó.</li>
+      <li>Conferir polaridade de diodos, LEDs, capacitores eletrolíticos, transistores e CIs.</li>
+      <li>Medir continuidade entre VCC e GND com o circuito desligado; curto direto deve ser investigado.</li>
+      <li>Configurar fonte com tensão correta e limite de corrente conservador.</li>
+      <li>Remover cargas caras ou sensíveis no primeiro teste, quando possível.</li>
+      <li>Ligar por etapas: fonte, regulador, lógica, sensores e atuadores.</li>
+      <li>Registrar tensões principais em tabela para comparar com os cálculos.</li>
+    </ul>
+
+    <h3>11.4 Soldagem e Inspeção Visual</h3>
+    <p>Soldagem profissional exige calor suficiente, tempo curto e superfície limpa. Solda boa tem brilho uniforme, molha a ilha e o terminal, não forma esfera solta nem ponte entre pinos.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Defeito</th><th>Como reconhecer</th><th>Causa provável</th><th>Correção</th></tr></thead>
+        <tbody>
+          <tr><td>Solda fria</td><td>Opaca, granulada, contato intermitente</td><td>Pouco calor ou peça movimentada</td><td>Reaquecer com fluxo e solda adequada</td></tr>
+          <tr><td>Ponte de solda</td><td>Curto entre pinos próximos</td><td>Excesso de solda</td><td>Usar malha dessoldadora ou sugador</td></tr>
+          <tr><td>Ilha levantada</td><td>Trilha/ilha descolada da placa</td><td>Calor excessivo ou força mecânica</td><td>Reparar com fio jumper e reduzir tempo de aquecimento</td></tr>
+          <tr><td>Componente invertido</td><td>Polaridade ou pinagem incorreta</td><td>Não conferir footprint/datasheet</td><td>Desenergizar, retirar e reinstalar corretamente</td></tr>
+          <tr><td>Resíduo de fluxo</td><td>Resina ou sujeira entre trilhas</td><td>Limpeza insuficiente</td><td>Limpar conforme o tipo de fluxo e orientação do fabricante</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>11.5 PCB: Layout que Funciona Fora do Simulador</h3>
+    <p>Em uma PCB, as trilhas não são fios ideais: possuem resistência, indutância, capacitância e acoplamento eletromagnético. Bons layouts controlam o caminho de ida e volta da corrente, reduzem laços, protegem sinais sensíveis e facilitam manutenção.</p>
+
+    <div class="fig">
+      <svg width="700" height="260" viewBox="0 0 700 260">
+        <rect width="700" height="260" rx="10" fill="#f8f9fa"/>
+        <text x="350" y="25" text-anchor="middle" fill="#0f3460" font-size="14" font-weight="bold">PCB de 2 camadas — exemplo didático de boas práticas</text>
+        <rect x="65" y="50" width="570" height="170" rx="10" fill="#dff4e5" stroke="#27ae60" stroke-width="2"/>
+        <text x="350" y="75" text-anchor="middle" fill="#1e5631" font-size="12" font-weight="bold">Plano inferior: GND contínuo sempre que possível</text>
+        <rect x="105" y="105" width="120" height="65" rx="8" fill="#0f3460"/>
+        <text x="165" y="134" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">REGULADOR</text>
+        <text x="165" y="151" text-anchor="middle" fill="#a8dadc" font-size="10">capacitor perto</text>
+        <circle cx="245" cy="118" r="12" fill="#f39c12"/><circle cx="245" cy="154" r="12" fill="#f39c12"/>
+        <text x="270" y="123" fill="#7d5700" font-size="10">C_in</text><text x="270" y="159" fill="#7d5700" font-size="10">C_out</text>
+        <rect x="360" y="95" width="130" height="85" rx="8" fill="#16213e"/>
+        <text x="425" y="125" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">MICRO</text>
+        <text x="425" y="142" text-anchor="middle" fill="#a8dadc" font-size="10">ADC + GPIO</text>
+        <circle cx="510" cy="108" r="10" fill="#f39c12"/><text x="525" y="112" fill="#7d5700" font-size="10">100 nF</text>
+        <rect x="535" y="115" width="70" height="45" rx="7" fill="#e94560"/>
+        <text x="570" y="140" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">CARGA</text>
+        <path d="M225,137 C285,100 320,105 360,123" fill="none" stroke="#e94560" stroke-width="6" stroke-linecap="round"/>
+        <path d="M490,137 C515,137 525,137 535,137" fill="none" stroke="#e94560" stroke-width="6" stroke-linecap="round"/>
+        <path d="M425,180 C405,210 170,212 165,170" fill="none" stroke="#27ae60" stroke-width="3" stroke-dasharray="6,4"/>
+        <text x="285" y="238" fill="#1e5631" font-size="11">Retorno de corrente deve ficar próximo ao caminho de ida: laços menores irradiam menos EMI.</text>
+      </svg>
+      <figcaption>Figura 11.2 — Layout didático: capacitores próximos aos pinos, trilhas de potência curtas e largas, plano de GND contínuo e laços de corrente reduzidos.</figcaption>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Regra prática</th><th>Motivo técnico</th><th>Aplicação</th></tr></thead>
+        <tbody>
+          <tr><td>Capacitor de 100 nF ao lado de cada CI</td><td>Fornece corrente instantânea e reduz ruído de alimentação</td><td>Microcontroladores, op-amps, lógica digital</td></tr>
+          <tr><td>Trilhas de potência mais largas</td><td>Menor resistência, menor aquecimento e menor queda de tensão</td><td>Motores, LEDs de potência, fontes chaveadas</td></tr>
+          <tr><td>Separar sinal sensível de potência</td><td>Evita acoplamento de ruído e leituras falsas</td><td>ADC, sensores, áudio, instrumentação</td></tr>
+          <tr><td>Plano de GND contínuo</td><td>Reduz impedância de retorno e área de laço</td><td>PCBs de 2 ou mais camadas</td></tr>
+          <tr><td>Evitar ângulos agudos e trilhas desnecessariamente longas</td><td>Melhora fabricação e reduz antenas acidentais</td><td>Layout geral</td></tr>
+          <tr><td>Adicionar pontos de teste</td><td>Facilita diagnóstico e produção</td><td>VCC, GND, reset, comunicação, saída regulada</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>11.6 EMC/EMI: Compatibilidade Eletromagnética para Iniciantes</h3>
+    <p>EMI é ruído eletromagnético emitido ou recebido pelo circuito. EMC é a capacidade de funcionar corretamente sem perturbar outros equipamentos e sem ser perturbado por eles. Mesmo em projetos escolares, entender EMC evita motores reiniciando microcontroladores, sensores instáveis e áudio com zumbido.</p>
+
+    <div class="grid">
+      <div class="card"><span class="tag">Fonte</span><strong>Origem do ruído</strong><p>Chaveamento rápido, relés, escovas de motor, cabos longos, descargas ESD e fontes mal filtradas.</p></div>
+      <div class="card"><span class="tag">Caminho</span><strong>Como o ruído viaja</strong><p>Condução por fios/trilhas, acoplamento capacitivo, indutivo ou radiação como antena.</p></div>
+      <div class="card"><span class="tag">Vítima</span><strong>Onde aparece o defeito</strong><p>Reset de MCU, erro em ADC, display piscando, comunicação serial falhando ou amplificador com chiado.</p></div>
+      <div class="card"><span class="tag">Mitigação</span><strong>Como reduzir</strong><p>Desacoplamento, filtros RC/LC, diodo em bobina, TVS, blindagem, cabos torcidos e layout correto.</p></div>
+    </div>
+
+    <div class="callout warning">
+      <span class="icon">⚠️</span><strong>Regra de ouro para cargas indutivas</strong>
+      Relés, solenóides e motores armazenam energia em campo magnético. Ao desligar, geram picos de tensão. Use diodo de roda livre em CC, snubber RC ou dispositivo apropriado em CA, e mantenha a malha de potência longe da lógica.
+    </div>
+
+    <h3>11.7 Diagnóstico de Falhas: Método em vez de Adivinhação</h3>
+    <p>Diagnóstico profissional segue uma sequência: observar, formular hipótese, medir, comparar com o esperado, isolar o bloco e corrigir. Trocar componentes ao acaso é caro e pode esconder a causa real.</p>
+
+    <div class="fig">
+      <svg width="690" height="300" viewBox="0 0 690 300">
+        <rect width="690" height="300" rx="10" fill="#f8f9fa"/>
+        <g text-anchor="middle" font-size="12" font-weight="bold">
+          <rect x="250" y="20" width="190" height="42" rx="8" fill="#0f3460"/><text x="345" y="46" fill="#fff">1. Sintoma observado</text>
+          <rect x="55" y="95" width="160" height="48" rx="8" fill="#16213e"/><text x="135" y="116" fill="#fff">2. Alimentação</text><text x="135" y="132" fill="#a8dadc" font-size="10">VCC, GND, ripple</text>
+          <rect x="265" y="95" width="160" height="48" rx="8" fill="#16213e"/><text x="345" y="116" fill="#fff">3. Entrada</text><text x="345" y="132" fill="#a8dadc" font-size="10">sensor/sinal</text>
+          <rect x="475" y="95" width="160" height="48" rx="8" fill="#16213e"/><text x="555" y="116" fill="#fff">4. Saída</text><text x="555" y="132" fill="#a8dadc" font-size="10">carga/atuador</text>
+          <rect x="160" y="190" width="170" height="50" rx="8" fill="#f39c12"/><text x="245" y="211" fill="#fff">5. Comparar</text><text x="245" y="228" fill="#fff" font-size="10">medido × calculado</text>
+          <rect x="365" y="190" width="170" height="50" rx="8" fill="#27ae60"/><text x="450" y="211" fill="#fff">6. Corrigir</text><text x="450" y="228" fill="#d7ffe6" font-size="10">e testar novamente</text>
+        </g>
+        <g stroke="#e94560" stroke-width="2.5">
+          <line x1="345" y1="62" x2="135" y2="95"/><line x1="345" y1="62" x2="345" y2="95"/><line x1="345" y1="62" x2="555" y2="95"/>
+          <line x1="135" y1="143" x2="245" y2="190"/><line x1="345" y1="143" x2="245" y2="190"/><line x1="555" y1="143" x2="450" y2="190"/><line x1="330" y1="215" x2="365" y2="215"/>
+        </g>
+        <text x="345" y="275" fill="#555" text-anchor="middle" font-size="12">Documente cada medição: ponto, valor esperado, valor medido, instrumento e conclusão.</text>
+      </svg>
+      <figcaption>Figura 11.3 — Fluxograma de troubleshooting por blocos: alimentação, entrada, processamento e saída.</figcaption>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Sintoma</th><th>Primeiras medições</th><th>Hipóteses prováveis</th><th>Ação segura</th></tr></thead>
+        <tbody>
+          <tr><td>LED não acende</td><td>V_fonte, queda no LED, resistor em série</td><td>Polaridade invertida, resistor alto, LED queimado</td><td>Testar LED com resistor conhecido e baixa tensão</td></tr>
+          <tr><td>Microcontrolador reinicia</td><td>VCC no reset, ripple, corrente da carga</td><td>Fonte fraca, motor sem diodo, ruído no GND</td><td>Separar alimentação da carga e adicionar desacoplamento</td></tr>
+          <tr><td>Sensor analógico oscila</td><td>ADC, referência, GND, cabos</td><td>Ruído, impedância alta, cabo longo</td><td>Filtro RC, média por software, blindagem ou cabo torcido</td></tr>
+          <tr><td>Regulador esquenta</td><td>Vin, Vout, corrente, temperatura</td><td>Dissipação excessiva, curto, dropout</td><td>Calcular P=(Vin−Vout)I e usar dissipador ou conversor chaveado</td></tr>
+          <tr><td>Comunicação falha</td><td>Nível lógico, GND comum, baud rate, pull-ups</td><td>3,3V×5V incompatível, cabo longo, I²C sem pull-up</td><td>Usar conversor de nível, reduzir velocidade e conferir protocolo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>11.8 Projeto Integrador — Estação de Monitoramento de Temperatura</h3>
+    <p>Este projeto reúne os principais blocos estudados: sensor, condicionamento, conversão A/D, processamento, atuação, alimentação, montagem e documentação.</p>
+
+    <div class="lab">
+      <h4>🔬 Desafio prático</h4>
+      <p><strong>Objetivo:</strong> construir uma estação que mede temperatura, mostra estado em LEDs e aciona um ventilador quando ultrapassar o limite definido.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Bloco</th><th>Opção didática</th><th>Conceitos aplicados</th><th>Critério de sucesso</th></tr></thead>
+          <tbody>
+            <tr><td>Sensor</td><td>NTC 10 kΩ ou LM35</td><td>Divisor de tensão, ADC, calibração</td><td>Leitura coerente com termômetro de referência</td></tr>
+            <tr><td>Processamento</td><td>Arduino Uno, ESP32 ou simulador</td><td>ADC, lógica, histerese, média móvel</td><td>Sem oscilar no limite de acionamento</td></tr>
+            <tr><td>Atuador</td><td>Ventilador CC com MOSFET</td><td>Chaveamento, diodo de proteção, PWM</td><td>Ventilador liga/desliga ou varia velocidade com segurança</td></tr>
+            <tr><td>Fonte</td><td>5 V lógica + 12 V carga</td><td>GND comum, desacoplamento, limite de corrente</td><td>Tensão estável durante partida do motor</td></tr>
+            <tr><td>Documentação</td><td>Esquema, BOM, fotos, medições</td><td>Rastreabilidade e manutenção</td><td>Outro grupo consegue reproduzir o circuito</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Entregáveis:</strong> esquema elétrico, lista de materiais, cálculo do resistor/divisor, tabela de medições, foto da montagem, explicação do algoritmo e conclusão sobre erros encontrados.</p>
+    </div>
+
+    <h4>Rubrica de avaliação técnica</h4>
+    <div class="table-wrap">
+      <table class="rubric">
+        <thead><tr><th>Critério</th><th>Excelente</th><th>Bom</th><th>Precisa melhorar</th></tr></thead>
+        <tbody>
+          <tr><td>Segurança</td><td>Fonte limitada, polaridades conferidas, bancada organizada</td><td>Pequenas falhas de organização</td><td>Liga sem checagem ou usa tensão inadequada</td></tr>
+          <tr><td>Cálculos</td><td>Inclui unidades, margens e justificativas</td><td>Valores corretos, mas pouca justificativa</td><td>Chutes ou ausência de cálculos</td></tr>
+          <tr><td>Medições</td><td>Tabela completa e comparação com esperado</td><td>Medições principais registradas</td><td>Sem evidências ou valores incoerentes</td></tr>
+          <tr><td>Montagem</td><td>Fiação clara, componentes corretos, sem mau contato</td><td>Funciona, mas com organização limitada</td><td>Intermitente ou difícil de revisar</td></tr>
+          <tr><td>Documentação</td><td>Reprodutível por outro estudante</td><td>Entende-se com explicação oral</td><td>Incompleta ou sem versão do circuito</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exercises">
+      <h4>📝 Exercícios — Módulo 11</h4>
+      <div class="ex-item">
+        <strong>1.</strong> Um regulador linear recebe 12 V e entrega 5 V a 300 mA. Calcule a potência dissipada e diga se é necessário pensar em dissipação térmica.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">P = (12 − 5) × 0,3 = <strong>2,1 W</strong>. É suficiente para aquecer bastante um encapsulamento pequeno; deve-se avaliar resistência térmica, dissipador ou trocar por conversor buck.</div>
+      </div>
+      <div class="ex-item">
+        <strong>2.</strong> Cite três motivos pelos quais um protótipo em protoboard pode funcionar mal em circuitos chaveados ou de alta frequência.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">Capacitâncias parasitas entre contatos, indutância e resistência dos jumpers, mau contato mecânico, trilhas internas longas e área de laço grande que aumenta EMI.</div>
+      </div>
+      <div class="ex-item">
+        <strong>3.</strong> Um motor CC faz o microcontrolador reiniciar quando liga. Quais medições e correções você tentaria primeiro?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">Medir queda de VCC no microcontrolador durante partida, ripple da fonte e GND. Corrigir com fonte adequada, capacitores de desacoplamento/reservatório, diodo de roda livre, separação de trilhas/cabos de potência e lógica, e aterramento em estrela quando apropriado.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <!-- ============================================================ APPENDIX -->
 <div class="module" id="apendice">
   <div class="module-header">
@@ -1819,8 +2114,17 @@ li{margin:4px 0}
       <dt>Dissipador de Calor (Heatsink)</dt>
       <dd>Componente metálico (geralmente alumínio) usado para dissipar o calor gerado por transistores, reguladores e CIs de potência. A resistência térmica θ_JA [°C/W] quantifica a eficiência.</dd>
 
+      <dt>BOM (Bill of Materials)</dt>
+      <dd>Lista de materiais do projeto: referência do componente, valor, encapsulamento, quantidade, fabricante, código de compra e observações de montagem.</dd>
+
+      <dt>DRC/ERC</dt>
+      <dd>Verificações automáticas em softwares EDA. ERC (Electrical Rules Check) detecta problemas no esquemático; DRC (Design Rules Check) aponta violações de layout como trilhas finas, espaçamentos e furos incompatíveis.</dd>
+
       <dt>EMC/EMI (Electromagnetic Compatibility / Interference)</dt>
       <dd>EMI é a emissão indesejada de ruído eletromagnético por circuitos eletrônicos. EMC é a capacidade de operar corretamente em presença de EMI. Norma ABNT NBR 55022/55024.</dd>
+
+      <dt>ESD (Electrostatic Discharge)</dt>
+      <dd>Descarga eletrostática. Pode danificar semicondutores, especialmente portas MOSFET, memórias e microcontroladores. Controla-se com aterramento, embalagem antiestática e procedimentos de bancada.</dd>
 
       <dt>FPGA (Field-Programmable Gate Array)</dt>
       <dd>CI reconfigurável com milhares de células lógicas programáveis. Permite implementar hardware digital customizado. Ex.: Xilinx Spartan, Intel Cyclone. Usado em protótipos, processamento de sinais de alta velocidade.</dd>
@@ -1872,8 +2176,11 @@ li{margin:4px 0}
           <tr><td>IEC 61131</td><td>IEC</td><td>Controladores programáveis (PLCs)</td><td>Automação industrial, linguagens de programação PLC</td></tr>
           <tr><td>IEC 61800</td><td>IEC</td><td>Sistemas de acionamento de velocidade variável</td><td>Inversores de frequência para motores</td></tr>
           <tr><td>IEC 61000</td><td>IEC</td><td>Compatibilidade eletromagnética (EMC)</td><td>Emissões e imunidade de equipamentos eletrônicos</td></tr>
+          <tr><td>IEC 61340-5-1</td><td>IEC</td><td>Proteção de dispositivos eletrônicos contra fenômenos eletrostáticos</td><td>Controle de ESD em fabricação, laboratório e manutenção</td></tr>
           <tr><td>IEC 62133</td><td>IEC</td><td>Segurança de baterias de íon de lítio</td><td>Baterias em dispositivos portáteis</td></tr>
           <tr><td>IEC 60950 / 62368</td><td>IEC</td><td>Segurança de equipamentos de TI e AV</td><td>Computadores, fontes de alimentação, audiovisual</td></tr>
+          <tr><td>IPC-2221</td><td>IPC</td><td>Padrão genérico de projeto de placas de circuito impresso</td><td>Regras de projeto, espaçamentos, trilhas e documentação de PCB</td></tr>
+          <tr><td>IPC-A-610</td><td>IPC</td><td>Aceitabilidade de montagens eletrônicas</td><td>Critérios visuais de soldagem e montagem eletrônica</td></tr>
           <tr><td>IEEE 802.11 (Wi-Fi)</td><td>IEEE</td><td>Redes locais sem fio</td><td>Wi-Fi 4 (n), 5 (ac), 6 (ax), 6E, 7 (be)</td></tr>
           <tr><td>ISO 26262</td><td>ISO</td><td>Segurança funcional automotiva</td><td>ASIL — sistemas eletrônicos veiculares</td></tr>
           <tr><td>NR-10</td><td>MTE (Brasil)</td><td>Segurança em instalações e serviços em eletricidade</td><td>Trabalhadores em eletricidade — obrigatória no Brasil</td></tr>
@@ -1892,7 +2199,13 @@ li{margin:4px 0}
       <li>RASHID, Muhammad H. <em>Eletrônica de Potência</em>. 3ª ed. Pearson, 2014.</li>
       <li>TOCCI, Ronald J.; WIDMER, Neal S.; MOSS, Gregory L. <em>Sistemas Digitais: Princípios e Aplicações</em>. 11ª ed. Pearson, 2011.</li>
       <li>HOROWITZ, Paul; HILL, Winfield. <em>The Art of Electronics</em>. 3ª ed. Cambridge University Press, 2015. (Referência essencial de engenheiros)</li>
+      <li>FRANCO, Sergio. <em>Design with Operational Amplifiers and Analog Integrated Circuits</em>. 4ª ed. McGraw-Hill, 2014. (Amplificadores operacionais e circuitos lineares)</li>
+      <li>OTT, Henry W. <em>Electromagnetic Compatibility Engineering</em>. Wiley, 2009. (Referência de EMC/EMI e boas práticas de layout)</li>
+      <li>BOGATIN, Eric. <em>Signal and Power Integrity — Simplified</em>. 3ª ed. Pearson, 2018. (Integridade de sinais, retorno de corrente e PCB)</li>
+      <li>MOHAN, Ned; UNDELAND, Tore M.; ROBBINS, William P. <em>Power Electronics: Converters, Applications, and Design</em>. 3ª ed. Wiley, 2003.</li>
       <li>TEXAS INSTRUMENTS. <em>Op Amp Applications Handbook</em>. Texas Instruments, 2002. Disponível em: <a href="https://www.ti.com/lit/an/slyt209/slyt209.pdf" target="_blank">ti.com</a></li>
+      <li>MIT OpenCourseWare. <em>6.002 Circuits and Electronics</em>. Curso aberto sobre circuitos e eletrônica. Disponível em: <a href="https://ocw.mit.edu/" target="_blank">ocw.mit.edu</a></li>
+      <li>ALL ABOUT CIRCUITS. <em>Online Textbook</em>. Biblioteca gratuita de fundamentos de eletrônica. Disponível em: <a href="https://www.allaboutcircuits.com/textbook/" target="_blank">allaboutcircuits.com</a></li>
       <li>ARDUINO. <em>Arduino Reference</em>. Disponível em: <a href="https://www.arduino.cc/reference/pt/" target="_blank">arduino.cc</a></li>
       <li>ESPRESSIF SYSTEMS. <em>ESP32 Technical Reference Manual</em>. Disponível em: <a href="https://www.espressif.com/en/support/documents/technical-documents" target="_blank">espressif.com</a></li>
     </ol>
@@ -1910,7 +2223,12 @@ li{margin:4px 0}
           <tr><td>Datasheet4U / Octopart</td><td>📄 Datasheets</td><td>datasheet4u.com / octopart.com</td><td>Datasheets de componentes eletrônicos</td></tr>
           <tr><td>All About Circuits</td><td>📖 Teoria</td><td>allaboutcircuits.com</td><td>Textbooks online gratuitos de eletrônica</td></tr>
           <tr><td>MIT OpenCourseWare 6.002</td><td>🎓 Curso universitário</td><td>ocw.mit.edu</td><td>Circuitos e Eletrônica — MIT (gratuito)</td></tr>
+          <tr><td>edX / MITx Circuits and Electronics</td><td>🎓 Curso online</td><td>edx.org</td><td>Curso estruturado de circuitos, análise e eletrônica básica</td></tr>
+          <tr><td>IEEE Xplore / Google Scholar</td><td>🔬 Pesquisa científica</td><td>ieeexplore.ieee.org / scholar.google.com</td><td>Artigos, revisões, teses e trabalhos acadêmicos para aprofundamento</td></tr>
           <tr><td>YouTube — GreatScott!</td><td>📺 Vídeos</td><td>youtube.com/@GreatScott</td><td>Projetos práticos com explicações claras</td></tr>
+          <tr><td>YouTube — EEVblog</td><td>📺 Vídeos</td><td>youtube.com/@EEVblog</td><td>Instrumentação, reparo, análise de projetos e cultura profissional de bancada</td></tr>
+          <tr><td>YouTube — WR Kits / Newton C. Braga / Brincando com Ideias</td><td>📺 Vídeos em português</td><td>youtube.com</td><td>Eletrônica básica, Arduino, microcontroladores, manutenção e projetos práticos</td></tr>
+          <tr><td>Hackaday / IEEE Spectrum / Elektor</td><td>📰 Sites especializados</td><td>hackaday.com / spectrum.ieee.org / elektor.com</td><td>Tendências, projetos, análise técnica e atualização profissional</td></tr>
           <tr><td>Calculadora de resistor</td><td>🔢 Online</td><td>resistorcolorcodecalc.com</td><td>Decodificar/calcular código de cores</td></tr>
         </tbody>
       </table>
@@ -1948,8 +2266,8 @@ function toggleAnswer(btn) {
 <footer style="text-align:center;padding:40px 20px;color:#888;font-size:.9rem;background:#1a1a2e;color:#aaa;margin-top:40px">
   <p>⚡ <strong style="color:#e94560">Apostila de Eletrônica — Curso Técnico</strong> ⚡</p>
   <p style="margin-top:8px">Conteúdo de domínio didático-técnico · Com referências a ABNT NBR 5410, IEC 61131, IEC 61800</p>
-  <p style="margin-top:8px">Módulos: Fundamentos · Grandezas · Passivos · Semicondutores · Transistores · Op-Amps · Fontes · Digital · Potência · Sensores</p>
-  <p style="margin-top:16px;font-size:.8rem;color:#666">Para uso educacional em cursos técnicos de eletrônica · 2024/2025</p>
+  <p style="margin-top:8px">Módulos: Fundamentos · Grandezas · Passivos · Semicondutores · Transistores · Op-Amps · Fontes · Digital · Potência · Sensores · PCB/EMC/Diagnóstico</p>
+  <p style="margin-top:16px;font-size:.8rem;color:#666">Para uso educacional em cursos técnicos de eletrônica · Atualizado em 2026</p>
 </footer>
 
 </body>
