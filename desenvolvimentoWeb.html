@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila de Desenvolvimento Web — Curso Técnico</title>
+<style>
+:root{
+  --bg:#eef4ff;
+  --surface:#ffffff;
+  --surface-2:#f7faff;
+  --ink:#14213d;
+  --muted:#52607a;
+  --primary:#2f80ed;
+  --primary-2:#56ccf2;
+  --accent:#7c3aed;
+  --success:#18864b;
+  --warning:#d97706;
+  --danger:#c62828;
+  --border:#d9e5f6;
+  --shadow:0 12px 40px rgba(20,33,61,.10);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:linear-gradient(180deg,#f4f8ff 0%,#eef4ff 35%,#f9fbff 100%);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#0d1b3e}
+code{font-family:'Cascadia Code','Fira Code','Courier New',monospace}
+pre{
+  background:#0f172a;
+  color:#e2e8f0;
+  padding:18px;
+  border-radius:14px;
+  overflow:auto;
+  margin:18px 0;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+}
+pre code{color:inherit}
+.cover{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:50px 20px;
+  background:
+    radial-gradient(circle at top left,rgba(86,204,242,.35),transparent 30%),
+    radial-gradient(circle at bottom right,rgba(124,58,237,.25),transparent 35%),
+    linear-gradient(135deg,#081228 0%,#15325e 55%,#1d4f91 100%);
+  color:#fff;
+}
+.cover-card{
+  max-width:980px;
+  width:100%;
+  padding:38px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:26px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+.hero-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.18);
+}
+.cover h1{font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.08;margin-bottom:12px}
+.cover h2{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:500;color:#d8e8ff;margin-bottom:18px}
+.cover p{max-width:760px;color:#e9f1ff;font-size:1.05rem}
+.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:28px}
+.hero-panel,.hero-stats{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;
+  padding:22px;
+}
+.hero-list{list-style:none;padding-left:0}
+.hero-list li{padding-left:28px;position:relative;margin:8px 0;color:#f6fbff}
+.hero-list li::before{content:'▸';position:absolute;left:0;color:#7dd3fc;font-weight:800}
+.hero-stats .stat{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.hero-stats .stat:last-child{border-bottom:none}
+.hero-stats strong{display:block;color:#fff;font-size:1.4rem}
+.hero-stats span{color:#d8e8ff;font-size:.92rem}
+main{padding:36px 0 60px}
+.panel{
+  max-width:1100px;
+  margin:0 auto 28px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.panel-header{
+  padding:28px 32px;
+  background:linear-gradient(135deg,#183b72,#2f80ed 70%,#56ccf2 100%);
+  color:#fff;
+}
+.panel-header .eyebrow{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;opacity:.9;margin-bottom:8px}
+.panel-header h2{font-size:2rem;margin-bottom:8px}
+.panel-header p{max-width:860px;color:#e8f3ff}
+.panel-body{padding:30px 32px}
+.toc ul{columns:2;column-gap:32px;padding-left:22px}
+.toc li{margin:8px 0;color:#22314e}
+.toc .tip{margin-top:18px;color:var(--muted)}
+h3{font-size:1.45rem;color:#183b72;margin:28px 0 10px;padding-left:14px;border-left:5px solid var(--accent)}
+h4{font-size:1.1rem;color:#20335d;margin:22px 0 10px}
+p{margin:12px 0;color:#2a3a57}
+ul,ol{margin:12px 0 12px 22px}
+li{margin:6px 0;color:#2a3a57}
+.grid{display:grid;gap:18px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.card{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+}
+.card h4,.card h5{margin-top:0}
+.callout{
+  display:flex;
+  gap:14px;
+  padding:18px 20px;
+  border-radius:16px;
+  margin:20px 0;
+  border:1px solid transparent;
+}
+.callout .icon{font-size:1.5rem;line-height:1}
+.callout.info{background:#eff6ff;border-color:#bfdbfe}
+.callout.success{background:#eefbf2;border-color:#b7ebc6}
+.callout.warning{background:#fff7ed;border-color:#fed7aa}
+.callout.danger{background:#fff1f2;border-color:#fecdd3}
+.callout strong{display:block;margin-bottom:4px}
+.table-wrap{overflow:auto;margin:18px 0;border:1px solid var(--border);border-radius:16px}
+table{width:100%;border-collapse:collapse;background:#fff}
+thead tr{background:#183b72;color:#fff}
+th,td{padding:12px 14px;text-align:left;vertical-align:top}
+tbody tr:nth-child(even){background:#f8fbff}
+tbody td{border-top:1px solid #e8eef7}
+.figure{
+  margin:22px 0;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg,#f9fbff,#f4f8ff);
+  border-radius:18px;
+  padding:18px;
+}
+.figure figcaption{margin-top:12px;color:var(--muted);font-size:.92rem;text-align:center}
+svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.kpi{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin:18px 0;
+}
+.kpi .item{
+  background:linear-gradient(180deg,#ffffff,#f3f8ff);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+}
+.kpi strong{display:block;font-size:1.6rem;color:#183b72}
+.timeline{list-style:none;padding-left:0;margin:20px 0}
+.timeline li{position:relative;padding:0 0 18px 28px;margin:0}
+.timeline li::before{content:'';position:absolute;left:8px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--primary)}
+.timeline li::after{content:'';position:absolute;left:13px;top:20px;width:2px;height:100%;background:#c7daf7}
+.timeline li:last-child::after{display:none}
+.note-inline{
+  display:inline-block;
+  background:#eef2ff;
+  color:#4338ca;
+  padding:2px 8px;
+  border-radius:999px;
+  font-size:.86rem;
+  font-weight:700;
+}
+.checklist{list-style:none;padding-left:0}
+.checklist li{position:relative;padding-left:28px}
+.checklist li::before{content:'✓';position:absolute;left:0;top:0;color:var(--success);font-weight:800}
+.exercises{
+  margin-top:28px;
+  padding:22px;
+  border-radius:18px;
+  border:1px dashed #86efac;
+  background:#f4fff6;
+}
+.ex-item{padding:14px 0;border-bottom:1px solid #ccead2}
+.ex-item:last-child{border-bottom:none;padding-bottom:0}
+.answer{
+  display:none;
+  margin-top:10px;
+  padding:12px 14px;
+  border-left:4px solid var(--success);
+  background:#eaf8ee;
+  border-radius:10px;
+  color:#1f5133;
+}
+.answer.show{display:block}
+.btn-answer{
+  margin-top:8px;
+  border:none;
+  background:var(--success);
+  color:#fff;
+  font-weight:700;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.lab{
+  margin:20px 0;
+  padding:22px;
+  border-radius:18px;
+  border:1px solid #c5daf8;
+  background:linear-gradient(180deg,#f7fbff,#edf4ff);
+}
+.footer{
+  max-width:1100px;
+  margin:0 auto 30px;
+  background:#0f172a;
+  color:#cbd5e1;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:var(--shadow);
+}
+.footer strong{color:#fff}
+.resource-tag{
+  display:inline-block;
+  margin:4px 6px 0 0;
+  padding:4px 10px;
+  border-radius:999px;
+  background:#e6f0ff;
+  color:#1d4f91;
+  font-size:.82rem;
+  font-weight:700;
+}
+@media print{
+  body{background:#fff}
+  .panel,.footer{box-shadow:none}
+  .btn-answer{display:none}
+  .answer{display:block !important}
+}
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr}
+  .toc ul{columns:1}
+  .panel-header,.panel-body{padding:24px}
+}
+</style>
+</head>
+<body>
+<header class="cover" id="topo">
+  <div class="cover-card">
+    <div class="hero-top">
+      <span class="badge">💻 CURSO TÉCNICO</span>
+      <span class="badge">🌐 HTML + CSS + JavaScript</span>
+      <span class="badge">📚 Apostila Profissional 2026</span>
+    </div>
+    <h1>Apostila de Desenvolvimento Web</h1>
+    <h2>Fundamentos, prática guiada e trilha de carreira para estudantes do ensino técnico</h2>
+    <p>
+      Este material foi elaborado para apoiar aulas de desenvolvimento web com linguagem clara,
+      foco profissional e atividades progressivas. A apostila integra teoria, exemplos, figuras,
+      tabelas, blocos de código, desafios práticos e uma curadoria de livros, cursos e repositórios
+      públicos para continuidade dos estudos.
+    </p>
+
+    <div class="hero-grid">
+      <div class="hero-panel">
+        <h3 style="color:#fff;border-left-color:#7dd3fc;margin-top:0">O que o estudante desenvolverá</h3>
+        <ul class="hero-list">
+          <li>Compreender como a web funciona do navegador ao servidor.</li>
+          <li>Estruturar páginas com HTML semântico e acessível.</li>
+          <li>Aplicar CSS para layout, responsividade e identidade visual.</li>
+          <li>Adicionar interatividade com JavaScript e manipulação do DOM.</li>
+          <li>Planejar projetos, testar, publicar e documentar soluções web.</li>
+        </ul>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>8 módulos</strong><span>do básico ao projeto integrador</span></div>
+        <div class="stat"><strong>20+ exercícios</strong><span>com respostas sugeridas</span></div>
+        <div class="stat"><strong>30+ recursos</strong><span>entre documentação, livros, cursos e repositórios</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="panel toc">
+    <div class="panel-header">
+      <div class="eyebrow">Visão geral</div>
+      <h2>Sumário da apostila</h2>
+      <p>Use o sumário como roteiro de aula, sequência de estudo individual ou base para um plano bimestral.</p>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li><a href="#mod1">Módulo 1 — Panorama da web e arquitetura básica</a></li>
+        <li><a href="#mod2">Módulo 2 — HTML: estrutura, semântica e acessibilidade</a></li>
+        <li><a href="#mod3">Módulo 3 — CSS: estilo, layout e design responsivo</a></li>
+        <li><a href="#mod4">Módulo 4 — JavaScript: lógica, DOM e eventos</a></li>
+        <li><a href="#mod5">Módulo 5 — Formulários, integração e experiência do usuário</a></li>
+        <li><a href="#mod6">Módulo 6 — Ferramentas, versionamento e fluxo profissional</a></li>
+        <li><a href="#mod7">Módulo 7 — Projeto integrador, atividades e critérios de avaliação</a></li>
+        <li><a href="#mod8">Módulo 8 — Biblioteca de estudos: livros, cursos e repositórios públicos</a></li>
+      </ul>
+      <p class="tip"><strong>Dica didática:</strong> cada módulo traz teoria, visualização, prática orientada e exercícios. Em laboratório, o ideal é alternar <span class="note-inline">explicação curta</span>, <span class="note-inline">demonstração</span> e <span class="note-inline">execução guiada</span>.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="mod1">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 1</div>
+      <h2>Panorama da web e arquitetura básica</h2>
+      <p>Antes de escrever código, é importante entender o ambiente em que um sistema web funciona.</p>
+    </div>
+    <div class="panel-body">
+      <div class="callout info">
+        <div class="icon">🧭</div>
+        <div>
+          <strong>Ideia central</strong>
+          Internet é a infraestrutura de redes. Web é um dos serviços que usam essa infraestrutura, baseada em páginas, links, protocolos e navegadores.
+        </div>
+      </div>
+
+      <h3>1.1 Como a web funciona</h3>
+      <p>Quando uma pessoa acessa um site, o navegador faz uma requisição para um servidor usando protocolos como HTTP ou HTTPS. O servidor devolve arquivos como HTML, CSS, JavaScript, imagens e fontes. O navegador interpreta tudo isso, monta a árvore DOM, aplica estilos, executa scripts e apresenta a interface.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 980 270" role="img" aria-label="Fluxo simplificado entre usuário, navegador, internet e servidor web">
+          <rect x="20" y="70" width="180" height="120" rx="18" fill="#e8f1ff" stroke="#2f80ed" stroke-width="3"></rect>
+          <text x="110" y="115" text-anchor="middle" font-size="26" fill="#183b72">Usuário</text>
+          <text x="110" y="150" text-anchor="middle" font-size="18" fill="#335">clique, digitação, toque</text>
+
+          <rect x="250" y="50" width="220" height="160" rx="18" fill="#f2f7ff" stroke="#56ccf2" stroke-width="3"></rect>
+          <text x="360" y="95" text-anchor="middle" font-size="24" fill="#183b72">Navegador</text>
+          <text x="360" y="126" text-anchor="middle" font-size="18" fill="#335">HTML → DOM</text>
+          <text x="360" y="154" text-anchor="middle" font-size="18" fill="#335">CSS → layout</text>
+          <text x="360" y="182" text-anchor="middle" font-size="18" fill="#335">JS → interação</text>
+
+          <rect x="540" y="85" width="140" height="90" rx="18" fill="#f5f3ff" stroke="#7c3aed" stroke-width="3"></rect>
+          <text x="610" y="120" text-anchor="middle" font-size="24" fill="#4c1d95">Internet</text>
+          <text x="610" y="147" text-anchor="middle" font-size="16" fill="#335">DNS · TCP/IP · HTTPS</text>
+
+          <rect x="750" y="50" width="200" height="160" rx="18" fill="#ecfdf5" stroke="#22c55e" stroke-width="3"></rect>
+          <text x="850" y="92" text-anchor="middle" font-size="24" fill="#166534">Servidor</text>
+          <text x="850" y="126" text-anchor="middle" font-size="18" fill="#335">arquivos estáticos</text>
+          <text x="850" y="154" text-anchor="middle" font-size="18" fill="#335">API · banco de dados</text>
+          <text x="850" y="182" text-anchor="middle" font-size="18" fill="#335">autenticação</text>
+
+          <line x1="200" y1="130" x2="250" y2="130" stroke="#2f80ed" stroke-width="4"></line>
+          <polygon points="250,130 236,122 236,138" fill="#2f80ed"></polygon>
+
+          <line x1="470" y1="130" x2="540" y2="130" stroke="#7c3aed" stroke-width="4"></line>
+          <polygon points="540,130 526,122 526,138" fill="#7c3aed"></polygon>
+
+          <line x1="680" y1="130" x2="750" y2="130" stroke="#22c55e" stroke-width="4"></line>
+          <polygon points="750,130 736,122 736,138" fill="#22c55e"></polygon>
+
+          <text x="505" y="108" text-anchor="middle" font-size="16" fill="#475569">requisição</text>
+          <text x="715" y="108" text-anchor="middle" font-size="16" fill="#475569">resposta</text>
+        </svg>
+        <figcaption>Figura 1 — Visão geral do caminho que uma página percorre até aparecer na tela.</figcaption>
+      </figure>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Front-end</h4>
+          <p>Camada visível ao usuário. Trabalha com interface, usabilidade, responsividade e interação.</p>
+          <span class="resource-tag">HTML</span>
+          <span class="resource-tag">CSS</span>
+          <span class="resource-tag">JavaScript</span>
+        </div>
+        <div class="card">
+          <h4>Back-end</h4>
+          <p>Camada de regras de negócio, autenticação, banco de dados e serviços de API.</p>
+          <span class="resource-tag">Node.js</span>
+          <span class="resource-tag">Python</span>
+          <span class="resource-tag">SQL</span>
+        </div>
+        <div class="card">
+          <h4>Full stack</h4>
+          <p>Profissional que entende a comunicação entre interface, servidor, versionamento e deploy.</p>
+          <span class="resource-tag">Integração</span>
+          <span class="resource-tag">Projeto</span>
+        </div>
+      </div>
+
+      <h3>1.2 Linguagens da tríade web</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tecnologia</th>
+              <th>Função principal</th>
+              <th>Pergunta que responde</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>Estrutura e significado</td>
+              <td>O que existe na página?</td>
+              <td>Títulos, parágrafos, imagens, formulários, tabelas</td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td>Apresentação visual</td>
+              <td>Como a página se parece?</td>
+              <td>Cores, espaçamento, fontes, layout, responsividade</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Comportamento e lógica</td>
+              <td>Como a página reage?</td>
+              <td>Menus, validações, animações, consumo de APIs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kpi">
+        <div class="item"><strong>Semântica</strong><span>facilita leitura humana, SEO e acessibilidade.</span></div>
+        <div class="item"><strong>Responsividade</strong><span>adapta a interface para celular, tablet e desktop.</span></div>
+        <div class="item"><strong>Interatividade</strong><span>transforma conteúdo estático em experiência dinâmica.</span></div>
+        <div class="item"><strong>Publicação</strong><span>leva o projeto para GitHub Pages, Netlify ou Vercel.</span></div>
+      </div>
+
+      <div class="exercises">
+        <h4>Exercícios do módulo</h4>
+        <div class="ex-item">
+          <p><strong>1.</strong> Diferencie internet, web e site.</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Internet é a infraestrutura global de redes. Web é um serviço que usa essa infraestrutura para entregar páginas e recursos interligados. Site é um conjunto organizado de páginas publicadas na web.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>2.</strong> Cite a função principal de HTML, CSS e JavaScript em uma página.</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">HTML organiza a estrutura, CSS define a aparência visual e JavaScript adiciona comportamento e lógica.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>3.</strong> Em uma requisição web simples, quem envia a solicitação e quem devolve a resposta?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">O navegador envia a solicitação ao servidor, e o servidor devolve a resposta com arquivos ou dados.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="mod2">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 2</div>
+      <h2>HTML: estrutura, semântica e acessibilidade</h2>
+      <p>HTML não é “apenas texto com tags”; ele descreve o significado do conteúdo e ajuda tecnologias assistivas a interpretar a página.</p>
+    </div>
+    <div class="panel-body">
+      <div class="callout success">
+        <div class="icon">🏗️</div>
+        <div>
+          <strong>Regra de ouro</strong>
+          Use a tag que representa melhor o conteúdo. O navegador pode até “aceitar” qualquer marcação, mas semântica correta melhora manutenção, acessibilidade e busca.
+        </div>
+      </div>
+
+      <h3>2.1 Esqueleto de uma página HTML</h3>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Minha primeira página&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Loja Escola&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Produtos em destaque&lt;/h2&gt;
+      &lt;p&gt;Conteúdo principal da página.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3>2.2 Tags semânticas mais importantes</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tag</th>
+              <th>Uso recomendado</th>
+              <th>Evite usar quando...</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&lt;header&gt;</td>
+              <td>Cabeçalho de página ou seção</td>
+              <td>for apenas um contêiner visual sem valor semântico</td>
+            </tr>
+            <tr>
+              <td>&lt;nav&gt;</td>
+              <td>Conjunto principal de links de navegação</td>
+              <td>houver links dispersos sem função de menu</td>
+            </tr>
+            <tr>
+              <td>&lt;main&gt;</td>
+              <td>Conteúdo principal único da página</td>
+              <td>existirem várias áreas principais concorrentes</td>
+            </tr>
+            <tr>
+              <td>&lt;section&gt;</td>
+              <td>Bloco temático com título</td>
+              <td>for só um agrupamento genérico sem assunto</td>
+            </tr>
+            <tr>
+              <td>&lt;article&gt;</td>
+              <td>Conteúdo independente, como notícia ou post</td>
+              <td>o trecho só fizer sentido dentro do contexto maior</td>
+            </tr>
+            <tr>
+              <td>&lt;aside&gt;</td>
+              <td>Conteúdo complementar, dicas, widgets</td>
+              <td>o bloco for parte central do fluxo</td>
+            </tr>
+            <tr>
+              <td>&lt;footer&gt;</td>
+              <td>Rodapé da página ou de uma seção</td>
+              <td>for apenas um bloco visual aleatório</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="figure">
+        <svg viewBox="0 0 980 300" role="img" aria-label="Estrutura visual de uma página semântica com header nav main aside e footer">
+          <rect x="40" y="20" width="900" height="260" rx="20" fill="#ffffff" stroke="#bcd2f1" stroke-width="3"></rect>
+          <rect x="80" y="45" width="820" height="45" rx="12" fill="#dbeafe"></rect>
+          <text x="490" y="73" text-anchor="middle" font-size="24" fill="#1d4f91">&lt;header&gt;</text>
+
+          <rect x="80" y="105" width="820" height="35" rx="12" fill="#ede9fe"></rect>
+          <text x="490" y="128" text-anchor="middle" font-size="22" fill="#5b21b6">&lt;nav&gt;</text>
+
+          <rect x="80" y="155" width="540" height="85" rx="14" fill="#ecfeff"></rect>
+          <text x="350" y="185" text-anchor="middle" font-size="24" fill="#0f766e">&lt;main&gt;</text>
+          <text x="350" y="213" text-anchor="middle" font-size="18" fill="#335">section · article · conteúdo central</text>
+
+          <rect x="650" y="155" width="250" height="85" rx="14" fill="#fff7ed"></rect>
+          <text x="775" y="185" text-anchor="middle" font-size="24" fill="#c2410c">&lt;aside&gt;</text>
+          <text x="775" y="213" text-anchor="middle" font-size="18" fill="#335">dicas · links · avisos</text>
+
+          <rect x="80" y="250" width="820" height="20" rx="10" fill="#dcfce7"></rect>
+          <text x="490" y="265" text-anchor="middle" font-size="18" fill="#166534">&lt;footer&gt;</text>
+        </svg>
+        <figcaption>Figura 2 — Layout semântico básico de uma página institucional.</figcaption>
+      </figure>
+
+      <h3>2.3 Acessibilidade desde o início</h3>
+      <ul class="checklist">
+        <li>Defina o idioma da página com <code>lang</code>.</li>
+        <li>Use hierarquia coerente de títulos: <code>h1</code>, <code>h2</code>, <code>h3</code>...</li>
+        <li>Associe rótulos a campos de formulário com <code>&lt;label for="..."&gt;</code>.</li>
+        <li>Forneça texto alternativo útil em imagens com <code>alt</code>.</li>
+        <li>Garanta contraste adequado entre texto e fundo.</li>
+        <li>Evite depender apenas de cor para indicar erro ou sucesso.</li>
+      </ul>
+
+      <div class="lab">
+        <h4>Atividade prática: página de apresentação profissional</h4>
+        <ol>
+          <li>Crie uma página com <code>header</code>, <code>main</code>, <code>section</code> e <code>footer</code>.</li>
+          <li>Inclua sua foto ou um espaço reservado com descrição em <code>alt</code>.</li>
+          <li>Monte uma seção “habilidades” em lista.</li>
+          <li>Adicione links para e-mail, GitHub e portfólio.</li>
+          <li>Valide se a página faz sentido mesmo sem CSS.</li>
+        </ol>
+      </div>
+
+      <div class="exercises">
+        <h4>Exercícios do módulo</h4>
+        <div class="ex-item">
+          <p><strong>1.</strong> Por que usar <code>&lt;main&gt;</code> é melhor do que usar apenas <code>&lt;div&gt;</code> para o conteúdo central?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque <code>&lt;main&gt;</code> comunica semanticamente que aquele é o conteúdo principal, ajudando leitores de tela, mecanismos de busca e manutenção do código.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>2.</strong> Qual a função do atributo <code>alt</code> em imagens?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Descrever a imagem para situações em que ela não pode ser vista, como leitores de tela, falha de carregamento ou navegação assistiva.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>3.</strong> Cite duas vantagens de escrever HTML semântico.</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Melhor acessibilidade, melhor SEO, organização mais clara do código e manutenção mais simples em equipe.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="mod3">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 3</div>
+      <h2>CSS: estilo, layout e design responsivo</h2>
+      <p>CSS transforma uma estrutura simples em uma interface legível, agradável e adaptável a diferentes telas.</p>
+    </div>
+    <div class="panel-body">
+      <div class="callout warning">
+        <div class="icon">🎨</div>
+        <div>
+          <strong>CSS não é “decoração”</strong>
+          Em projetos profissionais, CSS também organiza informação, reforça hierarquia visual, melhora legibilidade e ajuda a construir experiência de uso.
+        </div>
+      </div>
+
+      <h3>3.1 Conceitos essenciais</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Cascata</h4>
+          <p>Quando várias regras atingem o mesmo elemento, o navegador decide qual aplicar considerando origem, especificidade e ordem.</p>
+        </div>
+        <div class="card">
+          <h4>Especificidade</h4>
+          <p>Seletores mais específicos tendem a vencer seletores mais genéricos. IDs têm peso maior que classes, que têm peso maior que tags.</p>
+        </div>
+        <div class="card">
+          <h4>Box model</h4>
+          <p>Todo elemento é uma caixa com conteúdo, preenchimento, borda e margem.</p>
+        </div>
+        <div class="card">
+          <h4>Responsividade</h4>
+          <p>A interface deve funcionar em diferentes tamanhos de tela usando media queries, unidades relativas e layouts fluidos.</p>
+        </div>
+      </div>
+
+      <figure class="figure">
+        <svg viewBox="0 0 900 280" role="img" aria-label="Diagrama do box model com margin border padding e content">
+          <rect x="70" y="25" width="760" height="220" rx="18" fill="#fff7ed" stroke="#fb923c" stroke-width="3"></rect>
+          <text x="450" y="55" text-anchor="middle" font-size="24" fill="#9a3412">Margin</text>
+          <rect x="150" y="70" width="600" height="130" rx="16" fill="#dbeafe" stroke="#60a5fa" stroke-width="3"></rect>
+          <text x="450" y="98" text-anchor="middle" font-size="24" fill="#1d4f91">Border</text>
+          <rect x="220" y="105" width="460" height="70" rx="14" fill="#dcfce7" stroke="#4ade80" stroke-width="3"></rect>
+          <text x="450" y="132" text-anchor="middle" font-size="22" fill="#166534">Padding</text>
+          <rect x="330" y="122" width="240" height="36" rx="10" fill="#ede9fe" stroke="#8b5cf6" stroke-width="3"></rect>
+          <text x="450" y="146" text-anchor="middle" font-size="20" fill="#5b21b6">Content</text>
+        </svg>
+        <figcaption>Figura 3 — O box model explica por que um elemento ocupa determinado espaço na tela.</figcaption>
+      </figure>
+
+      <h3>3.2 Seletores, unidades e layout</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Recurso</th>
+              <th>Exemplo</th>
+              <th>Quando usar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Classe</td>
+              <td><code>.card</code></td>
+              <td>Estilos reutilizáveis em vários elementos</td>
+            </tr>
+            <tr>
+              <td>ID</td>
+              <td><code>#menu</code></td>
+              <td>Elemento único ou alvo de navegação</td>
+            </tr>
+            <tr>
+              <td>Unidade relativa</td>
+              <td><code>rem</code>, <code>%</code>, <code>vw</code></td>
+              <td>Interfaces adaptáveis e acessíveis</td>
+            </tr>
+            <tr>
+              <td>Flexbox</td>
+              <td><code>display:flex</code></td>
+              <td>Alinhar itens em linha ou coluna</td>
+            </tr>
+            <tr>
+              <td>Grid</td>
+              <td><code>display:grid</code></td>
+              <td>Layouts bidimensionais mais controlados</td>
+            </tr>
+            <tr>
+              <td>Media query</td>
+              <td><code>@media (max-width: 768px)</code></td>
+              <td>Ajustes por faixa de tela</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <pre><code>:root {
+  --cor-primaria: #2563eb;
+  --espaco: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaco);
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}</code></pre>
+
+      <div class="callout info">
+        <div class="icon">📱</div>
+        <div>
+          <strong>Mobile first</strong>
+          Uma boa prática é começar pensando na experiência em telas menores e depois expandir o layout para tablets e desktops.
+        </div>
+      </div>
+
+      <div class="lab">
+        <h4>Atividade prática: cartão de produto responsivo</h4>
+        <ul>
+          <li>Monte um cartão com imagem, nome, preço e botão.</li>
+          <li>Use <code>border-radius</code>, <code>box-shadow</code> e variáveis CSS.</li>
+          <li>Faça o cartão ocupar 100% da largura no celular e dividir espaço com outros cartões em telas maiores.</li>
+          <li>Teste em DevTools simulando diferentes aparelhos.</li>
+        </ul>
+      </div>
+
+      <div class="exercises">
+        <h4>Exercícios do módulo</h4>
+        <div class="ex-item">
+          <p><strong>1.</strong> O que é o box model?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">É o modelo de caixa do CSS formado por conteúdo, padding, border e margin.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>2.</strong> Qual a diferença prática entre Flexbox e Grid?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Flexbox é ótimo para alinhamentos em uma dimensão (linha ou coluna). Grid é mais indicado para layouts em duas dimensões, com linhas e colunas.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>3.</strong> Por que unidades relativas costumam ser preferidas em interfaces responsivas?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque se adaptam melhor a diferentes tamanhos de tela e configurações de acessibilidade, como aumento de fonte.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="mod4">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 4</div>
+      <h2>JavaScript: lógica, DOM e eventos</h2>
+      <p>JavaScript traz vida à interface. Com ele, a página deixa de ser apenas apresentação e passa a responder ao usuário.</p>
+    </div>
+    <div class="panel-body">
+      <div class="callout info">
+        <div class="icon">🧠</div>
+        <div>
+          <strong>Pensamento computacional</strong>
+          Antes de programar, descreva o problema em etapas: entrada, processamento, decisão e saída. Essa lógica vale para qualquer linguagem.
+        </div>
+      </div>
+
+      <h3>4.1 Fundamentos que todo iniciante precisa dominar</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Variáveis e tipos</h4>
+          <p><code>let</code> cria variáveis que podem mudar; <code>const</code> define referências fixas. Tipos comuns: string, number, boolean, array e object.</p>
+        </div>
+        <div class="card">
+          <h4>Condições</h4>
+          <p><code>if</code>, <code>else</code> e operadores lógicos permitem decisões com base em critérios.</p>
+        </div>
+        <div class="card">
+          <h4>Funções</h4>
+          <p>Blocos reutilizáveis que recebem dados, processam e retornam resultado.</p>
+        </div>
+        <div class="card">
+          <h4>Eventos</h4>
+          <p>Respostas a ações como clique, digitação, envio de formulário ou rolagem.</p>
+        </div>
+      </div>
+
+      <h3>4.2 DOM: a página vista como árvore</h3>
+      <p>O DOM (Document Object Model) representa os elementos HTML como uma árvore de nós. JavaScript pode ler, alterar, criar ou remover esses elementos.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 960 310" role="img" aria-label="Árvore simplificada do DOM com html head body main h1 button">
+          <circle cx="480" cy="40" r="28" fill="#dbeafe"></circle>
+          <text x="480" y="47" text-anchor="middle" font-size="20" fill="#1d4f91">html</text>
+
+          <circle cx="280" cy="120" r="28" fill="#ede9fe"></circle>
+          <text x="280" y="127" text-anchor="middle" font-size="20" fill="#5b21b6">head</text>
+
+          <circle cx="680" cy="120" r="28" fill="#dcfce7"></circle>
+          <text x="680" y="127" text-anchor="middle" font-size="20" fill="#166534">body</text>
+
+          <circle cx="580" cy="210" r="28" fill="#ecfeff"></circle>
+          <text x="580" y="217" text-anchor="middle" font-size="20" fill="#0f766e">main</text>
+
+          <circle cx="740" cy="210" r="28" fill="#fff7ed"></circle>
+          <text x="740" y="217" text-anchor="middle" font-size="20" fill="#c2410c">footer</text>
+
+          <circle cx="500" cy="280" r="28" fill="#fee2e2"></circle>
+          <text x="500" y="287" text-anchor="middle" font-size="18" fill="#991b1b">h1</text>
+
+          <circle cx="660" cy="280" r="28" fill="#e0f2fe"></circle>
+          <text x="660" y="287" text-anchor="middle" font-size="18" fill="#075985">button</text>
+
+          <line x1="480" y1="68" x2="280" y2="92" stroke="#94a3b8" stroke-width="3"></line>
+          <line x1="480" y1="68" x2="680" y2="92" stroke="#94a3b8" stroke-width="3"></line>
+          <line x1="680" y1="148" x2="580" y2="182" stroke="#94a3b8" stroke-width="3"></line>
+          <line x1="680" y1="148" x2="740" y2="182" stroke="#94a3b8" stroke-width="3"></line>
+          <line x1="580" y1="238" x2="500" y2="252" stroke="#94a3b8" stroke-width="3"></line>
+          <line x1="580" y1="238" x2="660" y2="252" stroke="#94a3b8" stroke-width="3"></line>
+        </svg>
+        <figcaption>Figura 4 — JavaScript interage com a página manipulando nós da árvore DOM.</figcaption>
+      </figure>
+
+      <pre><code>const botao = document.querySelector('#trocarTema');
+const corpo = document.body;
+
+botao.addEventListener('click', () =&gt; {
+  corpo.classList.toggle('tema-escuro');
+});</code></pre>
+
+      <h3>4.3 Exemplo real: botão que altera conteúdo</h3>
+      <pre><code>&lt;button id="mostrarMensagem"&gt;Saudar turma&lt;/button&gt;
+&lt;p id="saida"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+  const botao = document.querySelector('#mostrarMensagem');
+  const saida = document.querySelector('#saida');
+
+  botao.addEventListener('click', () =&gt; {
+    saida.textContent = 'Bem-vindos ao laboratório de desenvolvimento web!';
+  });
+&lt;/script&gt;</code></pre>
+
+      <div class="callout success">
+        <div class="icon">🔎</div>
+        <div>
+          <strong>DevTools é seu aliado</strong>
+          Use o console do navegador para inspecionar erros, testar comandos e compreender o comportamento do DOM em tempo real.
+        </div>
+      </div>
+
+      <div class="lab">
+        <h4>Atividade prática: lista de tarefas simples</h4>
+        <ol>
+          <li>Crie um campo de texto, um botão “Adicionar” e uma lista vazia.</li>
+          <li>Ao clicar no botão, adicione um novo item à lista.</li>
+          <li>Apague itens concluídos com outro botão.</li>
+          <li>Desafie-se a persistir dados em <code>localStorage</code>.</li>
+        </ol>
+      </div>
+
+      <div class="exercises">
+        <h4>Exercícios do módulo</h4>
+        <div class="ex-item">
+          <p><strong>1.</strong> O que significa dizer que o DOM é uma árvore?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Significa que os elementos da página são organizados em relação de pai, filho e irmãos, permitindo navegação e manipulação estruturada.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>2.</strong> Para que serve <code>addEventListener</code>?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Serve para registrar uma função que será executada quando um evento acontecer, como clique, teclado ou envio de formulário.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>3.</strong> Diferencie <code>const</code> e <code>let</code>.</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer"><code>const</code> é usada quando a referência não deve ser reatribuída; <code>let</code> permite mudança de valor ao longo do programa.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="mod5">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 5</div>
+      <h2>Formulários, integração e experiência do usuário</h2>
+      <p>Formulários conectam a interface aos dados. Eles aparecem em cadastros, pesquisas, login, compra, inscrição e suporte.</p>
+    </div>
+    <div class="panel-body">
+      <h3>5.1 Estrutura de um formulário bem construído</h3>
+      <pre><code>&lt;form id="contato" novalidate&gt;
+  &lt;label for="nome"&gt;Nome&lt;/label&gt;
+  &lt;input id="nome" name="nome" type="text" required&gt;
+
+  &lt;label for="email"&gt;E-mail&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" required&gt;
+
+  &lt;label for="mensagem"&gt;Mensagem&lt;/label&gt;
+  &lt;textarea id="mensagem" name="mensagem" rows="5"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+      <h3>5.2 Boas práticas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Prática</th>
+              <th>Por que importa</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rótulos claros</td>
+              <td>Evita erro de preenchimento e melhora acessibilidade</td>
+              <td>“Telefone com DDD” é melhor que apenas “Telefone”</td>
+            </tr>
+            <tr>
+              <td>Feedback imediato</td>
+              <td>Ajuda o usuário a corrigir erros rapidamente</td>
+              <td>Mensagem abaixo do campo inválido</td>
+            </tr>
+            <tr>
+              <td>Validação dupla</td>
+              <td>Cliente ajuda UX, servidor garante segurança</td>
+              <td>Checar e-mail no front-end e novamente no back-end</td>
+            </tr>
+            <tr>
+              <td>Botão com ação explícita</td>
+              <td>Evita ambiguidade</td>
+              <td>“Salvar inscrição” em vez de “OK”</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout danger">
+        <div class="icon">🔐</div>
+        <div>
+          <strong>Segurança importante</strong>
+          Validar no navegador melhora a experiência, mas nunca substitui validação no servidor. Dados vindos do usuário podem ser inválidos, maliciosos ou incompletos.
+        </div>
+      </div>
+
+      <h3>5.3 Mini fluxo de validação com JavaScript</h3>
+      <pre><code>const form = document.querySelector('#contato');
+const email = document.querySelector('#email');
+
+form.addEventListener('submit', (evento) =&gt; {
+  if (!email.value.includes('@')) {
+    evento.preventDefault();
+    alert('Digite um e-mail válido.');
+  }
+});</code></pre>
+
+      <div class="lab">
+        <h4>Atividade prática: formulário de inscrição para minicurso</h4>
+        <ul>
+          <li>Campos obrigatórios: nome, e-mail, turma e turno.</li>
+          <li>Mostrar mensagem de sucesso sem recarregar a página.</li>
+          <li>Exibir contagem de caracteres no campo “objetivos”.</li>
+          <li>Usar cores e ícones de forma acessível para indicar erro e sucesso.</li>
+        </ul>
+      </div>
+
+      <div class="exercises">
+        <h4>Exercícios do módulo</h4>
+        <div class="ex-item">
+          <p><strong>1.</strong> Por que cada campo deve ter um <code>label</code> associado?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque isso melhora usabilidade, aumenta a área clicável e ajuda leitores de tela a identificar corretamente o campo.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>2.</strong> A validação feita com JavaScript é suficiente sozinha?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Não. Ela melhora a experiência do usuário, mas a validação definitiva deve ocorrer também no servidor por segurança e integridade dos dados.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="mod6">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 6</div>
+      <h2>Ferramentas, versionamento e fluxo profissional</h2>
+      <p>Desenvolvimento web profissional não depende só de código: envolve organização, colaboração, testes e publicação.</p>
+    </div>
+    <div class="panel-body">
+      <h3>6.1 Kit mínimo de trabalho do estudante</h3>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Editor</h4>
+          <p>VS Code ou similar para editar arquivos, instalar extensões e usar terminal integrado.</p>
+        </div>
+        <div class="card">
+          <h4>Navegador</h4>
+          <p>Chrome, Edge ou Firefox com DevTools para inspecionar HTML, CSS, rede e console.</p>
+        </div>
+        <div class="card">
+          <h4>Git e GitHub</h4>
+          <p>Permitem versionar código, voltar estados anteriores e publicar portfólios e projetos.</p>
+        </div>
+      </div>
+
+      <h3>6.2 Fluxo de trabalho sugerido</h3>
+      <ol class="timeline">
+        <li><strong>Planejar:</strong> definir objetivo, público, conteúdo e estrutura da página.</li>
+        <li><strong>Codificar HTML:</strong> organizar semântica e conteúdo principal.</li>
+        <li><strong>Aplicar CSS:</strong> construir identidade visual e responsividade.</li>
+        <li><strong>Adicionar JavaScript:</strong> criar interações e validações.</li>
+        <li><strong>Testar:</strong> revisar diferentes tamanhos de tela, links, contraste e erros no console.</li>
+        <li><strong>Versionar:</strong> registrar mudanças com commits claros.</li>
+        <li><strong>Publicar:</strong> disponibilizar em GitHub Pages, Netlify ou Vercel.</li>
+      </ol>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Ferramenta</th>
+              <th>Uso pedagógico</th>
+              <th>Exemplo de aplicação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DevTools</td>
+              <td>Inspecionar elementos e depurar</td>
+              <td>Descobrir por que um estilo não foi aplicado</td>
+            </tr>
+            <tr>
+              <td>Git</td>
+              <td>Histórico e versionamento</td>
+              <td>Registrar a criação de um layout e depois a adição de interatividade</td>
+            </tr>
+            <tr>
+              <td>GitHub</td>
+              <td>Portfólio, colaboração e publicação</td>
+              <td>Hospedar um projeto escolar</td>
+            </tr>
+            <tr>
+              <td>Figma</td>
+              <td>Protótipos e organização visual</td>
+              <td>Planejar a interface antes da implementação</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout success">
+        <div class="icon">💼</div>
+        <div>
+          <strong>Competências valorizadas no mercado</strong>
+          Clareza na escrita do código, organização de arquivos, noções de UX, domínio de Git, boas práticas de acessibilidade e capacidade de explicar decisões técnicas.
+        </div>
+      </div>
+
+      <div class="exercises">
+        <h4>Exercícios do módulo</h4>
+        <div class="ex-item">
+          <p><strong>1.</strong> Qual a função do Git em um projeto escolar ou profissional?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Registrar versões do projeto, facilitar colaboração, recuperar estados anteriores e documentar a evolução do trabalho.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>2.</strong> Para que servem as DevTools do navegador?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Servem para inspecionar HTML e CSS, depurar JavaScript, analisar rede, medir desempenho e testar responsividade.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="mod7">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 7</div>
+      <h2>Projeto integrador, atividades e critérios de avaliação</h2>
+      <p>O aprendizado se consolida quando o estudante transforma conceitos em produto funcional.</p>
+    </div>
+    <div class="panel-body">
+      <h3>7.1 Projeto sugerido: portal de feira tecnológica da escola</h3>
+      <p>Proponha que a turma desenvolva um site para divulgar uma feira de tecnologia. O projeto permite praticar estrutura, estilo, interatividade, organização de conteúdo e publicação.</p>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Requisitos mínimos</h4>
+          <ul>
+            <li>Página inicial com destaque para o evento.</li>
+            <li>Seção sobre oficinas e expositores.</li>
+            <li>Galeria com cards responsivos.</li>
+            <li>Formulário de inscrição.</li>
+            <li>Menu com âncoras internas.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Desafios extras</h4>
+          <ul>
+            <li>Tema claro/escuro com JavaScript.</li>
+            <li>Contador regressivo para o evento.</li>
+            <li>Filtro por categoria de atividade.</li>
+            <li>Publicação online com link compartilhável.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>7.2 Roteiro de produção</h3>
+      <ol>
+        <li>Definir mapa do site e seções.</li>
+        <li>Esboçar wireframe em papel ou Figma.</li>
+        <li>Montar HTML semântico.</li>
+        <li>Aplicar CSS com identidade visual da escola.</li>
+        <li>Adicionar JavaScript para interações essenciais.</li>
+        <li>Revisar acessibilidade, legibilidade e responsividade.</li>
+        <li>Versionar e publicar.</li>
+      </ol>
+
+      <h3>7.3 Rubrica simplificada de avaliação</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th>Excelente</th>
+              <th>Bom</th>
+              <th>Precisa melhorar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>Semântico, organizado e acessível</td>
+              <td>Estruturado, com pequenos ajustes necessários</td>
+              <td>Uso excessivo de divs e hierarquia confusa</td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td>Visual consistente e responsivo</td>
+              <td>Boa aparência com pequenas falhas</td>
+              <td>Layout quebrado ou inconsistente</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Interações úteis e código legível</td>
+              <td>Interações funcionais com organização mediana</td>
+              <td>Scripts incompletos ou com erros</td>
+            </tr>
+            <tr>
+              <td>Entrega</td>
+              <td>Projeto publicado e documentado</td>
+              <td>Projeto funcional, mas pouco documentado</td>
+              <td>Projeto sem publicação ou incompleto</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lab">
+        <h4>Atividades extras para fixação</h4>
+        <ol>
+          <li>Refaça a página do projeto usando outra paleta de cores.</li>
+          <li>Crie uma versão mobile first da mesma interface.</li>
+          <li>Implemente um menu hambúrguer simples com JavaScript.</li>
+          <li>Adicione validação personalizada ao formulário.</li>
+          <li>Escreva uma breve documentação explicando as decisões do grupo.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="mod8">
+    <div class="panel-header">
+      <div class="eyebrow">Módulo 8</div>
+      <h2>Biblioteca de estudos: livros, cursos e repositórios públicos</h2>
+      <p>Curadoria de recursos pesquisados na web para aprofundamento técnico contínuo em HTML, CSS e JavaScript.</p>
+    </div>
+    <div class="panel-body">
+      <div class="callout info">
+        <div class="icon">📚</div>
+        <div>
+          <strong>Como usar esta curadoria</strong>
+          Combine uma fonte de consulta rápida, um curso estruturado e um repositório com projetos. Esse trio acelera a aprendizagem e ajuda a sair da teoria para a prática.
+        </div>
+      </div>
+
+      <h3>8.1 Documentação e referência oficial</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Recurso</th>
+              <th>Tipo</th>
+              <th>Link</th>
+              <th>Por que vale estudar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MDN Web Docs</td>
+              <td>Documentação</td>
+              <td><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">developer.mozilla.org</a></td>
+              <td>Referência completa e didática para HTML, CSS, JavaScript e APIs web.</td>
+            </tr>
+            <tr>
+              <td>WHATWG HTML Living Standard</td>
+              <td>Especificação</td>
+              <td><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">html.spec.whatwg.org</a></td>
+              <td>Fonte oficial da evolução do HTML moderno.</td>
+            </tr>
+            <tr>
+              <td>W3C CSS Specifications</td>
+              <td>Especificação</td>
+              <td><a href="https://www.w3.org/Style/CSS/specs/" target="_blank" rel="noopener noreferrer">w3.org/Style/CSS/specs</a></td>
+              <td>Ajuda a compreender módulos e recomendações formais do CSS.</td>
+            </tr>
+            <tr>
+              <td>ECMAScript Specification</td>
+              <td>Especificação</td>
+              <td><a href="https://tc39.es/ecma262/" target="_blank" rel="noopener noreferrer">tc39.es/ecma262</a></td>
+              <td>Base oficial da linguagem JavaScript, útil para aprofundamento.</td>
+            </tr>
+            <tr>
+              <td>web.dev Learn</td>
+              <td>Guia prático</td>
+              <td><a href="https://web.dev/learn/" target="_blank" rel="noopener noreferrer">web.dev/learn</a></td>
+              <td>Trilhas modernas com foco em boas práticas de desenvolvimento front-end.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>8.2 Livros e leituras recomendadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Livro</th>
+              <th>Autor</th>
+              <th>Acesso</th>
+              <th>Foco</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Eloquent JavaScript</td>
+              <td>Marijn Haverbeke</td>
+              <td><a href="https://eloquentjavascript.net/" target="_blank" rel="noopener noreferrer">eloquentjavascript.net</a></td>
+              <td>JavaScript moderno com explicações e exercícios.</td>
+            </tr>
+            <tr>
+              <td>You Don’t Know JS Yet</td>
+              <td>Kyle Simpson</td>
+              <td><a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Fundamentos profundos da linguagem e do modelo mental do JS.</td>
+            </tr>
+            <tr>
+              <td>HTML and CSS: Design and Build Websites</td>
+              <td>Jon Duckett</td>
+              <td><a href="https://www.htmlandcssbook.com/" target="_blank" rel="noopener noreferrer">Site oficial</a></td>
+              <td>Ótimo para compreender estrutura e design visual com linguagem acessível.</td>
+            </tr>
+            <tr>
+              <td>JavaScript: The Definitive Guide</td>
+              <td>David Flanagan</td>
+              <td>Livro comercial</td>
+              <td>Referência robusta para consulta técnica.</td>
+            </tr>
+            <tr>
+              <td>Learning Web Design</td>
+              <td>Jennifer Niederst Robbins</td>
+              <td>Livro comercial</td>
+              <td>Abordagem amigável para HTML, CSS, imagens e princípios da web.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>8.3 Cursos online úteis para curso técnico</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Curso</th>
+              <th>Plataforma</th>
+              <th>Link</th>
+              <th>Destaque</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Responsive Web Design</td>
+              <td>freeCodeCamp</td>
+              <td><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank" rel="noopener noreferrer">freecodecamp.org</a></td>
+              <td>Projetos práticos com HTML e CSS.</td>
+            </tr>
+            <tr>
+              <td>JavaScript Algorithms and Data Structures</td>
+              <td>freeCodeCamp</td>
+              <td><a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/" target="_blank" rel="noopener noreferrer">freecodecamp.org</a></td>
+              <td>Base lógica e prática de JavaScript.</td>
+            </tr>
+            <tr>
+              <td>Foundations / Full Stack JavaScript</td>
+              <td>The Odin Project</td>
+              <td><a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer">theodinproject.com</a></td>
+              <td>Trilha gratuita orientada a projetos e portfólio.</td>
+            </tr>
+            <tr>
+              <td>Learn HTML / Learn CSS / Learn JavaScript</td>
+              <td>web.dev</td>
+              <td><a href="https://web.dev/learn/" target="_blank" rel="noopener noreferrer">web.dev</a></td>
+              <td>Conteúdo moderno e organizado em módulos curtos.</td>
+            </tr>
+            <tr>
+              <td>HTML, CSS and Javascript for Web Developers</td>
+              <td>Coursera</td>
+              <td><a href="https://www.coursera.org/learn/html-css-javascript-for-web-developers" target="_blank" rel="noopener noreferrer">coursera.org</a></td>
+              <td>Curso estruturado com contexto acadêmico e exercícios.</td>
+            </tr>
+            <tr>
+              <td>Curso em Vídeo — HTML5/CSS3 e JavaScript</td>
+              <td>Curso em Vídeo</td>
+              <td><a href="https://www.cursoemvideo.com/cursos/" target="_blank" rel="noopener noreferrer">cursoemvideo.com</a></td>
+              <td>Recurso em português bastante acessível para iniciantes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>8.4 Repositórios públicos para estudar código real</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Repositório</th>
+              <th>Link</th>
+              <th>O que observar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>freeCodeCamp/freeCodeCamp</td>
+              <td><a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Currículo, projetos e estrutura de uma plataforma educacional open source.</td>
+            </tr>
+            <tr>
+              <td>TheOdinProject/curriculum</td>
+              <td><a href="https://github.com/TheOdinProject/curriculum" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Organização pedagógica por projetos e trilhas de estudo.</td>
+            </tr>
+            <tr>
+              <td>javascript-tutorial/en.javascript.info</td>
+              <td><a href="https://github.com/javascript-tutorial/en.javascript.info" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Conteúdo completo e progressivo de JavaScript em formato aberto.</td>
+            </tr>
+            <tr>
+              <td>getify/You-Dont-Know-JS</td>
+              <td><a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Discussão aprofundada sobre escopo, tipos, objetos e assíncrono.</td>
+            </tr>
+            <tr>
+              <td>wesbos/JavaScript30</td>
+              <td><a href="https://github.com/wesbos/JavaScript30" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>30 mini projetos para praticar manipulação do DOM sem frameworks.</td>
+            </tr>
+            <tr>
+              <td>Asabeneh/30-Days-Of-JavaScript</td>
+              <td><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Sequência diária de estudos com desafios progressivos.</td>
+            </tr>
+            <tr>
+              <td>mdn/content</td>
+              <td><a href="https://github.com/mdn/content" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Conteúdo aberto da documentação MDN, útil para estudar escrita técnica.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>8.5 Roteiro de aprofundamento em 6 semanas</h3>
+      <div class="grid grid-3">
+        <div class="card"><h4>Semana 1</h4><p>Estude estrutura HTML e crie páginas simples com títulos, listas, links e imagens.</p></div>
+        <div class="card"><h4>Semana 2</h4><p>Aprenda CSS básico: cores, tipografia, espaçamento e box model.</p></div>
+        <div class="card"><h4>Semana 3</h4><p>Pratique Flexbox, Grid e responsividade com mini layouts.</p></div>
+        <div class="card"><h4>Semana 4</h4><p>Estude JavaScript básico: variáveis, condições, funções e eventos.</p></div>
+        <div class="card"><h4>Semana 5</h4><p>Monte formulários com validação e scripts de interação.</p></div>
+        <div class="card"><h4>Semana 6</h4><p>Finalize um projeto integrador, publique e documente em GitHub.</p></div>
+      </div>
+
+      <div class="callout success">
+        <div class="icon">🚀</div>
+        <div>
+          <strong>Estratégia de estudo recomendada</strong>
+          Leia um conceito, reproduza um exemplo, modifique o exemplo com sua própria ideia e publique o resultado. Aprender web exige repetição prática e análise crítica do que foi construído.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="encerramento">
+    <div class="panel-header">
+      <div class="eyebrow">Fechamento</div>
+      <h2>Síntese final</h2>
+      <p>Desenvolvimento web é uma área acessível para começar e profunda o bastante para construir carreira.</p>
+    </div>
+    <div class="panel-body">
+      <p>Ao dominar HTML, CSS e JavaScript, o estudante passa a compreender como páginas são estruturadas, estilizadas e programadas. Mais importante ainda: aprende a resolver problemas reais por meio de interfaces que comunicam informação com clareza.</p>
+      <p>Em um curso técnico, a meta não é apenas memorizar tags e comandos, mas construir autonomia. Isso envolve pesquisar documentação, testar hipóteses, corrigir erros, versionar o trabalho e apresentar soluções funcionais.</p>
+      <div class="callout warning">
+        <div class="icon">📌</div>
+        <div>
+          <strong>Mensagem para a turma</strong>
+          Não espere “saber tudo” para começar um projeto. A prática consistente transforma curiosidade em competência técnica.
+        </div>
+      </div>
+      <p><a href="#topo">Voltar ao topo</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p><strong>Apostila de Desenvolvimento Web — Curso Técnico</strong></p>
+    <p>Conteúdo didático com foco em fundamentos, prática, acessibilidade, projeto integrador e continuidade dos estudos.</p>
+    <p style="margin-top:10px">Tecnologias centrais: HTML · CSS · JavaScript · Git/GitHub · DevTools · Publicação web</p>
+  </footer>
+</main>
+
+<script>
+function toggleAnswer(btn) {
+  const answer = btn.nextElementSibling;
+  if (answer.classList.contains('show')) {
+    answer.classList.remove('show');
+    btn.textContent = 'Ver resposta';
+  } else {
+    answer.classList.add('show');
+    btn.textContent = 'Ocultar resposta';
+  }
+}
+</script>
+</body>
+</html>
