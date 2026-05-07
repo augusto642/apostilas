@@ -217,8 +217,6 @@ li{margin:4px 0}
         <li>Referências Bibliográficas</li>
         <li>Links e Recursos Digitais</li>
         <li>Vídeos indicados e roteiro de estudo</li>
-        <li>Proposta Final de Atividades para Chromebook</li>
-        <li><a href="#apendice-exercicios">Banco extra de exercícios resolvidos</a></li>
       </ol>
     </li>
   </ol>
@@ -466,6 +464,37 @@ li{margin:4px 0}
       </div>
     </div>
 
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 1</h4>
+      <div class="ex-item">
+        <strong>1.1</strong> Classifique cada item como <em>eletricidade</em>, <em>eletrônica</em> ou <em>eletrônica de potência</em>: (a) subestação de distribuição, (b) placa de controle de uma máquina CNC, (c) inversor de frequência de um motor trifásico.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> (a) <em>Eletricidade</em>, porque trata de geração, transmissão e distribuição de energia. (b) <em>Eletrônica</em>, porque processa sinais e toma decisões de controle em baixa potência. (c) <em>Eletrônica de potência</em>, porque converte e controla energia para acionar uma carga de potência elevada.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>1.2</strong> Um cabo de cobre, um chip de silício dopado e uma peça de porcelana são usados em um equipamento. Identifique qual é condutor, semicondutor e isolante.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> O <strong>cobre</strong> é <em>condutor</em> porque possui elétrons livres com facilidade de deslocamento. O <strong>silício dopado</strong> é <em>semicondutor</em> porque sua condução pode ser controlada por dopagem e polarização. A <strong>porcelana</strong> é <em>isolante</em> porque oferece alta resistência à passagem de corrente.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>1.3</strong> Em um portão eletrônico, identifique sensor, processamento e atuador.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <em>Sensor:</em> fim de curso, fotocélula ou receptor do controle remoto. <em>Processamento:</em> microcontrolador ou placa lógica que decide abrir, fechar ou parar. <em>Atuador:</em> motor elétrico com seu estágio de potência, responsável pelo movimento mecânico do portão.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Classificar exemplos do cotidiano, montar um mapa mental e identificar sensor, processamento e atuador em um equipamento real.</p>
+      <p><strong>Entrega:</strong> Registro em portfólio digital com exemplos, esquema simples do sistema analisado e conclusão curta sobre a aplicação estudada.</p>
+    </div>
+
   </div><!-- module-body -->
 </div><!-- module -->
 
@@ -633,6 +662,37 @@ li{margin:4px 0}
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
         <div class="answer">I = 9/(1+8) = <strong>1 A</strong> · V_carga = 1×8 = <strong>8 V</strong> · P_carga = 1²×8 = <strong>8 W</strong> · Nota: 1 W é dissipado na resistência interna da fonte (perdas).</div>
       </div>
+    </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 2</h4>
+      <div class="ex-item">
+        <strong>2.1</strong> Um resistor de 8 Ω é ligado a uma fonte de 24 V. Calcule a corrente e a potência dissipada.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Pela Lei de Ohm, <strong>I = V/R = 24/8 = 3 A</strong>. A potência é <strong>P = V × I = 24 × 3 = 72 W</strong>. Logo, circulam 3 A e o resistor dissipa 72 W.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>2.2</strong> Dois resistores em série, 10 Ω e 20 Ω, são ligados em 12 V. Determine a corrente total e a queda de tensão em cada resistor.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Em série, <strong>R<sub>eq</sub> = 10 + 20 = 30 Ω</strong>. A corrente total é <strong>I = 12/30 = 0,4 A</strong>. As quedas são <strong>V<sub>10Ω</sub> = 0,4 × 10 = 4 V</strong> e <strong>V<sub>20Ω</sub> = 0,4 × 20 = 8 V</strong>. A soma 4 V + 8 V = 12 V confirma a LTK.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>2.3</strong> Dois resistores, 6 Ω e 3 Ω, estão em paralelo em uma fonte de 12 V. Calcule a resistência equivalente e a corrente total.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Em paralelo, <strong>1/R<sub>eq</sub> = 1/6 + 1/3 = 1/6 + 2/6 = 3/6</strong>, então <strong>R<sub>eq</sub> = 2 Ω</strong>. A corrente total é <strong>I = 12/2 = 6 A</strong>. Nos ramos passam 2 A no resistor de 6 Ω e 4 A no resistor de 3 Ω.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Simular circuitos simples no Falstad, preencher uma tabela com tensão, corrente e resistência e comparar ligações em série, paralelo e misto.</p>
+      <p><strong>Entrega:</strong> Link ou captura da simulação, tabela de resultados e conclusão sobre o comportamento de cada circuito.</p>
     </div>
   </div>
 </div>
@@ -826,6 +886,37 @@ li{margin:4px 0}
         <div class="answer">N₂/N₁ = V₂/V₁ → N₂ = N₁ × V₂/V₁ = 460 × 12/230 = <strong>24 espiras</strong></div>
       </div>
     </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 3</h4>
+      <div class="ex-item">
+        <strong>3.1</strong> Decodifique um resistor com faixas <strong>vermelho, violeta, marrom, dourado</strong>.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Vermelho = 2, violeta = 7, marrom = multiplicador ×10 e dourado = ±5%. Portanto, o valor é <strong>27 × 10 = 270 Ω ±5%</strong>.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>3.2</strong> Um capacitor de 1000 µF descarrega por um resistor de 10 kΩ. Qual é a constante de tempo do circuito RC?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <strong>τ = R × C = 10 000 × 0,001 = 10 s</strong>. Logo, a constante de tempo é de 10 segundos. Em aproximadamente 5τ (50 s), o capacitor estará praticamente descarregado.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>3.3</strong> Um transformador ideal reduz 220 V para 22 V. Se a corrente no secundário for 1 A, qual será aproximadamente a corrente no primário?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> A relação de tensão é de <strong>10:1</strong>. Em um transformador ideal, a potência se conserva aproximadamente: <strong>V<sub>p</sub>I<sub>p</sub> ≈ V<sub>s</sub>I<sub>s</sub></strong>. Então, <strong>I<sub>p</sub> = (22 × 1)/220 = 0,1 A</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Resolver código de cores, observar carga e descarga de capacitor e comparar resistores, capacitores e indutores em uma tabela técnica.</p>
+      <p><strong>Entrega:</strong> Tabela comparativa com função, unidade, símbolo e um exemplo de aplicação de cada componente.</p>
+    </div>
   </div>
 </div>
 
@@ -1018,6 +1109,37 @@ li{margin:4px 0}
         <div class="answer">O 1N4007 (junção PN de silício) tem V_F ≈ <strong>0,7 V</strong>; o 1N5819 (Schottky, junção metal-semicondutor) tem V_F ≈ <strong>0,3 V</strong>. Em retificadores não síncronos, a menor queda do Schottky reduz perdas térmicas. Em fontes modernas de alta eficiência, a retificação síncrona normalmente usa MOSFETs controlados.</div>
       </div>
     </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 4</h4>
+      <div class="ex-item">
+        <strong>4.1</strong> Um LED vermelho com queda típica de 2 V deve operar com 20 mA em uma fonte de 12 V. Qual resistor limitador é indicado?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <strong>R = (12 - 2)/0,02 = 500 Ω</strong>. Como 500 Ω não é valor comercial comum da série E12, escolhe-se normalmente <strong>510 Ω</strong>, reduzindo levemente a corrente e aumentando a segurança do LED.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>4.2</strong> Um regulador Zener de 5,1 V será ligado a uma fonte de 12 V. A carga consome 20 mA e o Zener precisa de pelo menos 5 mA para regular. Calcule o resistor série aproximado.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> A corrente total no resistor deve ser <strong>25 mA</strong> (20 mA da carga + 5 mA do Zener). Assim, <strong>R = (12 - 5,1)/0,025 = 276 Ω</strong>. Na prática, pode-se usar <strong>270 Ω</strong> ou <strong>280 Ω</strong>, dependendo da série disponível e da margem desejada.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>4.3</strong> Em uma ponte retificadora alimentada com 12 V<sub>CA</sub>, estime a tensão de pico após a retificação, considerando duas quedas de 0,7 V nos diodos em condução.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> O pico da senoide é <strong>12 × 1,414 ≈ 16,97 V</strong>. Na ponte, dois diodos conduzem por vez, totalizando <strong>1,4 V</strong> de queda. Portanto, a tensão de pico disponível é aproximadamente <strong>16,97 - 1,4 = 15,57 V</strong>, ou cerca de <strong>15,6 V</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Simular retificação de meia onda e onda completa, comparar LED, diodo comum e Zener e relacionar cada componente a um uso prático.</p>
+      <p><strong>Entrega:</strong> Registro com esquemas, observações sobre polaridade e uma explicação curta do papel de cada diodo analisado.</p>
+    </div>
   </div>
 </div>
 
@@ -1147,6 +1269,37 @@ li{margin:4px 0}
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
         <div class="answer">O MOSFET em condução se comporta como um resistor R_DS(on), então P = I²×R_DS(on). Por exemplo, um MOSFET moderno com R_DS(on)=10 mΩ a 10A dissipa 1W. Um BJT equivalente com V_CE(sat)≈0,5V dissiparia 0,5×10 = 5W. Além disso, o MOSFET não precisa de corrente contínua de base, eliminando a perda P = V_BE × I_B.</div>
       </div>
+    </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 5</h4>
+      <div class="ex-item">
+        <strong>5.1</strong> Um transistor BJT NPN deve chavear uma carga de 100 mA usando um sinal de 5 V. Adote ganho forçado de 10 e V<sub>BE</sub> = 0,7 V. Qual resistor de base aproximado usar?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Para saturar, use <strong>I<sub>B</sub> = I<sub>C</sub>/10 = 100 mA/10 = 10 mA</strong>. Então, <strong>R<sub>B</sub> = (5 - 0,7)/0,01 = 430 Ω</strong>. Um valor comercial próximo é <strong>430 Ω</strong> ou <strong>470 Ω</strong>, dependendo da margem disponível.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>5.2</strong> Um MOSFET apresenta R<sub>DS(on)</sub> = 0,05 Ω conduzindo 4 A. Calcule a potência dissipada por efeito Joule no estado ligado.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <strong>P = I²R = 4² × 0,05 = 16 × 0,05 = 0,8 W</strong>. Portanto, a dissipação aproximada é de 0,8 W, o que já pode exigir análise térmica dependendo do encapsulamento.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>5.3</strong> Para acionar rapidamente uma carga de corrente elevada com perdas reduzidas, é mais adequado usar BJT ou MOSFET? Justifique.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Em geral, o <strong>MOSFET</strong> é mais indicado, porque é controlado por tensão, tem alta impedância de entrada e costuma apresentar perdas menores em chaveamento e condução quando bem dimensionado. O BJT ainda é útil em aplicações simples, mas exige corrente de base e tende a dissipar mais em cargas elevadas.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Montar ou simular um transistor acionando LED, comparar BJT e MOSFET e explicar a função do transistor no controle de uma carga.</p>
+      <p><strong>Entrega:</strong> Esquema do circuito, justificativa do componente escolhido e observações sobre ganho, chaveamento ou dissipação.</p>
     </div>
   </div>
 </div>
@@ -1278,6 +1431,37 @@ li{margin:4px 0}
         <div class="answer">P_entrada = P_saída / η = 100 / 0,92 ≈ <strong>108,7 W</strong>. I_fonte = P_entrada / V = 108,7 / 12 ≈ <strong>9,06 A</strong>. Perda em calor: 108,7 – 100 = 8,7 W (dissipador pequeno suficiente).</div>
       </div>
     </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 6</h4>
+      <div class="ex-item">
+        <strong>6.1</strong> Um amplificador não inversor usa R<sub>f</sub> = 30 kΩ e R<sub>g</sub> = 10 kΩ. Qual é o ganho e a tensão de saída para uma entrada de 0,5 V?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> No não inversor, <strong>A<sub>v</sub> = 1 + R<sub>f</sub>/R<sub>g</sub> = 1 + 30/10 = 4</strong>. Logo, <strong>V<sub>out</sub> = 4 × 0,5 = 2,0 V</strong>.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>6.2</strong> Em um amplificador inversor, R<sub>in</sub> = 4,7 kΩ e R<sub>f</sub> = 47 kΩ. Qual é o ganho e a saída para V<sub>in</sub> = 0,2 V?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> No inversor, <strong>A<sub>v</sub> = -R<sub>f</sub>/R<sub>in</sub> = -47/4,7 = -10</strong>. Assim, <strong>V<sub>out</sub> = -10 × 0,2 = -2,0 V</strong>, respeitando os limites de alimentação do amplificador operacional.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>6.3</strong> Um comparador usa V<sub>ref</sub> = 2,5 V na entrada inversora. O sensor entrega 3,1 V na entrada não inversora. O que acontece na saída?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Como <strong>V<sub>+</sub> &gt; V<sub>-</sub></strong>, a saída tende a saturar em nível alto, próximo ao trilho positivo de alimentação. Se o sensor cair, por exemplo, para 1,8 V, a saída iria para o nível baixo.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Analisar comparador e amplificador inversor, interpretar gráficos e resolver situações envolvendo ganho e saturação.</p>
+      <p><strong>Entrega:</strong> Cálculos, gráfico ou captura da simulação e uma conclusão sobre o comportamento da saída em cada configuração.</p>
+    </div>
   </div>
 </div>
 
@@ -1386,6 +1570,37 @@ li{margin:4px 0}
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
         <div class="answer">D = V_out / V_in = 3,3 / 12 = <strong>0,275 = 27,5%</strong>. Isso significa que o transistor de chaveamento fica ON por 27,5% do período e OFF por 72,5%. O IC controlador (ex.: MC34063, LM2596) ajusta D automaticamente via laço de realimentação.</div>
       </div>
+    </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 7</h4>
+      <div class="ex-item">
+        <strong>7.1</strong> Um regulador linear reduz 12 V para 5 V fornecendo 300 mA. Qual potência ele dissipa em calor?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> A dissipação é <strong>P = (V<sub>in</sub> - V<sub>out</sub>) × I = (12 - 5) × 0,3 = 2,1 W</strong>. Isso mostra por que reguladores lineares podem aquecer bastante em quedas grandes de tensão.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>7.2</strong> Em uma fonte retificada de onda completa (120 Hz), a carga consome 0,5 A e o capacitor de filtro é de 2200 µF. Estime o ripple de tensão.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Uma aproximação útil é <strong>V<sub>ripple</sub> ≈ I/(f × C)</strong>. Então, <strong>V<sub>ripple</sub> ≈ 0,5/(120 × 0,0022) ≈ 1,89 V</strong>. Ou seja, o ripple é de aproximadamente <strong>1,9 V</strong>.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>7.3</strong> Um conversor buck ideal reduz 24 V para 12 V. Qual duty cycle aproximado é necessário?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Para um buck ideal, <strong>D = V<sub>out</sub>/V<sub>in</sub> = 12/24 = 0,5</strong>. Portanto, o duty cycle é de aproximadamente <strong>50%</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Ordenar transformador, retificador, filtro e regulador, explicar a função de cada bloco e comparar fonte linear com fonte chaveada.</p>
+      <p><strong>Entrega:</strong> Diagrama em blocos comentado, tabela comparativa e uma conclusão sobre eficiência e aplicação de cada topologia.</p>
     </div>
   </div>
 </div>
@@ -1560,6 +1775,37 @@ li{margin:4px 0}
         <div class="answer">V = (ADC / 1023) × V_ref = (512/1023) × 5 = 0,5005 × 5 ≈ <strong>2,50 V</strong> (metade da escala — potenciômetro no centro).</div>
       </div>
     </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 8</h4>
+      <div class="ex-item">
+        <strong>8.1</strong> Converta o número decimal 45 para binário e hexadecimal.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <strong>45 = 32 + 8 + 4 + 1</strong>, então em binário é <strong>101101</strong>. Agrupando em 4 bits: <strong>0010 1101</strong>, obtemos o hexadecimal <strong>2D</strong>.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>8.2</strong> Para A = 1 e B = 0, determine as saídas das portas AND, OR e XOR.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <strong>AND = 0</strong>, porque as duas entradas não estão em 1 ao mesmo tempo. <strong>OR = 1</strong>, porque ao menos uma entrada é 1. <strong>XOR = 1</strong>, porque as entradas são diferentes.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>8.3</strong> Simplifique a expressão booleana <strong>F = A·B + A·B̄</strong>.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Colocando <strong>A</strong> em evidência: <strong>F = A(B + B̄)</strong>. Como <strong>B + B̄ = 1</strong>, resulta <strong>F = A</strong>. Portanto, o circuito pode ser reduzido a um simples fio ou buffer da variável A.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Preencher tabelas-verdade, montar portas lógicas e programar um LED piscando no Tinkercad ou Wokwi.</p>
+      <p><strong>Entrega:</strong> Captura da simulação, tabela-verdade preenchida e explicação curta da lógica implementada.</p>
+    </div>
   </div>
 </div>
 
@@ -1695,6 +1941,37 @@ li{margin:4px 0}
         <div class="answer">V_média = D × V_CC = 0,6 × 12 = <strong>7,2 V</strong>. Velocidade ≈ 60% × 3000 = <strong>1800 RPM</strong> (motor CC tem velocidade aproximadamente proporcional à tensão aplicada).</div>
       </div>
     </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 9</h4>
+      <div class="ex-item">
+        <strong>9.1</strong> Um sinal PWM de 24 V trabalha com duty cycle de 25% em uma carga resistiva. Qual valor médio aproximado de tensão é aplicado à carga?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Para uma análise média simples, <strong>V<sub>médio</sub> ≈ D × V = 0,25 × 24 = 6 V</strong>. Assim, o equivalente médio é próximo de 6 V, embora a forma de onda real continue sendo pulsada.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>9.2</strong> Um acionamento entrega 48 V e 10 A ao motor com eficiência de 90%. Qual potência entra no conversor e qual a perda aproximada?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> A potência útil é <strong>P<sub>out</sub> = 48 × 10 = 480 W</strong>. Se a eficiência é 90%, então <strong>P<sub>in</sub> = 480/0,9 ≈ 533 W</strong>. A perda é <strong>533 - 480 ≈ 53 W</strong>.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>9.3</strong> Um IGBT conduz 15 A com queda V<sub>CE(sat)</sub> de 2 V. Estime a perda por condução.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> A perda aproximada é <strong>P = V × I = 2 × 15 = 30 W</strong>. Esse valor já indica a necessidade de dissipador e análise térmica adequados.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Observar o efeito do PWM, relacionar duty cycle e potência e pesquisar aplicações em inversores, carregadores e acionamentos.</p>
+      <p><strong>Entrega:</strong> Registro com gráfico ou captura da forma de onda, cálculo do duty cycle e resumo das aplicações pesquisadas.</p>
+    </div>
   </div>
 </div>
 
@@ -1819,6 +2096,37 @@ li{margin:4px 0}
         <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
         <div class="answer">Vpp = 4 div × 2 V/div = <strong>8 Vpp</strong>. Vpico = Vpp/2 = <strong>4 V</strong>. Período T = 5 div × 1 ms/div = 5 ms. Frequência f = 1/T = 1/0,005 = <strong>200 Hz</strong>.</div>
       </div>
+    </div>
+
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 10</h4>
+      <div class="ex-item">
+        <strong>10.1</strong> Um sensor fornece 10 mV/°C. Qual será sua saída em 35 °C?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <strong>V = 35 × 10 mV = 350 mV</strong>, ou <strong>0,35 V</strong>. Essa é a tensão esperada na saída do sensor, desconsiderando offset adicional.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>10.2</strong> Para medir a tensão de uma bateria de 12 V com multímetro, qual grandeza e faixa devem ser selecionadas?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Deve-se selecionar <strong>tensão contínua (V⎓ ou DCV)</strong> e uma faixa acima de 12 V, como <strong>20 V</strong> em multímetros de faixa manual. As pontas de prova devem ser conectadas em paralelo com a bateria.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>10.3</strong> No osciloscópio, um sinal apresenta período de 2 ms. Qual é sua frequência?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> <strong>f = 1/T = 1/0,002 = 500 Hz</strong>. Portanto, o sinal tem frequência de 500 Hz.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Simular um sensor de temperatura, montar uma tabela de leitura e ação e comparar multímetro, osciloscópio e gerador de funções.</p>
+      <p><strong>Entrega:</strong> Tabela de medições, descrição do instrumento usado em cada etapa e conclusão sobre a leitura realizada.</p>
     </div>
   </div>
 </div>
@@ -2097,6 +2405,37 @@ li{margin:4px 0}
       </div>
     </div>
 
+    <div class="exercises">
+      <h4>🧩 Exercícios extras — Módulo 11</h4>
+      <div class="ex-item">
+        <strong>11.1</strong> Um LED não acende em um circuito de 5 V com resistor de 330 Ω. A tensão da fonte está correta, mas o LED foi montado invertido. Qual é a falha?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> A falha é de <strong>polaridade</strong>. O LED é um diodo e só conduz no sentido direto. Invertido, ele bloqueia a corrente e não acende. A correção é inverter o LED, respeitando ânodo e cátodo.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>11.2</strong> Cite duas práticas de layout que ajudam a reduzir ruído e EMI em uma PCB.
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Duas práticas clássicas são: <strong>(1)</strong> manter trilhas de alta corrente ou comutação curtas e com área de laço pequena; <strong>(2)</strong> usar plano de terra contínuo e bom desacoplamento próximo aos CIs. Ambas reduzem impedâncias parasitas e emissão de ruído.
+        </div>
+      </div>
+      <div class="ex-item">
+        <strong>11.3</strong> Antes de energizar uma placa recém-montada, quais três verificações rápidas são recomendadas?
+        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
+        <div class="answer">
+          <strong>Resposta:</strong> Um checklist objetivo inclui: <strong>(1)</strong> conferir polaridade de diodos, LEDs, capacitores eletrolíticos e CI polarizado; <strong>(2)</strong> procurar curto entre alimentação e terra com multímetro; <strong>(3)</strong> revisar soldas frias, pontes de solda e valores dos componentes críticos.
+        </div>
+      </div>
+    </div>
+
+    <div class="lab">
+      <h4>🔬 Atividade prática do módulo</h4>
+      <p><strong>Proposta:</strong> Identificar erros em circuitos, elaborar um checklist de segurança e criar uma ficha técnica simples de um componente ou montagem.</p>
+      <p><strong>Entrega:</strong> Checklist preenchido, hipótese de falha, teste realizado e correção proposta em um relatório curto.</p>
+    </div>
+
   </div>
 </div>
 
@@ -2336,358 +2675,6 @@ li{margin:4px 0}
       </ol>
     </div>
 
-    <h3>A.6 Proposta Final de Atividades para Chromebook</h3>
-    <p>Para turmas que utilizam exclusivamente <strong>Chromebooks</strong>, a proposta final da apostila deve priorizar recursos que funcionem integralmente no navegador, com registros digitais simples, claros e compatíveis com o ambiente escolar.</p>
-
-    <h4>Diretrizes gerais</h4>
-    <ul>
-      <li>Priorizar simuladores online e ferramentas sem instalação local.</li>
-      <li>Organizar as entregas em Google Docs, Google Sheets ou Google Slides.</li>
-      <li>Solicitar evidências objetivas: link do projeto, captura de tela, respostas curtas e conclusão técnica.</li>
-      <li>Estimular trabalho em dupla ou trio para discussão, revisão e documentação.</li>
-    </ul>
-
-    <h4>Ferramentas recomendadas</h4>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Ferramenta</th><th>Tipo</th><th>Uso principal</th><th>Vantagem para Chromebook</th></tr></thead>
-        <tbody>
-          <tr><td>Tinkercad Circuits</td><td>Simulador online</td><td>Circuitos básicos e Arduino</td><td>Gratuito, roda no navegador e permite compartilhar links</td></tr>
-          <tr><td>Falstad Circuit Simulator</td><td>Simulador online</td><td>Análise visual de circuitos analógicos</td><td>Leve, rápido e ideal para observar tensão/corrente em tempo real</td></tr>
-          <tr><td>Wokwi</td><td>Simulador online</td><td>Arduino, ESP32 e microcontroladores</td><td>Permite código, simulação e testes sem instalação</td></tr>
-          <tr><td>Google Docs / Sheets / Slides</td><td>Produtividade</td><td>Relatórios, tabelas e portfólio</td><td>Integração direta com contas escolares e colaboração em tempo real</td></tr>
-          <tr><td>EasyEDA</td><td>EDA online</td><td>Esquemáticos e introdução a PCB</td><td>Funciona no navegador e facilita a transição para projeto profissional</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h4>Exercícios complementares por módulo</h4>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Módulo</th><th>Foco</th><th>Exercícios sugeridos</th></tr></thead>
-        <tbody>
-          <tr><td>Módulo 1 — Fundamentos</td><td>Conceitos e aplicações</td><td>Classificar exemplos do cotidiano; montar mapa mental; identificar sensor, processamento e atuador em equipamentos reais.</td></tr>
-          <tr><td>Módulo 2 — Grandezas elétricas</td><td>Lei de Ohm e circuitos</td><td>Simular circuitos simples no Falstad; preencher tabela com tensão, corrente e resistência; comparar série, paralelo e misto.</td></tr>
-          <tr><td>Módulo 3 — Componentes passivos</td><td>Resistores, capacitores e indutores</td><td>Resolver código de cores; observar carga/descarga de capacitor; comparar componentes em tabela técnica.</td></tr>
-          <tr><td>Módulo 4 — Diodos</td><td>Retificação e aplicações</td><td>Simular meia onda e onda completa; comparar LED, diodo comum e Zener; relacionar usos práticos.</td></tr>
-          <tr><td>Módulo 5 — Transistores</td><td>Chaveamento e controle</td><td>Montar transistor acionando LED; comparar BJT e MOSFET; explicar função do transistor em controle de cargas.</td></tr>
-          <tr><td>Módulo 6 — Amplificadores operacionais</td><td>Ganho e comparação</td><td>Analisar comparador e amplificador inversor; interpretar gráficos; resolver situações sobre ganho e saturação.</td></tr>
-          <tr><td>Módulo 7 — Fontes de alimentação</td><td>Blocos e conversão</td><td>Ordenar transformador, retificador, filtro e regulador; explicar cada bloco; comparar fonte linear e chaveada.</td></tr>
-          <tr><td>Módulo 8 — Circuitos digitais</td><td>Lógica e programação</td><td>Preencher tabelas-verdade; montar portas lógicas; programar LED piscando no Tinkercad ou Wokwi.</td></tr>
-          <tr><td>Módulo 9 — Eletrônica de potência</td><td>PWM e acionamento</td><td>Observar efeito do PWM; relacionar duty cycle e potência; pesquisar aplicações em inversores e carregadores.</td></tr>
-          <tr><td>Módulo 10 — Sensores e instrumentação</td><td>Leitura e medição</td><td>Simular sensor de temperatura; montar tabela de leitura e ação; comparar multímetro, osciloscópio e gerador de funções.</td></tr>
-          <tr><td>Módulo 11 — Projeto e diagnóstico</td><td>Boas práticas e análise</td><td>Identificar erros em circuitos; elaborar checklist de segurança; criar ficha técnica simples de um componente.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h4>Atividades integradoras</h4>
-    <div class="grid">
-      <div class="card"><span class="tag">Documentação</span><strong>Portfólio digital do aluno</strong><p>Reunir links, prints, respostas e conclusões das atividades em um único documento compartilhável.</p></div>
-      <div class="card"><span class="tag">Projeto</span><strong>Semáforo eletrônico</strong><p>Simular LEDs e lógica de acionamento em dupla, registrando estados, temporização e justificativa do circuito.</p></div>
-      <div class="card"><span class="tag">Projeto</span><strong>Alarme de temperatura</strong><p>Integrar sensor, LED ou buzzer virtual e lógica de acionamento em ambiente online.</p></div>
-      <div class="card"><span class="tag">Diagnóstico</span><strong>Caça a erros</strong><p>Analisar circuitos com falhas intencionais e registrar a hipótese, o teste realizado e a correção proposta.</p></div>
-      <div class="card"><span class="tag">Pesquisa</span><strong>Componente eletrônico</strong><p>Pesquisar símbolo, função, aplicação, limites e cuidados de uso de um componente escolhido pelo grupo.</p></div>
-      <div class="card"><span class="tag">Revisão</span><strong>Avaliação por pares</strong><p>Trocar links dos projetos e fazer revisão técnica entre grupos com critérios objetivos.</p></div>
-    </div>
-
-    <h4>Modelo de entrega</h4>
-    <ul class="checklist">
-      <li>Nome da atividade e módulo correspondente.</li>
-      <li>Link do simulador ou arquivo compartilhado.</li>
-      <li>Captura de tela da montagem ou execução.</li>
-      <li>Respostas objetivas ou tabela de resultados.</li>
-      <li>Conclusão curta sobre o aprendizado técnico obtido.</li>
-    </ul>
-
-    <div class="callout info">
-      <span class="icon">💻</span><strong>Vantagens pedagógicas do formato</strong>
-      Esta organização é compatível com Chromebook, dispensa instalação local, favorece documentação digital e permite prática supervisionada mesmo quando a escola não dispõe de laboratório completo para todos os alunos.
-    </div>
-
-
-    <h3 id="apendice-exercicios">A.7 Banco extra de exercícios resolvidos</h3>
-    <p>Os exercícios abaixo foram elaborados de forma original com base nos temas mais recorrentes em listas técnicas de eletrônica básica, analógica, digital e instrumentação. Use-os como revisão, recuperação paralela, estudo dirigido ou prática antes de avaliações.</p>
-
-    <div class="callout success">
-      <span class="icon">📚</span><strong>Como usar este banco extra</strong>
-      Resolva primeiro sem abrir a resposta. Depois compare o raciocínio, confira unidades, polaridade, sentido da corrente e hipótese de funcionamento do circuito.
-    </div>
-
-    <div class="exercises">
-      <h4>🧩 Módulo 1 — Fundamentos</h4>
-      <div class="ex-item">
-        <strong>1.1</strong> Classifique cada item como <em>eletricidade</em>, <em>eletrônica</em> ou <em>eletrônica de potência</em>: (a) subestação de distribuição, (b) placa de controle de uma máquina CNC, (c) inversor de frequência de um motor trifásico.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> (a) <em>Eletricidade</em>, porque trata de geração, transmissão e distribuição de energia. (b) <em>Eletrônica</em>, porque processa sinais e toma decisões de controle em baixa potência. (c) <em>Eletrônica de potência</em>, porque converte e controla energia para acionar uma carga de potência elevada.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>1.2</strong> Um cabo de cobre, um chip de silício dopado e uma peça de porcelana são usados em um equipamento. Identifique qual é condutor, semicondutor e isolante.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> O <strong>cobre</strong> é <em>condutor</em> porque possui elétrons livres com facilidade de deslocamento. O <strong>silício dopado</strong> é <em>semicondutor</em> porque sua condução pode ser controlada por dopagem e polarização. A <strong>porcelana</strong> é <em>isolante</em> porque oferece alta resistência à passagem de corrente.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>1.3</strong> Em um portão eletrônico, identifique sensor, processamento e atuador.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <em>Sensor:</em> fim de curso, fotocélula ou receptor do controle remoto. <em>Processamento:</em> microcontrolador ou placa lógica que decide abrir, fechar ou parar. <em>Atuador:</em> motor elétrico com seu estágio de potência, responsável pelo movimento mecânico do portão.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>📐 Módulo 2 — Grandezas elétricas fundamentais</h4>
-      <div class="ex-item">
-        <strong>2.1</strong> Um resistor de 8 Ω é ligado a uma fonte de 24 V. Calcule a corrente e a potência dissipada.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Pela Lei de Ohm, <strong>I = V/R = 24/8 = 3 A</strong>. A potência é <strong>P = V × I = 24 × 3 = 72 W</strong>. Logo, circulam 3 A e o resistor dissipa 72 W.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>2.2</strong> Dois resistores em série, 10 Ω e 20 Ω, são ligados em 12 V. Determine a corrente total e a queda de tensão em cada resistor.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Em série, <strong>R<sub>eq</sub> = 10 + 20 = 30 Ω</strong>. A corrente total é <strong>I = 12/30 = 0,4 A</strong>. As quedas são <strong>V<sub>10Ω</sub> = 0,4 × 10 = 4 V</strong> e <strong>V<sub>20Ω</sub> = 0,4 × 20 = 8 V</strong>. A soma 4 V + 8 V = 12 V confirma a LTK.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>2.3</strong> Dois resistores, 6 Ω e 3 Ω, estão em paralelo em uma fonte de 12 V. Calcule a resistência equivalente e a corrente total.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Em paralelo, <strong>1/R<sub>eq</sub> = 1/6 + 1/3 = 1/6 + 2/6 = 3/6</strong>, então <strong>R<sub>eq</sub> = 2 Ω</strong>. A corrente total é <strong>I = 12/2 = 6 A</strong>. Nos ramos passam 2 A no resistor de 6 Ω e 4 A no resistor de 3 Ω.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>🎛️ Módulo 3 — Componentes passivos</h4>
-      <div class="ex-item">
-        <strong>3.1</strong> Decodifique um resistor com faixas <strong>vermelho, violeta, marrom, dourado</strong>.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Vermelho = 2, violeta = 7, marrom = multiplicador ×10 e dourado = ±5%. Portanto, o valor é <strong>27 × 10 = 270 Ω ±5%</strong>.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>3.2</strong> Um capacitor de 1000 µF descarrega por um resistor de 10 kΩ. Qual é a constante de tempo do circuito RC?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <strong>τ = R × C = 10 000 × 0,001 = 10 s</strong>. Logo, a constante de tempo é de 10 segundos. Em aproximadamente 5τ (50 s), o capacitor estará praticamente descarregado.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>3.3</strong> Um transformador ideal reduz 220 V para 22 V. Se a corrente no secundário for 1 A, qual será aproximadamente a corrente no primário?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> A relação de tensão é de <strong>10:1</strong>. Em um transformador ideal, a potência se conserva aproximadamente: <strong>V<sub>p</sub>I<sub>p</sub> ≈ V<sub>s</sub>I<sub>s</sub></strong>. Então, <strong>I<sub>p</sub> = (22 × 1)/220 = 0,1 A</strong>.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>🔻 Módulo 4 — Semicondutores e diodos</h4>
-      <div class="ex-item">
-        <strong>4.1</strong> Um LED vermelho com queda típica de 2 V deve operar com 20 mA em uma fonte de 12 V. Qual resistor limitador é indicado?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <strong>R = (12 - 2)/0,02 = 500 Ω</strong>. Como 500 Ω não é valor comercial comum da série E12, escolhe-se normalmente <strong>510 Ω</strong>, reduzindo levemente a corrente e aumentando a segurança do LED.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>4.2</strong> Um regulador Zener de 5,1 V será ligado a uma fonte de 12 V. A carga consome 20 mA e o Zener precisa de pelo menos 5 mA para regular. Calcule o resistor série aproximado.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> A corrente total no resistor deve ser <strong>25 mA</strong> (20 mA da carga + 5 mA do Zener). Assim, <strong>R = (12 - 5,1)/0,025 = 276 Ω</strong>. Na prática, pode-se usar <strong>270 Ω</strong> ou <strong>280 Ω</strong>, dependendo da série disponível e da margem desejada.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>4.3</strong> Em uma ponte retificadora alimentada com 12 V<sub>CA</sub>, estime a tensão de pico após a retificação, considerando duas quedas de 0,7 V nos diodos em condução.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> O pico da senoide é <strong>12 × 1,414 ≈ 16,97 V</strong>. Na ponte, dois diodos conduzem por vez, totalizando <strong>1,4 V</strong> de queda. Portanto, a tensão de pico disponível é aproximadamente <strong>16,97 - 1,4 = 15,57 V</strong>, ou cerca de <strong>15,6 V</strong>.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>🔀 Módulo 5 — Transistores BJT e MOSFET</h4>
-      <div class="ex-item">
-        <strong>5.1</strong> Um transistor BJT NPN deve chavear uma carga de 100 mA usando um sinal de 5 V. Adote ganho forçado de 10 e V<sub>BE</sub> = 0,7 V. Qual resistor de base aproximado usar?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Para saturar, use <strong>I<sub>B</sub> = I<sub>C</sub>/10 = 100 mA/10 = 10 mA</strong>. Então, <strong>R<sub>B</sub> = (5 - 0,7)/0,01 = 430 Ω</strong>. Um valor comercial próximo é <strong>430 Ω</strong> ou <strong>470 Ω</strong>, dependendo da margem disponível.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>5.2</strong> Um MOSFET apresenta R<sub>DS(on)</sub> = 0,05 Ω conduzindo 4 A. Calcule a potência dissipada por efeito Joule no estado ligado.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <strong>P = I²R = 4² × 0,05 = 16 × 0,05 = 0,8 W</strong>. Portanto, a dissipação aproximada é de 0,8 W, o que já pode exigir análise térmica dependendo do encapsulamento.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>5.3</strong> Para acionar rapidamente uma carga de corrente elevada com perdas reduzidas, é mais adequado usar BJT ou MOSFET? Justifique.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Em geral, o <strong>MOSFET</strong> é mais indicado, porque é controlado por tensão, tem alta impedância de entrada e costuma apresentar perdas menores em chaveamento e condução quando bem dimensionado. O BJT ainda é útil em aplicações simples, mas exige corrente de base e tende a dissipar mais em cargas elevadas.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>➕ Módulo 6 — Amplificadores operacionais</h4>
-      <div class="ex-item">
-        <strong>6.1</strong> Um amplificador não inversor usa R<sub>f</sub> = 30 kΩ e R<sub>g</sub> = 10 kΩ. Qual é o ganho e a tensão de saída para uma entrada de 0,5 V?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> No não inversor, <strong>A<sub>v</sub> = 1 + R<sub>f</sub>/R<sub>g</sub> = 1 + 30/10 = 4</strong>. Logo, <strong>V<sub>out</sub> = 4 × 0,5 = 2,0 V</strong>.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>6.2</strong> Em um amplificador inversor, R<sub>in</sub> = 4,7 kΩ e R<sub>f</sub> = 47 kΩ. Qual é o ganho e a saída para V<sub>in</sub> = 0,2 V?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> No inversor, <strong>A<sub>v</sub> = -R<sub>f</sub>/R<sub>in</sub> = -47/4,7 = -10</strong>. Assim, <strong>V<sub>out</sub> = -10 × 0,2 = -2,0 V</strong>, respeitando os limites de alimentação do amplificador operacional.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>6.3</strong> Um comparador usa V<sub>ref</sub> = 2,5 V na entrada inversora. O sensor entrega 3,1 V na entrada não inversora. O que acontece na saída?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Como <strong>V<sub>+</sub> &gt; V<sub>-</sub></strong>, a saída tende a saturar em nível alto, próximo ao trilho positivo de alimentação. Se o sensor cair, por exemplo, para 1,8 V, a saída iria para o nível baixo.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>🔌 Módulo 7 — Fontes de alimentação</h4>
-      <div class="ex-item">
-        <strong>7.1</strong> Um regulador linear reduz 12 V para 5 V fornecendo 300 mA. Qual potência ele dissipa em calor?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> A dissipação é <strong>P = (V<sub>in</sub> - V<sub>out</sub>) × I = (12 - 5) × 0,3 = 2,1 W</strong>. Isso mostra por que reguladores lineares podem aquecer bastante em quedas grandes de tensão.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>7.2</strong> Em uma fonte retificada de onda completa (120 Hz), a carga consome 0,5 A e o capacitor de filtro é de 2200 µF. Estime o ripple de tensão.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Uma aproximação útil é <strong>V<sub>ripple</sub> ≈ I/(f × C)</strong>. Então, <strong>V<sub>ripple</sub> ≈ 0,5/(120 × 0,0022) ≈ 1,89 V</strong>. Ou seja, o ripple é de aproximadamente <strong>1,9 V</strong>.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>7.3</strong> Um conversor buck ideal reduz 24 V para 12 V. Qual duty cycle aproximado é necessário?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Para um buck ideal, <strong>D = V<sub>out</sub>/V<sub>in</sub> = 12/24 = 0,5</strong>. Portanto, o duty cycle é de aproximadamente <strong>50%</strong>.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>💻 Módulo 8 — Circuitos digitais</h4>
-      <div class="ex-item">
-        <strong>8.1</strong> Converta o número decimal 45 para binário e hexadecimal.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <strong>45 = 32 + 8 + 4 + 1</strong>, então em binário é <strong>101101</strong>. Agrupando em 4 bits: <strong>0010 1101</strong>, obtemos o hexadecimal <strong>2D</strong>.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>8.2</strong> Para A = 1 e B = 0, determine as saídas das portas AND, OR e XOR.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <strong>AND = 0</strong>, porque as duas entradas não estão em 1 ao mesmo tempo. <strong>OR = 1</strong>, porque ao menos uma entrada é 1. <strong>XOR = 1</strong>, porque as entradas são diferentes.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>8.3</strong> Simplifique a expressão booleana <strong>F = A·B + A·B̄</strong>.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Colocando <strong>A</strong> em evidência: <strong>F = A(B + B̄)</strong>. Como <strong>B + B̄ = 1</strong>, resulta <strong>F = A</strong>. Portanto, o circuito pode ser reduzido a um simples fio ou buffer da variável A.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>⚙️ Módulo 9 — Eletrônica de potência</h4>
-      <div class="ex-item">
-        <strong>9.1</strong> Um sinal PWM de 24 V trabalha com duty cycle de 25% em uma carga resistiva. Qual valor médio aproximado de tensão é aplicado à carga?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Para uma análise média simples, <strong>V<sub>médio</sub> ≈ D × V = 0,25 × 24 = 6 V</strong>. Assim, o equivalente médio é próximo de 6 V, embora a forma de onda real continue sendo pulsada.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>9.2</strong> Um acionamento entrega 48 V e 10 A ao motor com eficiência de 90%. Qual potência entra no conversor e qual a perda aproximada?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> A potência útil é <strong>P<sub>out</sub> = 48 × 10 = 480 W</strong>. Se a eficiência é 90%, então <strong>P<sub>in</sub> = 480/0,9 ≈ 533 W</strong>. A perda é <strong>533 - 480 ≈ 53 W</strong>.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>9.3</strong> Um IGBT conduz 15 A com queda V<sub>CE(sat)</sub> de 2 V. Estime a perda por condução.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> A perda aproximada é <strong>P = V × I = 2 × 15 = 30 W</strong>. Esse valor já indica a necessidade de dissipador e análise térmica adequados.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>🌡️ Módulo 10 — Sensores e instrumentação</h4>
-      <div class="ex-item">
-        <strong>10.1</strong> Um sensor fornece 10 mV/°C. Qual será sua saída em 35 °C?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <strong>V = 35 × 10 mV = 350 mV</strong>, ou <strong>0,35 V</strong>. Essa é a tensão esperada na saída do sensor, desconsiderando offset adicional.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>10.2</strong> Para medir a tensão de uma bateria de 12 V com multímetro, qual grandeza e faixa devem ser selecionadas?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Deve-se selecionar <strong>tensão contínua (V⎓ ou DCV)</strong> e uma faixa acima de 12 V, como <strong>20 V</strong> em multímetros de faixa manual. As pontas de prova devem ser conectadas em paralelo com a bateria.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>10.3</strong> No osciloscópio, um sinal apresenta período de 2 ms. Qual é sua frequência?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> <strong>f = 1/T = 1/0,002 = 500 Hz</strong>. Portanto, o sinal tem frequência de 500 Hz.
-        </div>
-      </div>
-    </div>
-
-    <div class="exercises">
-      <h4>🛠️ Módulo 11 — Projeto, PCB, EMC e diagnóstico</h4>
-      <div class="ex-item">
-        <strong>11.1</strong> Um LED não acende em um circuito de 5 V com resistor de 330 Ω. A tensão da fonte está correta, mas o LED foi montado invertido. Qual é a falha?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> A falha é de <strong>polaridade</strong>. O LED é um diodo e só conduz no sentido direto. Invertido, ele bloqueia a corrente e não acende. A correção é inverter o LED, respeitando ânodo e cátodo.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>11.2</strong> Cite duas práticas de layout que ajudam a reduzir ruído e EMI em uma PCB.
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Duas práticas clássicas são: <strong>(1)</strong> manter trilhas de alta corrente ou comutação curtas e com área de laço pequena; <strong>(2)</strong> usar plano de terra contínuo e bom desacoplamento próximo aos CIs. Ambas reduzem impedâncias parasitas e emissão de ruído.
-        </div>
-      </div>
-      <div class="ex-item">
-        <strong>11.3</strong> Antes de energizar uma placa recém-montada, quais três verificações rápidas são recomendadas?
-        <br><button class="btn-answer" onclick="toggleAnswer(this)">Ver Resposta</button>
-        <div class="answer">
-          <strong>Resposta:</strong> Um checklist objetivo inclui: <strong>(1)</strong> conferir polaridade de diodos, LEDs, capacitores eletrolíticos e CI polarizado; <strong>(2)</strong> procurar curto entre alimentação e terra com multímetro; <strong>(3)</strong> revisar soldas frias, pontes de solda e valores dos componentes críticos.
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
