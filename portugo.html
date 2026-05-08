@@ -1267,10 +1267,12 @@ inteiro z = x + y * 2</code></pre>
 
 <script>
 function toggleAnswer(btn) {
+  const originalLabel = btn.dataset.label || btn.textContent;
+  btn.dataset.label = originalLabel;
   const answer = btn.nextElementSibling;
   if (answer.classList.contains('show')) {
     answer.classList.remove('show');
-    btn.textContent = 'Ver resposta';
+    btn.textContent = originalLabel;
   } else {
     answer.classList.add('show');
     btn.textContent = 'Ocultar resposta';
