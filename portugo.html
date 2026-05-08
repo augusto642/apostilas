@@ -177,9 +177,10 @@ tbody td{border-top:1px solid #e7eef8}
 .exercises{margin-top:28px;padding:22px;border-radius:18px;border:1px dashed #86efac;background:#f4fff6}
 .ex-item{padding:14px 0;border-bottom:1px solid #ccead2}
 .ex-item:last-child{border-bottom:none;padding-bottom:0}
-.answer{display:none;margin-top:10px;padding:12px 14px;border-left:4px solid var(--success);background:#eaf8ee;border-radius:10px;color:#1f5133}
+.answer{display:block;margin-top:10px;padding:12px 14px;border-left:4px solid var(--success);background:#eaf8ee;border-radius:10px;color:#1f5133}
 .answer.show{display:block}
-.btn-answer{margin-top:8px;border:none;background:var(--success);color:#fff;font-weight:700;padding:8px 12px;border-radius:10px;cursor:pointer}
+.answer::before{content:"Resolução";display:block;font-weight:700;margin-bottom:6px;color:#14532d;letter-spacing:.02em}
+.btn-answer{display:none}
 .lab{margin:20px 0;padding:22px;border-radius:18px;border:1px solid #c5daf8;background:linear-gradient(180deg,#f7fbff,#edf4ff)}
 .footer{max-width:1120px;margin:0 auto 30px;background:#0f172a;color:#cbd5e1;border-radius:20px;padding:30px;box-shadow:var(--shadow)}
 .footer strong{color:#fff}
@@ -327,6 +328,10 @@ tbody td{border-top:1px solid #e7eef8}
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer">Facilita o entendimento da lógica em português e reduz a carga inicial de sintaxe complexa, permitindo foco em variáveis, condições e repetições.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Cite uma situação de estudo em que usar Portugol é mais vantajoso do que começar direto em uma linguagem profissional.</p>
+          <div class="answer">Uma boa resposta é quando o foco está em aprender lógica, como média, condições e repetições, sem se preocupar ainda com bibliotecas, instalação complexa ou sintaxe avançada.</div>
+        </div>
       </div>
       <h3>1.4 Como estudar programação de verdade</h3>
       <ul class="checklist">
@@ -423,6 +428,10 @@ fimalgoritmo</code></pre>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer">Mudam palavras-chave e formato do bloco principal; permanecem a ideia de início do programa, comandos em sequência e exibição na tela.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Reescreva o algoritmo “Olá, mundo!” no estilo do Portugol Studio e no estilo do VisuAlg.</p>
+          <div class="answer">A ideia é praticar a adaptação de dialeto: o conceito continua o mesmo, mas mudam palavras-chave e a forma de abrir e fechar o programa.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -516,6 +525,17 @@ fimalgoritmo</code></pre>
         escreva("Olá\n")
         escreva("Estou estudando Portugol\n")
         escreva("Quero melhorar minha lógica")
+    }
+}</code></pre></div>
+        </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Escreva um programa com uma mensagem de boas-vindas e um comentário explicando o objetivo do código.</p>
+          <div class="answer"><pre><code>programa
+{
+    funcao inicio()
+    {
+        // Mensagem inicial do programa
+        escreva("Bem-vindo ao estudo de Portugol")
     }
 }</code></pre></div>
         </div>
@@ -632,6 +652,19 @@ logico aprovado = verdadeiro</code></pre></div>
     }
 }</code></pre></div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Monte um programa que calcule o perímetro de um retângulo a partir da base e da altura.</p>
+          <div class="answer"><pre><code>programa
+{
+    funcao inicio()
+    {
+        real base = 6
+        real altura = 4
+        real perimetro = 2 * (base + altura)
+        escreva("Perímetro = ", perimetro)
+    }
+}</code></pre></div>
+        </div>
       </div>
     </div>
   </section>
@@ -731,6 +764,10 @@ escreva(nome, " mora em ", cidade)</code></pre></div>
           <p><strong>3.</strong> Modifique o programa da média para ler três notas em vez de duas.</p>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver orientação</button>
           <div class="answer">Declare mais uma variável, some as três notas e divida por 3.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Faça um programa que leia o preço de um produto e a quantidade comprada, mostrando o valor total.</p>
+          <div class="answer">Leia <code>preco</code> e <code>quantidade</code>, calcule <code>total = preco * quantidade</code> e mostre uma saída como <code>Total a pagar = ...</code>.</div>
         </div>
       </div>
     </div>
@@ -832,6 +869,10 @@ senao
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver orientação</button>
           <div class="answer">Uma estratégia possível: média maior ou igual a 6 e frequência suficiente = aprovado; média entre 4 e 5,9 = recuperação; abaixo disso = reprovado.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Crie um programa que informe se uma pessoa pode solicitar um cartão: idade mínima de 18 anos e renda mínima de 2000.</p>
+          <div class="answer">Use uma condição com operador <code>e</code>: se a idade for maior ou igual a 18 e a renda for maior ou igual a 2000, mostre que a solicitação pode seguir; caso contrário, informe que os critérios não foram atendidos.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -918,6 +959,10 @@ escreva("Acesso liberado")</code></pre></div>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver lógica</button>
           <div class="answer">Use um contador iniciado em zero. A cada número positivo lido, some 1 ao contador.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Use repetição para somar os números pares de 2 até 20.</p>
+          <div class="answer">Uma solução é usar um <code>para</code> pulando de 2 em 2, acumulando os valores em uma variável <code>soma</code> e exibindo o resultado no final.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -991,6 +1036,10 @@ para (i = 0; i &lt; 5; i++)
           <p><strong>3.</strong> Crie um programa que leia 6 notas em vetor e conte quantas são maiores ou iguais a 6.</p>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver ideia</button>
           <div class="answer">Use um contador de aprovados; para cada posição do vetor, teste se a nota é maior ou igual a 6.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Leia 5 idades em um vetor e mostre a média das idades.</p>
+          <div class="answer">Use um vetor para armazenar as 5 idades, some cada valor durante o laço e no final divida a soma por 5 para obter a média.</div>
         </div>
       </div>
     </div>
@@ -1074,6 +1123,13 @@ para (i = 0; i &lt; 5; i++)
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver objetivo</button>
           <div class="answer">Esse exercício treina separação de responsabilidades: a função calcula, a função principal interage com o usuário.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Crie um procedimento chamado <code>mostrarLinha()</code> que exiba um separador na tela e chame esse procedimento duas vezes.</p>
+          <div class="answer"><pre><code>funcao mostrarLinha()
+{
+    escreva("--------------------\n")
+}</code></pre><p>Depois, na função principal, basta chamar <code>mostrarLinha()</code> duas vezes.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1153,6 +1209,10 @@ inteiro z = x + y * 2</code></pre>
           <p><strong>3.</strong> Analise um programa seu e escreva um pequeno relatório: qual era o problema, qual erro encontrou e como corrigiu.</p>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver objetivo</button>
           <div class="answer">O foco é desenvolver pensamento reflexivo e documentação técnica do processo de correção.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Escreva dois casos de teste para um programa que informa se uma pessoa é maior de idade.</p>
+          <div class="answer">Exemplo: entrada 18 deve resultar em “maior de idade”; entrada 17 deve resultar em “menor de idade”. Isso ajuda a validar o limite da condição.</div>
         </div>
       </div>
     </div>
@@ -1241,6 +1301,10 @@ inteiro z = x + y * 2</code></pre>
           <p><strong>3.</strong> Faça um sistema de caixa simples que some preços até o usuário decidir encerrar.</p>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver habilidades treinadas</button>
           <div class="answer">Entrada, repetição, acumulador, decisão e saída formatada.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Amplie o projeto do boletim para também informar qual aluno teve a maior média da turma.</p>
+          <div class="answer">Além de contar aprovados, guarde a maior média encontrada até o momento e o nome do aluno correspondente. Ao final, mostre esse destaque junto com o restante do relatório.</div>
         </div>
       </div>
     </div>
