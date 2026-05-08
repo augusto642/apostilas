@@ -1114,15 +1114,15 @@ botao.addEventListener('click', () =&gt; {
   const lista = document.querySelector('#oficinas');
 
   try {
-    const resposta = await fetch('https://api.exemplo.com/oficinas');
+    const resposta = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
     const dados = await resposta.json();
 
-    lista.innerHTML = dados.map((item) =&gt; `&lt;li&gt;${item.titulo}&lt;/li&gt;`).join('');
+    lista.innerHTML = dados.map((item) =&gt; `&lt;li&gt;${item.title}&lt;/li&gt;`).join('');
   } catch (erro) {
     lista.innerHTML = '&lt;li&gt;Não foi possível carregar as oficinas agora.&lt;/li&gt;';
   }
 }</code></pre>
-      <p><strong>Leitura profissional:</strong> quem domina DOM, eventos, funções e integração básica com APIs já consegue desenvolver páginas dinâmicas muito próximas do que aparece em vagas de estágio e júnior.</p>
+      <p><strong>Leitura profissional:</strong> quem domina DOM, eventos, funções, tratamento de erros, controle básico de estado e integração com APIs já consegue desenvolver páginas dinâmicas muito próximas do que aparece em vagas de estágio e júnior.</p>
 
       <div class="callout success">
         <div class="icon">🔎</div>
