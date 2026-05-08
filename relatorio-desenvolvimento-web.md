@@ -1,44 +1,41 @@
 # Relatório de atualização da apostila `desenvolvimentoWeb.html`
 
 ## Objetivo
-Aprimorar a apostila de desenvolvimento web com uma apresentação inicial mais profissional, um sumário mais claro para uso em sala e uma trilha de mini projetos simples distribuídos ao longo do material.
+Elevar a qualidade pedagógica da apostila de desenvolvimento web, revisando a trilha completa e reforçando o conteúdo com uma rota de estudos mais robusta, referências abertas e práticas inspiradas no repositório `gustavoguanabara/html-css`.
 
 ## Melhorias aplicadas
-- reforço da capa com foco pedagógico, público-alvo, foco formativo e entrega esperada;
-- reorganização do sumário em formato executivo, separando percurso formativo e trilha de mini projetos;
-- inclusão e ajuste de mini projetos alinhados aos módulos do conteúdo:
-  - currículo profissional em HTML;
-  - landing page de cafeteria;
-  - cardápio digital responsivo;
-  - lista de tarefas com JavaScript;
-  - formulário de inscrição;
-  - página de login acessível;
-- ampliação da seção de referências com repositórios e coleções úteis para prática de projetos iniciantes.
+- revisão da capa e do sumário para refletir uma trilha mais rica em exercícios, práticas e referências;
+- inclusão de uma rota de aprendizagem do zero ao primeiro portfólio no módulo introdutório;
+- ampliação do módulo de HTML com fundamentos frequentemente negligenciados: textos, listas, links, favicon e organização de arquivos;
+- ampliação do módulo de CSS com laboratório visual sobre cores, fontes, seletores, fundos e refinamento progressivo de layout;
+- adição de um checklist profissional de publicação e revisão em dupla no módulo de ferramentas e fluxo;
+- criação de uma trilha prática específica com o repositório `gustavoguanabara/html-css`, explicando como usar README, PDFs, exercícios e desafios em sala;
+- atualização da curadoria de repositórios públicos para incluir explicitamente `gustavoguanabara/html-css`.
 
-## Distribuição pedagógica sugerida
-| Etapa | Projeto | Competências principais |
+## Como a referência externa foi usada
+O repositório do Professor Gustavo Guanabara foi utilizado como base de repertório para organizar temas e sequências de estudo, especialmente em tópicos clássicos para iniciantes: internet, HTML essencial, imagens, listas, ligações, estilos, cores, fontes, box model, mini projetos e Git/GitHub.
+
+A apostila não replica o material original. Em vez disso, sintetiza os assuntos em texto autoral, com organização própria, mantendo a referência ao repositório consultado para que professores e estudantes possam aprofundar os estudos na fonte original.
+
+## Distribuição pedagógica reforçada
+| Etapa | Foco principal | Resultado esperado |
 |---|---|---|
-| HTML | Currículo profissional | semântica, headings, listas, links, acessibilidade |
-| CSS | Landing page de cafeteria | layout, cards, responsividade, identidade visual |
-| CSS | Cardápio digital | grid, organização visual, categorias |
-| JavaScript | Lista de tarefas | DOM, eventos, classes, persistência |
-| Formulários | Inscrição em minicurso | inputs, validação, feedback |
-| Formulários | Página de login | hierarquia visual, UX, mensagens de erro |
+| Panorama da web | internet, navegador, servidor e trilha de aprendizagem | visão sistêmica antes do código |
+| HTML | semântica, textos, listas, links, imagens e organização | páginas compreensíveis mesmo sem CSS |
+| CSS | cores, tipografia, seletores, layout e fundos | interfaces mais legíveis e profissionais |
+| JavaScript | DOM, eventos, estado e interatividade | páginas dinâmicas com feedback ao usuário |
+| Fluxo profissional | Git, GitHub, revisão e publicação | projetos apresentados com mais maturidade |
+| Curadoria | documentação, cursos e repositórios | continuidade de estudos com autonomia |
 
-## Referências pesquisadas na web e em repositórios
-As referências abaixo foram usadas como inspiração para selecionar mini projetos simples e adequados para alunos iniciantes:
-
-- 100 Projetos Front-End — https://micaelsantiago.github.io/100ProjetosFrontEnd/
-- Devs Brasil, “10 Projetos Simples em HTML para Praticar Seus Conhecimentos” — https://devsbrasil.com.br/10-projetos-simples-em-html-para-praticar-seus-conhecimentos/
-- Alonza, “12 Projetos em HTML para iniciantes” — https://alonza.com.br/projetos-em-html-para-iniciantes/
-- Programação For Kids, “10 Projetos Fáceis Para Aprender HTML, CSS e JavaScript” — https://programacaoforkids.com.br/projetos-faceis-para-aprender-html-css-javascript/
-- DevRamonJorge/primeirosProjetos — https://github.com/DevRamonJorge/primeirosProjetos
-- DiegoMouraOficial/ProjetoCV — https://github.com/DiegoMouraOficial/ProjetoCV
-- silviafds/Projeto-Html-CSS-JavaScript — https://github.com/silviafds/Projeto-Html-CSS-JavaScript
-- wendersonalexandre/ideias-de--projetos-para-iniciantes — https://github.com/wendersonalexandre/ideias-de--projetos-para-iniciantes
-- wesbos/JavaScript30 — https://github.com/wesbos/JavaScript30
-- freeCodeCamp/freeCodeCamp — https://github.com/freeCodeCamp/freeCodeCamp
-- TheOdinProject/curriculum — https://github.com/TheOdinProject/curriculum
+## Referências pesquisadas
+- Repositório principal: https://github.com/gustavoguanabara/html-css
+- PDFs das aulas: https://github.com/gustavoguanabara/html-css/tree/master/aulas-pdf
+- Exercícios: https://github.com/gustavoguanabara/html-css/tree/master/exercicios
+- Desafios: https://github.com/gustavoguanabara/html-css/tree/master/desafios
+- Curso em Vídeo: https://www.cursoemvideo.com/cursos/
+- MDN Web Docs: https://developer.mozilla.org/
+- freeCodeCamp: https://www.freecodecamp.org/
+- The Odin Project: https://www.theodinproject.com/
 
 ## Resultado esperado para a turma
-Com a nova organização, a apostila passa a apoiar melhor a condução das aulas, o planejamento de laboratório e a criação de um portfólio inicial com entregas pequenas, visíveis e progressivas.
+Com as novas seções, a apostila fica mais completa para uso em aula, laboratório e estudo autônomo. O material agora conecta melhor fundamento, prática guiada, revisão profissional e continuidade de estudos em referências abertas e confiáveis.

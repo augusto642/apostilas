@@ -304,6 +304,14 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
   font-size:.82rem;
   font-weight:700;
 }
+.roadmap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:20px 0}
+.phase-card{background:linear-gradient(180deg,#ffffff,#f4f8ff);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 8px 24px rgba(20,33,61,.05)}
+.phase{display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:999px;background:#e7f0ff;color:#1d4f91;font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.phase-card h4{margin:14px 0 8px}
+.phase-card p{margin:10px 0 12px}
+.mentor-board{margin:20px 0;padding:22px;border:1px solid #d6e4ff;border-radius:18px;background:linear-gradient(135deg,#f7fbff,#eef4ff)}
+.mentor-board h4{margin-top:0}
+.study-route td:first-child{font-weight:700;color:#183b72}
 @media print{
   body{background:#fff}
   .panel,.footer{box-shadow:none}
@@ -356,8 +364,8 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
       </div>
       <div class="hero-stats">
         <div class="stat"><strong>8 módulos</strong><span>do básico ao projeto integrador profissional</span></div>
-        <div class="stat"><strong>20+ exercícios e 8 práticas</strong><span>com atividades orientadas e respostas sugeridas</span></div>
-        <div class="stat"><strong>40+ recursos</strong><span>entre documentação, livros, cursos, YouTube e referências de mercado</span></div>
+        <div class="stat"><strong>30+ exercícios, trilhas e práticas</strong><span>com atividades orientadas, respostas sugeridas e roteiros de evolução</span></div>
+        <div class="stat"><strong>50+ referências</strong><span>entre documentação, livros, cursos, YouTube, repositórios e mapas de estudo</span></div>
       </div>
     </div>
   </div>
@@ -374,7 +382,7 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
       <div class="toc-summary">
         <div class="card"><strong>8 módulos</strong><span>Sequência progressiva do panorama da web ao projeto integrador.</span></div>
         <div class="card"><strong>6 mini projetos</strong><span>Propostas curtas para transformar teoria em entrega visível.</span></div>
-        <div class="card"><strong>1 relatório de apoio</strong><span>Documento complementar com resumo das melhorias e fontes consultadas.</span></div>
+        <div class="card"><strong>1 relatório + trilha guiada</strong><span>Resumo complementar com fontes consultadas e roteiro inspirado em repositório aberto.</span></div>
       </div>
       <div class="toc-grid">
         <div class="toc-card">
@@ -554,6 +562,62 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
           <li>Registre dois pontos fortes e duas oportunidades de melhoria no site analisado.</li>
         </ol>
       </div>
+
+      <h3>1.4 Rota de aprendizagem do zero ao primeiro portfólio</h3>
+      <p>Uma progressão eficiente para turmas técnicas começa em visão de internet, passa por HTML e CSS com exemplos pequenos e só depois avança para publicação e projeto autoral. Nesta revisão, a trilha foi reforçada com temas recorrentes do repositório aberto <code>gustavoguanabara/html-css</code>, como história da internet, primeiros passos em HTML, listas, links, imagens, estilos, cores, fontes, box model, mini projetos e GitHub.</p>
+      <div class="roadmap-grid">
+        <article class="phase-card">
+          <span class="phase">Fase 1</span>
+          <h4>Entender a web antes do código</h4>
+          <p>O estudante precisa dominar o cenário em que a página existe.</p>
+          <ul>
+            <li>história e funcionamento da internet;</li>
+            <li>diferença entre navegador, servidor, domínio e hospedagem;</li>
+            <li>relação entre HTML, CSS e JavaScript.</li>
+          </ul>
+        </article>
+        <article class="phase-card">
+          <span class="phase">Fase 2</span>
+          <h4>Construir HTML com clareza</h4>
+          <p>Antes de pensar em efeitos, a página precisa fazer sentido sem CSS.</p>
+          <ul>
+            <li>títulos, parágrafos, listas, links e imagens;</li>
+            <li>estrutura semântica e acessibilidade básica;</li>
+            <li>organização de arquivos, nomes e navegação interna.</li>
+          </ul>
+        </article>
+        <article class="phase-card">
+          <span class="phase">Fase 3</span>
+          <h4>Dar identidade visual ao projeto</h4>
+          <p>Com a base pronta, entra o trabalho de layout e leitura visual.</p>
+          <ul>
+            <li>cores, fontes, seletores e box model;</li>
+            <li>cards, menus, botões, responsividade e hierarquia;</li>
+            <li>uso criterioso de imagens de fundo e efeitos.</li>
+          </ul>
+        </article>
+        <article class="phase-card">
+          <span class="phase">Fase 4</span>
+          <h4>Transformar estudo em entrega</h4>
+          <p>O conteúdo só se consolida quando vira portfólio e publicação.</p>
+          <ul>
+            <li>mini projetos com contexto real;</li>
+            <li>versionamento com Git e GitHub;</li>
+            <li>publicação online e revisão final de qualidade.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="mentor-board">
+        <h4>Método de estudo que acelera evolução</h4>
+        <ol>
+          <li>Leia ou assista a um conceito curto.</li>
+          <li>Reproduza o exemplo para compreender a técnica.</li>
+          <li>Modifique o exemplo com tema próprio da turma.</li>
+          <li>Publique a versão autoral e registre o que aprendeu.</li>
+        </ol>
+      </div>
+
 
       <div class="exercises">
         <h4>Exercícios do módulo</h4>
@@ -786,6 +850,66 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
         <li>Prefira <code>&lt;th scope="col"&gt;</code> e <code>&lt;th scope="row"&gt;</code> para facilitar leitura por tecnologias assistivas.</li>
         <li>Em telas pequenas, pense em rolagem horizontal ou reorganização visual, em vez de reduzir demais o texto.</li>
       </ul>
+
+
+
+      <h3>2.6 Fundamentos de HTML que separam página improvisada de material profissional</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Textos, caracteres e ênfases</h4>
+          <p>Um iniciante precisa saber quando usar parágrafo, quebra de linha, citação, ênfase e entidades HTML. Isso evita páginas visualmente confusas e melhora a leitura.</p>
+          <ul>
+            <li>prefira <code>&lt;p&gt;</code> para blocos de texto em vez de empilhar <code>&lt;br&gt;</code>;</li>
+            <li>use <code>&amp;amp;</code>, <code>&amp;lt;</code> e outras entidades quando o conteúdo exigir;</li>
+            <li>reserve <code>&lt;strong&gt;</code> e <code>&lt;em&gt;</code> para dar significado, não apenas aparência.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Listas que ajudam a navegar</h4>
+          <p>Listas ordenadas e não ordenadas aparecem em menus, passos, glossários, checklists e seções de conteúdo. Elas organizam informação melhor do que blocos soltos.</p>
+          <ul>
+            <li>use <code>&lt;ol&gt;</code> quando a sequência importa;</li>
+            <li>use <code>&lt;ul&gt;</code> para agrupamentos sem ordem rígida;</li>
+            <li>transforme listas em menus com CSS nas próximas etapas.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Links que orientam a experiência</h4>
+          <p>Uma página madura informa para onde leva, o que abre e em que contexto o usuário está navegando. Bons links economizam tempo e reduzem erros.</p>
+          <ul>
+            <li>escreva textos de link com significado real;</li>
+            <li>use âncoras internas para páginas extensas;</li>
+            <li>indique claramente downloads, sites externos e contatos.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Favicons, pastas e organização</h4>
+          <p>Detalhes simples passam sensação de projeto completo: favicon, nomes coerentes, pastas previsíveis e mídia otimizada.</p>
+          <ul>
+            <li>separe imagens, estilos e scripts quando o projeto crescer;</li>
+            <li>padronize nomes de arquivos com clareza;</li>
+            <li>inclua favicon e títulos de página pensados para navegação real.</li>
+          </ul>
+        </div>
+      </div>
+
+      <pre><code>&lt;nav aria-label="Navegação principal"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#sobre"&gt;Sobre o projeto&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#oficinas"&gt;Oficinas&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;</code></pre>
+
+      <div class="callout info">
+        <div class="icon">🧩</div>
+        <div>
+          <strong>Visão de professor</strong>
+          Se a turma dominar hierarquia de títulos, listas, links, imagens e organização de arquivos, metade das dificuldades dos primeiros projetos já desaparece.
+        </div>
+      </div>
 
       <div class="lab mini-project" id="mini-curriculo">
         <span class="project-kicker">Mini projeto 1</span>
@@ -1044,6 +1168,78 @@ body {
         <div>
           <strong>Mobile first</strong>
           Uma boa prática é começar pensando na experiência em telas menores e depois expandir o layout para tablets e desktops.
+        </div>
+      </div>
+
+
+
+      <h3>3.5 Laboratório visual: cores, fontes, seletores e fundos com intenção</h3>
+      <div class="table-wrap study-route">
+        <table>
+          <thead>
+            <tr>
+              <th>Frente de estudo</th>
+              <th>O que praticar</th>
+              <th>Resultado visível</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cores e contraste</td>
+              <td>Montar paleta, definir cor primária, neutros e estado de foco/erro/sucesso.</td>
+              <td>Interface mais legível e com identidade visual coerente.</td>
+            </tr>
+            <tr>
+              <td>Fontes e hierarquia</td>
+              <td>Combinar tipografia de títulos e corpo, ajustar peso, tamanho e espaçamento.</td>
+              <td>Leitura confortável e aparência mais profissional.</td>
+            </tr>
+            <tr>
+              <td>Seletores e reutilização</td>
+              <td>Criar classes para botões, cards, alertas, menus e destaques recorrentes.</td>
+              <td>Código mais limpo e fácil de manter.</td>
+            </tr>
+            <tr>
+              <td>Fundos e atmosfera</td>
+              <td>Usar degradês, texturas leves e imagens de fundo sem sacrificar contraste.</td>
+              <td>Página com presença visual sem perder clareza.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <pre><code>:root {
+  --cor-principal: #1d4f91;
+  --cor-destaque: #7c3aed;
+  --cor-fundo: #f8fbff;
+}
+
+.hero {
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(8, 18, 40, 0.92), rgba(29, 79, 145, 0.88)),
+    url('bg-laboratorio.jpg') center/cover;
+}
+
+.card-produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(20, 33, 61, 0.14);
+}</code></pre>
+
+      <h3>3.6 Sequência de refinamento que vale para quase todo projeto</h3>
+      <ol class="timeline">
+        <li><strong>Versão 1:</strong> deixar o HTML legível, com espaçamento e cores básicas.</li>
+        <li><strong>Versão 2:</strong> criar componentes repetíveis, como botões, cards e blocos de destaque.</li>
+        <li><strong>Versão 3:</strong> ajustar layout com Flexbox ou Grid para diferentes larguras de tela.</li>
+        <li><strong>Versão 4:</strong> inserir fundos, imagens e microefeitos apenas onde agregam valor.</li>
+        <li><strong>Versão 5:</strong> revisar contraste, foco, peso visual e desempenho.</li>
+      </ol>
+
+      <div class="callout success">
+        <div class="icon">✨</div>
+        <div>
+          <strong>Design forte nasce de repetição consciente</strong>
+          Bons projetos de iniciante não dependem de dezenas de efeitos. Eles combinam poucas escolhas consistentes: paleta clara, tipografia estável, bom espaçamento e componentes reutilizados.
         </div>
       </div>
 
@@ -1611,6 +1807,26 @@ git push -u origin main</code></pre>
         </table>
       </div>
 
+
+
+      <h3>6.5 Checklist de publicação que passa confiança</h3>
+      <ul class="checklist">
+        <li>Revise ortografia, títulos, links quebrados e textos de botão antes de publicar.</li>
+        <li>Confirme se imagens estão leves, com nomes claros e descrições adequadas quando necessário.</li>
+        <li>Teste no celular, no desktop e com zoom aumentado para observar responsividade.</li>
+        <li>Verifique no DevTools se não há erros de console causados por scripts ou caminhos incorretos.</li>
+        <li>Publique a versão final apenas depois de um último commit com mensagem objetiva.</li>
+      </ul>
+
+      <div class="mentor-board">
+        <h4>Ritual simples de revisão em dupla</h4>
+        <ol>
+          <li>Um estudante navega e o outro observa erros de layout, ortografia e acessibilidade.</li>
+          <li>Os dois registram três pontos fortes e três melhorias concretas.</li>
+          <li>Depois da correção, publiquem de novo e comparem a nova versão com a anterior.</li>
+        </ol>
+      </div>
+
       <div class="lab">
         <h4>Atividade prática: fluxo profissional de entrega</h4>
         <ol>
@@ -1944,6 +2160,52 @@ git push -u origin main</code></pre>
         </table>
       </div>
 
+
+
+      <h3>8.2.1 Trilha prática com o repositório <code>html-css</code></h3>
+      <p>Entre os materiais abertos em português, o repositório <code>gustavoguanabara/html-css</code> funciona muito bem como laboratório paralelo. Ele reúne PDFs, exercícios e desafios em uma sequência didática fácil de adaptar para curso técnico, desde que a turma use o conteúdo como referência de estudo e mantenha a atribuição ao material original.</p>
+      <div class="table-wrap study-route">
+        <table>
+          <thead>
+            <tr>
+              <th>Recurso do repositório</th>
+              <th>Como usar na rotina de estudos</th>
+              <th>Aplicação em sala ou laboratório</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>README e visão geral do curso</td>
+              <td>Entender a proposta do material, a sequência dos módulos e o foco para iniciantes.</td>
+              <td>Planejar o bimestre e alinhar expectativa de entregas.</td>
+            </tr>
+            <tr>
+              <td>PDFs das aulas</td>
+              <td>Revisar fundamentos como internet, HTML, imagens, listas, links, cores, fontes e GitHub.</td>
+              <td>Usar como reforço teórico antes de cada prática autoral.</td>
+            </tr>
+            <tr>
+              <td>Exercícios resolvidos</td>
+              <td>Observar estrutura mínima, organização de arquivos e evolução gradual do CSS.</td>
+              <td>Comparar soluções, refazer do zero e depois personalizar.</td>
+            </tr>
+            <tr>
+              <td>Desafios</td>
+              <td>Transformar exemplos básicos em páginas mais completas, com tema visual e contexto real.</td>
+              <td>Aplicar como entrega avaliativa, feira tecnológica ou portfólio da turma.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warning">
+        <div class="icon">📎</div>
+        <div>
+          <strong>Uso responsável da referência</strong>
+          Ao estudar com materiais públicos, a melhor prática é reproduzir para aprender, remixar com tema próprio e sempre citar a fonte original quando ela orientar a trilha da turma.
+        </div>
+      </div>
+
       <h3>8.3 Cursos online úteis para curso técnico</h3>
       <div class="table-wrap">
         <table>
@@ -2079,6 +2341,11 @@ git push -u origin main</code></pre>
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td>gustavoguanabara/html-css</td>
+              <td><a href="https://github.com/gustavoguanabara/html-css" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Excelente para acompanhar uma progressão didática em português com PDFs, exercícios e desafios para adaptação autoral.</td>
+            </tr>
             <tr>
               <td>DevRamonJorge/primeirosProjetos</td>
               <td><a href="https://github.com/DevRamonJorge/primeirosProjetos" target="_blank" rel="noopener noreferrer">GitHub</a></td>
