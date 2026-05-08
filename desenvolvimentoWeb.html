@@ -96,6 +96,33 @@ pre code{color:inherit}
 .hero-stats .stat:last-child{border-bottom:none}
 .hero-stats strong{display:block;color:#fff;font-size:1.4rem}
 .hero-stats span{color:#d8e8ff;font-size:.92rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 18px;
+  border-radius:999px;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+}
+.hero-actions a.primary-action{background:#fff;color:#15325e}
+.cover-meta{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin-top:22px;
+}
+.meta-card{
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.15);
+}
+.meta-card strong{display:block;color:#fff;font-size:1rem;margin-bottom:4px}
+.meta-card span{color:#d8e8ff;font-size:.92rem}
 main{padding:36px 0 60px}
 .panel{
   max-width:1100px;
@@ -115,9 +142,38 @@ main{padding:36px 0 60px}
 .panel-header h2{font-size:2rem;margin-bottom:8px}
 .panel-header p{max-width:860px;color:#e8f3ff}
 .panel-body{padding:30px 32px}
-.toc ul{columns:2;column-gap:32px;padding-left:22px}
+.toc ul{padding-left:20px}
 .toc li{margin:8px 0;color:#22314e}
 .toc .tip{margin-top:18px;color:var(--muted)}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.toc-card{
+  background:linear-gradient(180deg,#ffffff,#f6faff);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+}
+.toc-card h3{margin-top:0}
+.toc-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px}
+.toc-summary .card strong{display:block;font-size:1.4rem;color:#183b72}
+.mini-project{
+  border:1px solid #c9dcfb;
+  background:linear-gradient(180deg,#ffffff,#eef5ff);
+}
+.project-kicker{
+  display:inline-block;
+  margin-bottom:10px;
+  padding:4px 10px;
+  border-radius:999px;
+  background:#e8efff;
+  color:#274690;
+  font-size:.8rem;
+  font-weight:800;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.project-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.project-track td:first-child{font-weight:700;color:#183b72}
+.source-list li{margin:10px 0}
 h3{font-size:1.45rem;color:#183b72;margin:28px 0 10px;padding-left:14px;border-left:5px solid var(--accent)}
 h4{font-size:1.1rem;color:#20335d;margin:22px 0 10px}
 p{margin:12px 0;color:#2a3a57}
@@ -267,16 +323,25 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
     <div class="hero-top">
       <span class="badge">💻 CURSO TÉCNICO</span>
       <span class="badge">🌐 HTML + CSS + JavaScript</span>
-      <span class="badge">📚 Material didático 2026</span>
+      <span class="badge">📚 Edição revisada 2026</span>
     </div>
     <h1>Apostila de Desenvolvimento Web</h1>
-    <h2>Fundamentos, prática guiada e trilha de carreira para estudantes do ensino técnico</h2>
+    <h2>Formação introdutória com linguagem profissional, prática orientada e repertório de portfólio</h2>
     <p>
-      Este material foi elaborado para apoiar aulas de desenvolvimento web com linguagem clara,
-      foco profissional e atividades progressivas. A apostila integra teoria, exemplos, figuras,
-      tabelas, blocos de código, desafios práticos e uma curadoria de livros, cursos e repositórios
-      públicos para continuidade dos estudos.
+      Este material foi organizado para apoiar aulas, estudos autônomos e laboratórios de criação.
+      A apostila combina fundamentos técnicos, tarefas guiadas, mini projetos progressivos e uma
+      curadoria de referências abertas para que cada estudante avance do primeiro HTML até a publicação
+      de interfaces simples e úteis.
     </p>
+    <div class="hero-actions">
+      <a class="primary-action" href="#sumario-executivo">Abrir sumário executivo</a>
+      <a href="#trilha-projetos">Ver trilha de mini projetos</a>
+    </div>
+    <div class="cover-meta">
+      <div class="meta-card"><strong>Público-alvo</strong><span>Turmas técnicas iniciantes em informática e desenvolvimento web.</span></div>
+      <div class="meta-card"><strong>Foco formativo</strong><span>HTML semântico, CSS responsivo, JavaScript, formulários e publicação.</span></div>
+      <div class="meta-card"><strong>Entrega esperada</strong><span>Portfólio inicial com páginas autorais e um projeto integrador publicado.</span></div>
+    </div>
 
     <div class="hero-grid">
       <div class="hero-panel">
@@ -299,24 +364,45 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
 </header>
 
 <main>
-  <section class="panel toc">
+  <section class="panel toc" id="sumario-executivo">
     <div class="panel-header">
       <div class="eyebrow">Visão geral</div>
-      <h2>Sumário da apostila</h2>
-      <p>Use o sumário como roteiro de aula, sequência de estudo individual ou base para um plano bimestral.</p>
+      <h2>Sumário executivo da apostila</h2>
+      <p>Use este quadro como mapa de aula, plano bimestral e referência rápida para conectar conteúdo, prática e portfólio.</p>
     </div>
     <div class="panel-body">
-      <ul>
-        <li><a href="#mod1">Módulo 1 — Panorama da web e arquitetura básica</a></li>
-        <li><a href="#mod2">Módulo 2 — HTML: estrutura, semântica e acessibilidade</a></li>
-        <li><a href="#mod3">Módulo 3 — CSS: estilo, layout e design responsivo</a></li>
-        <li><a href="#mod4">Módulo 4 — JavaScript: lógica, DOM e eventos</a></li>
-        <li><a href="#mod5">Módulo 5 — Formulários, integração e experiência do usuário</a></li>
-        <li><a href="#mod6">Módulo 6 — Ferramentas, versionamento e fluxo profissional</a></li>
-        <li><a href="#mod7">Módulo 7 — Projeto integrador, atividades e critérios de avaliação</a></li>
-        <li><a href="#mod8">Módulo 8 — Biblioteca de estudos: livros, cursos, YouTube e referências de mercado</a></li>
-      </ul>
-      <p class="tip"><strong>Dica didática:</strong> cada módulo traz teoria, visualização, prática orientada e exercícios. Em laboratório, o ideal é alternar <span class="note-inline">explicação curta</span>, <span class="note-inline">demonstração</span> e <span class="note-inline">execução guiada</span>.</p>
+      <div class="toc-summary">
+        <div class="card"><strong>8 módulos</strong><span>Sequência progressiva do panorama da web ao projeto integrador.</span></div>
+        <div class="card"><strong>6 mini projetos</strong><span>Propostas curtas para transformar teoria em entrega visível.</span></div>
+        <div class="card"><strong>1 relatório de apoio</strong><span>Documento complementar com resumo das melhorias e fontes consultadas.</span></div>
+      </div>
+      <div class="toc-grid">
+        <div class="toc-card">
+          <h3>Percurso formativo</h3>
+          <ul>
+            <li><a href="#mod1">Módulo 1 — Panorama da web e arquitetura básica</a></li>
+            <li><a href="#mod2">Módulo 2 — HTML: estrutura, semântica e acessibilidade</a></li>
+            <li><a href="#mod3">Módulo 3 — CSS: estilo, layout e design responsivo</a></li>
+            <li><a href="#mod4">Módulo 4 — JavaScript: lógica, DOM e eventos</a></li>
+            <li><a href="#mod5">Módulo 5 — Formulários, integração e experiência do usuário</a></li>
+            <li><a href="#mod6">Módulo 6 — Ferramentas, versionamento e fluxo profissional</a></li>
+            <li><a href="#mod7">Módulo 7 — Trilha de mini projetos, projeto integrador e avaliação</a></li>
+            <li><a href="#mod8">Módulo 8 — Curadoria de estudos e referências externas</a></li>
+          </ul>
+        </div>
+        <div class="toc-card" id="trilha-projetos">
+          <h3>Trilha de mini projetos</h3>
+          <ul>
+            <li><a href="#mini-curriculo">Currículo profissional em HTML</a></li>
+            <li><a href="#mini-cafeteria">Landing page de cafeteria</a></li>
+            <li><a href="#mini-cardapio">Cardápio digital responsivo</a></li>
+            <li><a href="#mini-lista">Lista de tarefas com JavaScript</a></li>
+            <li><a href="#mini-formulario">Formulário de inscrição</a></li>
+            <li><a href="#mini-login">Página de login acessível</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="tip"><strong>Dica didática:</strong> cada módulo alterna <span class="note-inline">conceito essencial</span>, <span class="note-inline">demonstração guiada</span> e <span class="note-inline">produção prática</span>. Ao final da trilha, a turma já terá material suficiente para compor um portfólio inicial.</p>
     </div>
   </section>
 
@@ -701,14 +787,21 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
         <li>Em telas pequenas, pense em rolagem horizontal ou reorganização visual, em vez de reduzir demais o texto.</li>
       </ul>
 
-      <div class="lab">
-        <h4>Atividade prática: página de apresentação profissional</h4>
+      <div class="lab mini-project" id="mini-curriculo">
+        <span class="project-kicker">Mini projeto 1</span>
+        <h4>Currículo profissional em HTML</h4>
+        <p>Transforme a estrutura semântica estudada neste módulo em uma página de currículo clara, acessível e pronta para receber CSS nas próximas etapas.</p>
+        <div class="project-meta">
+          <span class="resource-tag">HTML semântico</span>
+          <span class="resource-tag">Acessibilidade</span>
+          <span class="resource-tag">Links e listas</span>
+        </div>
         <ol>
-          <li>Crie uma página com <code>header</code>, <code>main</code>, <code>section</code> e <code>footer</code>.</li>
-          <li>Inclua sua foto ou um espaço reservado com descrição em <code>alt</code>.</li>
-          <li>Monte uma seção “habilidades” em lista.</li>
-          <li>Adicione links para e-mail, GitHub e portfólio.</li>
-          <li>Valide se a página faz sentido mesmo sem CSS.</li>
+          <li>Crie uma capa curta com nome, objetivo profissional e contatos.</li>
+          <li>Organize seções de formação, habilidades, projetos e experiências simuladas.</li>
+          <li>Inclua foto ou avatar com descrição em <code>alt</code> e links de contato funcionais.</li>
+          <li>Revise a hierarquia de títulos para que a página faça sentido sem CSS.</li>
+          <li>Prepare espaço para uma futura versão publicada no GitHub Pages.</li>
         </ol>
       </div>
 
@@ -954,13 +1047,20 @@ body {
         </div>
       </div>
 
-      <div class="lab">
-        <h4>Atividade prática: cartão de produto responsivo</h4>
+      <div class="lab mini-project" id="mini-cafeteria">
+        <span class="project-kicker">Mini projeto 2</span>
+        <h4>Landing page de cafeteria</h4>
+        <p>Use CSS para construir uma página de apresentação de cafeteria com identidade visual, vitrine de produtos e chamada para ação.</p>
+        <div class="project-meta">
+          <span class="resource-tag">Hero section</span>
+          <span class="resource-tag">Flexbox e Grid</span>
+          <span class="resource-tag">Responsividade</span>
+        </div>
         <ul>
-          <li>Monte um cartão com imagem, nome, preço e botão.</li>
-          <li>Use <code>border-radius</code>, <code>box-shadow</code> e variáveis CSS.</li>
-          <li>Faça o cartão ocupar 100% da largura no celular e dividir espaço com outros cartões em telas maiores.</li>
-          <li>Teste em DevTools simulando diferentes aparelhos.</li>
+          <li>Monte uma seção inicial com slogan, imagem e botão “Peça agora” ou “Ver cardápio”.</li>
+          <li>Crie cards para cafés, combos ou sobremesas com preço e destaque visual.</li>
+          <li>Adapte o layout para celular e desktop usando Flexbox ou Grid.</li>
+          <li>Como extensão, transforme a vitrine em um <span id="mini-cardapio"><strong>cardápio digital responsivo</strong></span> com categorias e destaque para itens mais vendidos.</li>
         </ul>
       </div>
 
@@ -1132,13 +1232,20 @@ botao.addEventListener('click', () =&gt; {
         </div>
       </div>
 
-      <div class="lab">
-        <h4>Atividade prática: lista de tarefas simples</h4>
+      <div class="lab mini-project" id="mini-lista">
+        <span class="project-kicker">Mini projeto 3</span>
+        <h4>Lista de tarefas com JavaScript</h4>
+        <p>Este é o primeiro projeto ideal para mostrar ao estudante como HTML, CSS e JavaScript se conectam em uma interface útil.</p>
+        <div class="project-meta">
+          <span class="resource-tag">DOM</span>
+          <span class="resource-tag">Eventos</span>
+          <span class="resource-tag">localStorage</span>
+        </div>
         <ol>
           <li>Crie um campo de texto, um botão “Adicionar” e uma lista vazia.</li>
-          <li>Ao clicar no botão, adicione um novo item à lista.</li>
-          <li>Apague itens concluídos com outro botão.</li>
-          <li>Desafie-se a persistir dados em <code>localStorage</code>.</li>
+          <li>Ao clicar no botão, adicione um novo item com opção de concluir ou remover.</li>
+          <li>Use classes CSS para diferenciar tarefas pendentes e concluídas.</li>
+          <li>Desafie-se a persistir dados em <code>localStorage</code> para manter a lista após recarregar.</li>
         </ol>
       </div>
 
@@ -1322,13 +1429,38 @@ form.addEventListener('submit', (evento) =&gt; {
         </div>
       </div>
 
-      <div class="lab">
-        <h4>Atividade prática: formulário de inscrição para minicurso</h4>
+      <div class="lab mini-project" id="mini-formulario">
+        <span class="project-kicker">Mini projeto 4</span>
+        <h4>Formulário de inscrição para minicurso</h4>
+        <p>Projeto rápido para consolidar cadastro, validação visual e feedback ao usuário em um cenário escolar.</p>
+        <div class="project-meta">
+          <span class="resource-tag">Cadastro</span>
+          <span class="resource-tag">Formulários</span>
+          <span class="resource-tag">Feedback</span>
+        </div>
         <ul>
           <li>Campos obrigatórios: nome, e-mail, turma e turno.</li>
           <li>Mostrar mensagem de sucesso sem recarregar a página.</li>
           <li>Exibir contagem de caracteres no campo “objetivos”.</li>
           <li>Usar cores e ícones de forma acessível para indicar erro e sucesso.</li>
+        </ul>
+      </div>
+
+      <h3 id="mini-login">5.6 Mini projeto complementar: página de login acessível</h3>
+      <div class="card mini-project">
+        <span class="project-kicker">Mini projeto 5</span>
+        <h4>Página de login para laboratório, biblioteca ou portal escolar</h4>
+        <p>Depois de estudar formulários, o estudante pode montar uma interface de login com foco em clareza visual, rótulos corretos e feedback imediato.</p>
+        <div class="project-meta">
+          <span class="resource-tag">Login</span>
+          <span class="resource-tag">UX</span>
+          <span class="resource-tag">Validação</span>
+        </div>
+        <ul>
+          <li>Crie campos de e-mail ou matrícula e senha com <code>label</code> associado.</li>
+          <li>Adicione link de recuperação de senha e botão principal bem destacado.</li>
+          <li>Mostre mensagens de erro simples, sem expor detalhes técnicos.</li>
+          <li>Use contraste adequado, foco visível e uma hierarquia visual limpa.</li>
         </ul>
       </div>
 
@@ -1512,7 +1644,60 @@ git push -u origin main</code></pre>
       <p>O aprendizado se consolida quando o estudante transforma conceitos em produto funcional.</p>
     </div>
     <div class="panel-body">
-      <h3>7.1 Projeto sugerido: portal de feira tecnológica da escola</h3>
+      <h3>7.1 Trilha sugerida de mini projetos</h3>
+      <p>Além do projeto integrador, a turma pode evoluir com entregas curtas e progressivas. A seleção abaixo foi pensada para gerar repertório de portfólio e foi inspirada por coleções de projetos iniciantes e repositórios públicos citados no relatório complementar.</p>
+      <div class="table-wrap project-track">
+        <table>
+          <thead>
+            <tr>
+              <th>Mini projeto</th>
+              <th>Módulo-base</th>
+              <th>Competências praticadas</th>
+              <th>Expansão sugerida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Currículo em HTML</td>
+              <td>Módulo 2</td>
+              <td>Estrutura semântica, listas, links, acessibilidade.</td>
+              <td>Publicar como portfólio inicial com CSS personalizado.</td>
+            </tr>
+            <tr>
+              <td>Landing page de cafeteria</td>
+              <td>Módulo 3</td>
+              <td>Hero section, cards, responsividade e identidade visual.</td>
+              <td>Adicionar seção de promoções e depoimentos.</td>
+            </tr>
+            <tr>
+              <td>Cardápio digital responsivo</td>
+              <td>Módulo 3</td>
+              <td>Grid, organização por categorias e hierarquia visual.</td>
+              <td>Criar filtro visual por bebidas e sobremesas.</td>
+            </tr>
+            <tr>
+              <td>Lista de tarefas</td>
+              <td>Módulo 4</td>
+              <td>DOM, eventos, classes CSS e persistência.</td>
+              <td>Salvar tarefas por prioridade e data.</td>
+            </tr>
+            <tr>
+              <td>Formulário de inscrição</td>
+              <td>Módulo 5</td>
+              <td>Inputs, validação, feedback e UX.</td>
+              <td>Integrar envio com planilha ou API simulada.</td>
+            </tr>
+            <tr>
+              <td>Página de login</td>
+              <td>Módulo 5</td>
+              <td>Fluxo de autenticação, mensagens de erro e acessibilidade.</td>
+              <td>Implementar mostrar/ocultar senha e tema claro/escuro.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>7.2 Projeto sugerido: portal de feira tecnológica da escola</h3>
       <p>Proponha que a turma desenvolva um site para divulgar uma feira de tecnologia. O projeto permite praticar estrutura, estilo, interatividade, organização de conteúdo e publicação.</p>
 
       <div class="grid grid-2">
@@ -1537,7 +1722,7 @@ git push -u origin main</code></pre>
         </div>
       </div>
 
-      <h3>7.2 Roteiro de produção</h3>
+      <h3>7.3 Roteiro de produção</h3>
       <ol>
         <li>Definir mapa do site e seções.</li>
         <li>Esboçar wireframe em papel ou Figma.</li>
@@ -1548,7 +1733,7 @@ git push -u origin main</code></pre>
         <li>Versionar e publicar.</li>
       </ol>
 
-      <h3>7.3 Rubrica simplificada de avaliação</h3>
+      <h3>7.4 Rubrica simplificada de avaliação</h3>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1599,7 +1784,7 @@ git push -u origin main</code></pre>
         </ol>
       </div>
 
-      <h3>7.4 Desafio final maior: portal institucional completo</h3>
+      <h3>7.5 Desafio final maior: portal institucional completo</h3>
       <p>Para consolidar o curso em nível profissional, proponha um desafio final em equipe: criar um portal institucional para um evento, laboratório, empresa júnior ou campanha social. A entrega deve simular um projeto real, com briefing, cronograma, protótipo, implementação, publicação e apresentação.</p>
       <div class="grid grid-2">
         <div class="card">
@@ -1883,7 +2068,7 @@ git push -u origin main</code></pre>
         </div>
       </div>
 
-      <h3>8.5 Repositórios públicos para estudar código real</h3>
+      <h3>8.5 Repositórios públicos e coleções de mini projetos</h3>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1895,39 +2080,39 @@ git push -u origin main</code></pre>
           </thead>
           <tbody>
             <tr>
-              <td>freeCodeCamp/freeCodeCamp</td>
-              <td><a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener noreferrer">GitHub</a></td>
-              <td>Currículo, projetos e estrutura de uma plataforma educacional open source.</td>
+              <td>DevRamonJorge/primeirosProjetos</td>
+              <td><a href="https://github.com/DevRamonJorge/primeirosProjetos" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Reúne exemplos simples de login, formulário, portfólio e navegação para iniciantes.</td>
             </tr>
             <tr>
-              <td>TheOdinProject/curriculum</td>
-              <td><a href="https://github.com/TheOdinProject/curriculum" target="_blank" rel="noopener noreferrer">GitHub</a></td>
-              <td>Organização pedagógica por projetos e trilhas de estudo.</td>
+              <td>DiegoMouraOficial/ProjetoCV</td>
+              <td><a href="https://github.com/DiegoMouraOficial/ProjetoCV" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Projeto de currículo em HTML e CSS útil para trabalhar semântica, seções e apresentação profissional.</td>
             </tr>
             <tr>
-              <td>javascript-tutorial/en.javascript.info</td>
-              <td><a href="https://github.com/javascript-tutorial/en.javascript.info" target="_blank" rel="noopener noreferrer">GitHub</a></td>
-              <td>Conteúdo completo e progressivo de JavaScript em formato aberto.</td>
+              <td>silviafds/Projeto-Html-CSS-JavaScript</td>
+              <td><a href="https://github.com/silviafds/Projeto-Html-CSS-JavaScript" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Exemplos de landing pages, formulários e páginas de login em nível introdutório.</td>
             </tr>
             <tr>
-              <td>getify/You-Dont-Know-JS</td>
-              <td><a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" rel="noopener noreferrer">GitHub</a></td>
-              <td>Discussão aprofundada sobre escopo, tipos, objetos e assíncrono.</td>
+              <td>wendersonalexandre/ideias-de--projetos-para-iniciantes</td>
+              <td><a href="https://github.com/wendersonalexandre/ideias-de--projetos-para-iniciantes" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Lista de ideias como to-do list, calculadora e interfaces básicas para prática em sala.</td>
             </tr>
             <tr>
               <td>wesbos/JavaScript30</td>
               <td><a href="https://github.com/wesbos/JavaScript30" target="_blank" rel="noopener noreferrer">GitHub</a></td>
-              <td>30 mini projetos para praticar manipulação do DOM sem frameworks.</td>
+              <td>30 mini projetos para praticar DOM e interatividade sem frameworks.</td>
             </tr>
             <tr>
-              <td>Asabeneh/30-Days-Of-JavaScript</td>
-              <td><a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank" rel="noopener noreferrer">GitHub</a></td>
-              <td>Sequência diária de estudos com desafios progressivos.</td>
+              <td>freeCodeCamp/freeCodeCamp</td>
+              <td><a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Trilhas com projetos guiados e desafios úteis para ampliar o portfólio do estudante.</td>
             </tr>
             <tr>
-              <td>mdn/content</td>
-              <td><a href="https://github.com/mdn/content" target="_blank" rel="noopener noreferrer">GitHub</a></td>
-              <td>Conteúdo aberto da documentação MDN, útil para estudar escrita técnica.</td>
+              <td>TheOdinProject/curriculum</td>
+              <td><a href="https://github.com/TheOdinProject/curriculum" target="_blank" rel="noopener noreferrer">GitHub</a></td>
+              <td>Boa referência para organizar aprendizagem baseada em projetos progressivos.</td>
             </tr>
           </tbody>
         </table>
