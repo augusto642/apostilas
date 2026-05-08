@@ -284,6 +284,42 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
   border:1px solid #c5daf8;
   background:linear-gradient(180deg,#f7fbff,#edf4ff);
 }
+.practice-deck{
+  margin:22px 0;
+  padding:22px;
+  border-radius:18px;
+  border:1px solid #c7d2fe;
+  background:linear-gradient(180deg,#f8faff,#eef2ff);
+}
+.practice-deck h4{margin-top:0}
+.practice-deck ol{margin-bottom:0}
+.challenge-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin:22px 0;
+}
+.challenge-card{
+  background:linear-gradient(180deg,#ffffff,#f8fbff);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+}
+.challenge-card h4{margin-top:12px}
+.challenge-card ul{margin-bottom:0}
+.challenge-level{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:4px 10px;
+  border-radius:999px;
+  background:#ede9fe;
+  color:#5b21b6;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
 .footer{
   max-width:1100px;
   margin:0 auto 30px;
@@ -393,7 +429,7 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
       </div>
       <div class="hero-stats">
         <div class="stat"><strong>8 módulos</strong><span>do básico ao projeto integrador profissional</span></div>
-        <div class="stat"><strong>30+ exercícios, trilhas e práticas</strong><span>com atividades orientadas, respostas sugeridas e roteiros de evolução</span></div>
+        <div class="stat"><strong>70+ exercícios, desafios e práticas</strong><span>com codificação guiada, respostas sugeridas e entregas progressivas</span></div>
         <div class="stat"><strong>50+ referências</strong><span>entre documentação, livros, cursos, YouTube, repositórios e mapas de estudo</span></div>
       </div>
     </div>
@@ -410,7 +446,7 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
     <div class="panel-body">
       <div class="toc-summary">
         <div class="card"><strong>8 módulos</strong><span>Sequência progressiva do panorama da web ao projeto integrador.</span></div>
-        <div class="card"><strong>6 mini projetos</strong><span>Propostas curtas para transformar teoria em entrega visível.</span></div>
+        <div class="card"><strong>11 mini projetos</strong><span>Propostas curtas e progressivas para transformar teoria em entrega visível.</span></div>
         <div class="card"><strong>1 relatório + trilha guiada</strong><span>Resumo complementar com fontes consultadas e roteiro inspirado em repositório aberto.</span></div>
       </div>
       <div class="toc-grid">
@@ -436,6 +472,11 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
             <li><a href="#mini-lista">Lista de tarefas com JavaScript</a></li>
             <li><a href="#mini-formulario">Formulário de inscrição</a></li>
             <li><a href="#mini-login">Página de login acessível</a></li>
+            <li><a href="#mini-noticia">Página de notícia escolar</a></li>
+            <li><a href="#mini-galeria">Galeria responsiva de projetos</a></li>
+            <li><a href="#mini-quiz">Quiz interativo</a></li>
+            <li><a href="#mini-painel">Painel de inscrições</a></li>
+            <li><a href="#mini-kit-publicacao">Kit de publicação</a></li>
           </ul>
         </div>
       </div>
@@ -665,7 +706,51 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer">O navegador envia a solicitação ao servidor, e o servidor devolve a resposta com arquivos ou dados.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Por que entender a arquitetura básica da web ajuda a depurar problemas de um site?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque permite identificar se o problema está no navegador, na rede, no servidor, no arquivo enviado ou no comportamento da interface.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>5.</strong> Cite dois exemplos de conteúdo típico do front-end e dois do back-end.</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Front-end: layout, botões, formulários, animações. Back-end: autenticação, banco de dados, regras de negócio e APIs.</div>
+        </div>
       </div>
+
+      <div class="practice-deck">
+        <h4>Exercícios de codificação guiada do módulo</h4>
+        <ol>
+          <li>Crie uma página <code>internet-vs-web.html</code> com título, três parágrafos explicando os conceitos e uma lista com exemplos de sites e serviços.</li>
+          <li>Monte uma linha do tempo simples com pelo menos quatro marcos da evolução da internet usando <code>&lt;ol&gt;</code> e subtítulos.</li>
+          <li>Desenhe em HTML a estrutura de uma requisição web usando caixas com <code>&lt;div&gt;</code>, textos e setas feitas com CSS.</li>
+          <li>Adicione um bloco final com “O que eu aprendi hoje” para registrar descobertas e dúvidas da aula.</li>
+        </ol>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="challenge-level">Desafio rápido</span>
+          <h4>Mapa da escola na web</h4>
+          <p>Crie uma página explicando como o site da escola chega ao navegador do aluno.</p>
+          <ul>
+            <li>use os termos navegador, servidor, internet e site;</li>
+            <li>inclua pelo menos uma figura ou diagrama;</li>
+            <li>termine com um resumo em linguagem simples.</li>
+          </ul>
+        </article>
+        <article class="challenge-card">
+          <span class="challenge-level">Desafio técnico</span>
+          <h4>Glossário inicial do curso</h4>
+          <p>Monte um glossário com 10 termos da web e deixe cada definição em no máximo duas linhas.</p>
+          <ul>
+            <li>organize em ordem alfabética;</li>
+            <li>use links internos para navegar entre letras;</li>
+            <li>publique em formato de página limpa e legível.</li>
+          </ul>
+        </article>
+      </div>
+
     </div>
   </section>
 
@@ -975,7 +1060,51 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer">Melhor acessibilidade, melhor SEO, organização mais clara do código e manutenção mais simples em equipe.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Quando faz mais sentido usar <code>&lt;section&gt;</code> e quando faz mais sentido usar <code>&lt;div&gt;</code>?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer"><code>&lt;section&gt;</code> faz sentido quando há um bloco temático com título. <code>&lt;div&gt;</code> serve como contêiner genérico sem significado semântico próprio.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>5.</strong> Por que tabelas não devem ser usadas para montar o layout completo da página?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque tabelas são próprias para dados tabulares. Usá-las como layout prejudica semântica, acessibilidade, manutenção e responsividade.</div>
+        </div>
       </div>
+
+      <div class="practice-deck">
+        <h4>Exercícios de codificação HTML</h4>
+        <ol>
+          <li>Crie uma página de perfil com <code>header</code>, <code>main</code>, <code>section</code> e <code>footer</code>, incluindo foto, bio, habilidades e contatos.</li>
+          <li>Monte uma página de cardápio com títulos hierárquicos, listas e links internos entre categorias.</li>
+          <li>Crie uma tabela de horários de aula com <code>caption</code>, <code>thead</code> e <code>scope</code> adequados.</li>
+          <li>Produza uma página acessível com imagem, texto alternativo, menu principal e bloco de conteúdo complementar em <code>aside</code>.</li>
+        </ol>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="challenge-level">Desafio semântico</span>
+          <h4>Portal de notícias da turma</h4>
+          <p>Monte uma página inicial com manchete principal, duas notícias secundárias e links de navegação.</p>
+          <ul>
+            <li>use <code>article</code> para cada notícia;</li>
+            <li>inclua autor, data e resumo curto;</li>
+            <li>garanta que a estrutura faça sentido sem CSS.</li>
+          </ul>
+        </article>
+        <article class="challenge-card" id="mini-noticia">
+          <span class="challenge-level">Mini projeto 6</span>
+          <h4>Página de notícia escolar</h4>
+          <p>Desenvolva uma matéria completa sobre um evento da escola com semântica, imagem, links e seção de destaques.</p>
+          <ul>
+            <li>crie manchete, subtítulo e bloco “leia também”;</li>
+            <li>adicione legenda em imagem e tabela ou lista de programação;</li>
+            <li>prepare o HTML para receber CSS editorial no módulo seguinte.</li>
+          </ul>
+        </article>
+      </div>
+
     </div>
   </section>
 
@@ -1306,7 +1435,51 @@ body {
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer">Porque se adaptam melhor a diferentes tamanhos de tela e configurações de acessibilidade, como aumento de fonte.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Em que situação uma paleta visual ruim pode prejudicar a experiência do usuário?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Quando compromete contraste, dificulta leitura, confunde hierarquia ou torna estados importantes pouco visíveis.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>5.</strong> Por que componentes reutilizáveis ajudam na manutenção do CSS?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque evitam repetição, facilitam ajustes globais e tornam o visual mais consistente em toda a interface.</div>
+        </div>
       </div>
+
+      <div class="practice-deck">
+        <h4>Exercícios de codificação CSS</h4>
+        <ol>
+          <li>Estilize a página de currículo do módulo anterior com paleta própria, bom contraste e cards para habilidades.</li>
+          <li>Crie uma grade de produtos com pelo menos seis cards usando Grid e comportamento responsivo.</li>
+          <li>Desenvolva um menu horizontal para desktop e reorganize-o para telas menores.</li>
+          <li>Faça um estudo de tipografia: defina escala visual para <code>h1</code> até <code>p</code> e documente as escolhas.</li>
+        </ol>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="challenge-level">Desafio visual</span>
+          <h4>Antes e depois do layout</h4>
+          <p>Pegue um HTML sem estilo e crie duas versões: uma básica e outra refinada.</p>
+          <ul>
+            <li>compare espaçamento, cores e tipografia;</li>
+            <li>registe o que mudou na legibilidade;</li>
+            <li>apresente a evolução para a turma.</li>
+          </ul>
+        </article>
+        <article class="challenge-card" id="mini-galeria">
+          <span class="challenge-level">Mini projeto 7</span>
+          <h4>Galeria responsiva de projetos</h4>
+          <p>Monte uma vitrine com miniaturas, título, descrição curta e filtro visual por categoria.</p>
+          <ul>
+            <li>use Grid para organizar a galeria;</li>
+            <li>adicione hover elegante e foco visível;</li>
+            <li>prepare uma versão compacta para celular.</li>
+          </ul>
+        </article>
+      </div>
+
     </div>
   </section>
 
@@ -1491,7 +1664,51 @@ botao.addEventListener('click', () =&gt; {
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer"><code>const</code> mantém a mesma referência; <code>let</code> permite reatribuição. Em objetos e arrays com <code>const</code>, o conteúdo interno ainda pode mudar.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Por que tratar erro em código front-end é importante?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque falhas podem acontecer em rede, entrada do usuário ou lógica da interface, e o sistema precisa reagir sem quebrar a experiência.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>5.</strong> O que muda na experiência quando um script altera a interface sem recarregar a página?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">A experiência fica mais fluida, rápida e interativa, porque o usuário recebe resposta imediata às ações realizadas.</div>
+        </div>
       </div>
+
+      <div class="practice-deck">
+        <h4>Exercícios de codificação JavaScript</h4>
+        <ol>
+          <li>Crie um botão que troque o texto de um parágrafo entre duas mensagens.</li>
+          <li>Monte um contador com botões de incrementar, decrementar e zerar.</li>
+          <li>Desenvolva um tema claro/escuro simples usando classe no <code>body</code>.</li>
+          <li>Leia um campo de formulário e mostre uma prévia personalizada em tempo real.</li>
+        </ol>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="challenge-level">Desafio de DOM</span>
+          <h4>Filtro de cards</h4>
+          <p>Crie botões que mostrem somente cards de uma categoria escolhida pelo usuário.</p>
+          <ul>
+            <li>marque os elementos com classes ou atributos;</li>
+            <li>altere a interface sem recarregar a página;</li>
+            <li>mostre feedback quando nenhum card corresponder.</li>
+          </ul>
+        </article>
+        <article class="challenge-card" id="mini-quiz">
+          <span class="challenge-level">Mini projeto 8</span>
+          <h4>Quiz interativo de revisão</h4>
+          <p>Monte um quiz com perguntas de múltipla escolha, pontuação final e botão para reiniciar.</p>
+          <ul>
+            <li>mostre resposta certa e errada com feedback visual;</li>
+            <li>exiba a pontuação ao final;</li>
+            <li>opcional: salve o melhor resultado em <code>localStorage</code>.</li>
+          </ul>
+        </article>
+      </div>
+
     </div>
   </section>
 
@@ -1701,7 +1918,51 @@ form.addEventListener('submit', (evento) =&gt; {
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer">Não. Ela melhora a experiência do usuário, mas a validação definitiva deve ocorrer também no servidor por segurança e integridade dos dados.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>3.</strong> Quando o método <code>GET</code> costuma ser mais adequado que <code>POST</code>?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Quando o formulário apenas consulta informações, como buscas e filtros, sem gravar dados sensíveis.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> Qual o risco de pedir dados demais em um formulário simples?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Aumenta abandono, confusão e exposição desnecessária de dados, prejudicando confiança e privacidade.</div>
+        </div>
       </div>
+
+      <div class="practice-deck">
+        <h4>Exercícios de codificação com formulários</h4>
+        <ol>
+          <li>Monte um formulário de cadastro com nome, e-mail, telefone, turma e objetivo do aluno.</li>
+          <li>Crie mensagens de erro abaixo dos campos obrigatórios quando estiverem vazios.</li>
+          <li>Implemente contagem de caracteres em um <code>textarea</code> com limite definido.</li>
+          <li>Mostre uma mensagem de sucesso sem recarregar a página após validação básica.</li>
+        </ol>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="challenge-level">Desafio de UX</span>
+          <h4>Formulário sem atrito</h4>
+          <p>Refatore um formulário ruim para deixá-lo claro, acessível e confiável.</p>
+          <ul>
+            <li>melhore rótulos, textos de ajuda e ordem dos campos;</li>
+            <li>adicione feedback visual sem depender só de cor;</li>
+            <li>mostre ao usuário o próximo passo após o envio.</li>
+          </ul>
+        </article>
+        <article class="challenge-card" id="mini-painel">
+          <span class="challenge-level">Mini projeto 9</span>
+          <h4>Painel de inscrições</h4>
+          <p>Crie uma página com formulário de inscrição e resumo lateral dos dados digitados em tempo real.</p>
+          <ul>
+            <li>exiba preview de nome, turma e turno;</li>
+            <li>destaque campos pendentes ou inválidos;</li>
+            <li>organize a interface para funcionar bem em celular.</li>
+          </ul>
+        </article>
+      </div>
+
     </div>
   </section>
 
@@ -1878,7 +2139,51 @@ git push -u origin main</code></pre>
           <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
           <div class="answer">Servem para inspecionar HTML e CSS, depurar JavaScript, analisar rede, medir desempenho e testar responsividade.</div>
         </div>
+        <div class="ex-item">
+          <p><strong>3.</strong> Por que publicar um projeto ajuda tanto na formação do estudante?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Porque transforma estudo em entrega real, permite feedback externo e mostra evolução técnica de forma visível.</div>
+        </div>
+        <div class="ex-item">
+          <p><strong>4.</strong> O que caracteriza uma mensagem de commit melhor do que “atualizações”?</p>
+          <button class="btn-answer" onclick="toggleAnswer(this)">Ver resposta</button>
+          <div class="answer">Ela descreve a mudança com clareza e contexto, por exemplo: “adiciona galeria responsiva” ou “corrige validação do formulário”.</div>
+        </div>
       </div>
+
+      <div class="practice-deck">
+        <h4>Exercícios de codificação e entrega profissional</h4>
+        <ol>
+          <li>Crie um README curto para um mini projeto explicando objetivo, tecnologias e como abrir o arquivo.</li>
+          <li>Monte um checklist de revisão antes de publicar uma página em GitHub Pages.</li>
+          <li>Simule três commits importantes do projeto: estrutura inicial, estilos e interatividade.</li>
+          <li>Registre um relatório pós-entrega com erros encontrados e correções realizadas.</li>
+        </ol>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="challenge-level">Desafio de organização</span>
+          <h4>Entrega pronta para outra pessoa</h4>
+          <p>Organize um projeto para que qualquer colega consiga abrir, entender e continuar o trabalho.</p>
+          <ul>
+            <li>padronize nomes de arquivos e pastas;</li>
+            <li>descreva o objetivo em poucas linhas;</li>
+            <li>registre o que ainda falta fazer.</li>
+          </ul>
+        </article>
+        <article class="challenge-card" id="mini-kit-publicacao">
+          <span class="challenge-level">Mini projeto 10</span>
+          <h4>Kit de publicação do projeto</h4>
+          <p>Monte um pacote final com página publicada, breve documentação, histórico de commits e evidências de teste.</p>
+          <ul>
+            <li>inclua link publicado e capturas de tela;</li>
+            <li>escreva um README com visão geral e próximos passos;</li>
+            <li>prepare o material como se fosse entrega para estágio.</li>
+          </ul>
+        </article>
+      </div>
+
     </div>
   </section>
 
@@ -1938,8 +2243,57 @@ git push -u origin main</code></pre>
               <td>Fluxo de autenticação, mensagens de erro e acessibilidade.</td>
               <td>Implementar mostrar/ocultar senha e tema claro/escuro.</td>
             </tr>
+            <tr>
+              <td>Página de notícia escolar</td>
+              <td>Módulo 2</td>
+              <td>Semântica, artigos, imagens, listas e navegação.</td>
+              <td>Transformar em página editorial com estilos responsivos.</td>
+            </tr>
+            <tr>
+              <td>Galeria responsiva de projetos</td>
+              <td>Módulo 3</td>
+              <td>Grid, cards, hover, foco visível e adaptação mobile.</td>
+              <td>Adicionar filtro visual e modal simples.</td>
+            </tr>
+            <tr>
+              <td>Quiz interativo</td>
+              <td>Módulo 4</td>
+              <td>DOM, eventos, estado, pontuação e reinício.</td>
+              <td>Salvar histórico de resultados no navegador.</td>
+            </tr>
+            <tr>
+              <td>Painel de inscrições</td>
+              <td>Módulo 5</td>
+              <td>Formulário, preview em tempo real e validação visual.</td>
+              <td>Integrar com API simulada de envio.</td>
+            </tr>
+            <tr>
+              <td>Kit de publicação</td>
+              <td>Módulo 6</td>
+              <td>Documentação, versionamento, revisão e entrega profissional.</td>
+              <td>Preparar apresentação curta para banca ou professor.</td>
+            </tr>
           </tbody>
         </table>
+      </div>
+
+      <h3>7.1.1 Banco intensivo de desafios e sprints</h3>
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span class="challenge-level">Sprint 1</span>
+          <h4>HTML em 40 minutos</h4>
+          <p>Construir uma página completa só com HTML semântico, navegação interna, imagem e tabela.</p>
+        </article>
+        <article class="challenge-card">
+          <span class="challenge-level">Sprint 2</span>
+          <h4>CSS em 60 minutos</h4>
+          <p>Transformar a página anterior em uma interface responsiva com cards, hero e rodapé consistente.</p>
+        </article>
+        <article class="challenge-card">
+          <span class="challenge-level">Sprint 3</span>
+          <h4>JS em 60 minutos</h4>
+          <p>Adicionar menu, filtro, formulário com feedback e pelo menos um componente interativo.</p>
+        </article>
       </div>
 
       <h3>7.2 Projeto sugerido: portal de feira tecnológica da escola</h3>

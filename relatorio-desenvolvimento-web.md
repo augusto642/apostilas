@@ -1,41 +1,32 @@
 # Relatório de atualização da apostila `desenvolvimentoWeb.html`
 
 ## Objetivo
-Elevar a qualidade pedagógica da apostila de desenvolvimento web, revisando a trilha completa e reforçando o conteúdo com uma rota de estudos mais robusta, referências abertas e práticas inspiradas no repositório `gustavoguanabara/html-css`.
+Ampliar a apostila para que ela tenha muito mais prática aplicada, com bastante exercício de codificação, desafios progressivos e novos mini projetos distribuídos ao longo dos módulos.
 
 ## Melhorias aplicadas
-- revisão da capa e do sumário para refletir uma trilha mais rica em exercícios, práticas e referências;
-- inclusão de uma rota de aprendizagem do zero ao primeiro portfólio no módulo introdutório;
-- ampliação do módulo de HTML com fundamentos frequentemente negligenciados: textos, listas, links, favicon e organização de arquivos;
-- ampliação do módulo de CSS com laboratório visual sobre cores, fontes, seletores, fundos e refinamento progressivo de layout;
-- adição de um checklist profissional de publicação e revisão em dupla no módulo de ferramentas e fluxo;
-- criação de uma trilha prática específica com o repositório `gustavoguanabara/html-css`, explicando como usar README, PDFs, exercícios e desafios em sala;
-- atualização da curadoria de repositórios públicos para incluir explicitamente `gustavoguanabara/html-css`.
+- ampliação das métricas da trilha para refletir um volume maior de exercícios, desafios e práticas;
+- inclusão de novos blocos de exercícios de codificação guiada nos módulos principais;
+- expansão das listas de exercícios conceituais com novas perguntas e respostas em HTML, CSS, JavaScript, formulários e fluxo profissional;
+- criação de desafios rápidos e desafios técnicos por módulo para estimular produção autoral;
+- adição de cinco novos mini projetos:
+  - página de notícia escolar;
+  - galeria responsiva de projetos;
+  - quiz interativo;
+  - painel de inscrições;
+  - kit de publicação do projeto;
+- reforço do módulo 7 com uma seção de sprints e banco intensivo de desafios;
+- atualização da trilha de mini projetos do sumário para incluir as novas entregas sugeridas.
 
-## Como a referência externa foi usada
-O repositório do Professor Gustavo Guanabara foi utilizado como base de repertório para organizar temas e sequências de estudo, especialmente em tópicos clássicos para iniciantes: internet, HTML essencial, imagens, listas, ligações, estilos, cores, fontes, box model, mini projetos e Git/GitHub.
-
-A apostila não replica o material original. Em vez disso, sintetiza os assuntos em texto autoral, com organização própria, mantendo a referência ao repositório consultado para que professores e estudantes possam aprofundar os estudos na fonte original.
-
-## Distribuição pedagógica reforçada
-| Etapa | Foco principal | Resultado esperado |
+## Distribuição prática reforçada
+| Módulo | Novas práticas adicionadas | Foco principal |
 |---|---|---|
-| Panorama da web | internet, navegador, servidor e trilha de aprendizagem | visão sistêmica antes do código |
-| HTML | semântica, textos, listas, links, imagens e organização | páginas compreensíveis mesmo sem CSS |
-| CSS | cores, tipografia, seletores, layout e fundos | interfaces mais legíveis e profissionais |
-| JavaScript | DOM, eventos, estado e interatividade | páginas dinâmicas com feedback ao usuário |
-| Fluxo profissional | Git, GitHub, revisão e publicação | projetos apresentados com mais maturidade |
-| Curadoria | documentação, cursos e repositórios | continuidade de estudos com autonomia |
-
-## Referências pesquisadas
-- Repositório principal: https://github.com/gustavoguanabara/html-css
-- PDFs das aulas: https://github.com/gustavoguanabara/html-css/tree/master/aulas-pdf
-- Exercícios: https://github.com/gustavoguanabara/html-css/tree/master/exercicios
-- Desafios: https://github.com/gustavoguanabara/html-css/tree/master/desafios
-- Curso em Vídeo: https://www.cursoemvideo.com/cursos/
-- MDN Web Docs: https://developer.mozilla.org/
-- freeCodeCamp: https://www.freecodecamp.org/
-- The Odin Project: https://www.theodinproject.com/
+| Panorama da web | sprint guiada + 2 desafios | arquitetura básica e comunicação clara |
+| HTML | codificação HTML + desafio semântico + mini projeto | semântica, listas, tabelas e acessibilidade |
+| CSS | codificação CSS + desafio visual + mini projeto | layout, responsividade e identidade visual |
+| JavaScript | codificação JS + desafio DOM + mini projeto | eventos, estado e interatividade |
+| Formulários | codificação com validação + desafio de UX + mini projeto | cadastro, feedback e preview |
+| Fluxo profissional | prática de entrega + desafio de organização + mini projeto | documentação, revisão e publicação |
+| Projeto integrador | banco intensivo de sprints | síntese e ritmo de produção |
 
 ## Resultado esperado para a turma
-Com as novas seções, a apostila fica mais completa para uso em aula, laboratório e estudo autônomo. O material agora conecta melhor fundamento, prática guiada, revisão profissional e continuidade de estudos em referências abertas e confiáveis.
+Com esse reforço, a apostila deixa de ser apenas uma sequência de explicações e passa a funcionar também como banco de prática. O estudante encontra agora um volume bem maior de tarefas concretas para codar, testar, adaptar e transformar em portfólio.
