@@ -290,9 +290,9 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
         </ul>
       </div>
       <div class="hero-stats">
-        <div class="stat"><strong>8 módulos</strong><span>do básico ao projeto integrador</span></div>
-        <div class="stat"><strong>20+ exercícios</strong><span>com respostas sugeridas</span></div>
-        <div class="stat"><strong>30+ recursos</strong><span>entre documentação, livros, cursos e repositórios</span></div>
+        <div class="stat"><strong>8 módulos</strong><span>do básico ao projeto integrador profissional</span></div>
+        <div class="stat"><strong>20+ exercícios e 8 práticas</strong><span>com atividades orientadas e respostas sugeridas</span></div>
+        <div class="stat"><strong>40+ recursos</strong><span>entre documentação, livros, cursos, YouTube e referências de mercado</span></div>
       </div>
     </div>
   </div>
@@ -314,7 +314,7 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
         <li><a href="#mod5">Módulo 5 — Formulários, integração e experiência do usuário</a></li>
         <li><a href="#mod6">Módulo 6 — Ferramentas, versionamento e fluxo profissional</a></li>
         <li><a href="#mod7">Módulo 7 — Projeto integrador, atividades e critérios de avaliação</a></li>
-        <li><a href="#mod8">Módulo 8 — Biblioteca de estudos: livros, cursos e repositórios públicos</a></li>
+        <li><a href="#mod8">Módulo 8 — Biblioteca de estudos: livros, cursos, YouTube e referências de mercado</a></li>
       </ul>
       <p class="tip"><strong>Dica didática:</strong> cada módulo traz teoria, visualização, prática orientada e exercícios. Em laboratório, o ideal é alternar <span class="note-inline">explicação curta</span>, <span class="note-inline">demonstração</span> e <span class="note-inline">execução guiada</span>.</p>
     </div>
@@ -437,6 +437,36 @@ svg{max-width:100%;height:auto;display:block;margin:0 auto}
         <div class="item"><strong>Responsividade</strong><span>adapta a interface para celular, tablet e desktop.</span></div>
         <div class="item"><strong>Interatividade</strong><span>transforma conteúdo estático em experiência dinâmica.</span></div>
         <div class="item"><strong>Publicação</strong><span>leva o projeto para GitHub Pages, Netlify ou Vercel.</span></div>
+      </div>
+
+      <h3>1.3 Competências profissionais da web moderna</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Qualidade visual e semântica</h4>
+          <p>O mercado espera páginas com hierarquia clara, conteúdo bem escrito e HTML capaz de ser entendido por pessoas, buscadores e tecnologias assistivas.</p>
+        </div>
+        <div class="card">
+          <h4>Acessibilidade e inclusão</h4>
+          <p>Contraste adequado, navegação por teclado, textos alternativos e formulários bem rotulados deixaram de ser diferencial e passaram a ser requisito profissional.</p>
+        </div>
+        <div class="card">
+          <h4>Desempenho e experiência</h4>
+          <p>Projetos web modernos precisam carregar rápido, funcionar no celular e evitar excesso de imagens pesadas, scripts desnecessários e navegação confusa.</p>
+        </div>
+        <div class="card">
+          <h4>Organização de projeto</h4>
+          <p>Mesmo em projetos simples, saber nomear arquivos, separar responsabilidades e publicar com versionamento mostra maturidade técnica.</p>
+        </div>
+      </div>
+
+      <div class="lab">
+        <h4>Atividade prática: mapear a jornada de uma página</h4>
+        <ol>
+          <li>Escolha um site conhecido da escola, da prefeitura ou de uma empresa local.</li>
+          <li>Identifique onde aparecem HTML, CSS e JavaScript na experiência do usuário.</li>
+          <li>Descreva uma requisição simples: URL, navegador, resposta do servidor e interface exibida.</li>
+          <li>Registre dois pontos fortes e duas oportunidades de melhoria no site analisado.</li>
+        </ol>
       </div>
 
       <div class="exercises">
@@ -1046,6 +1076,54 @@ botao.addEventListener('click', () =&gt; {
   });
 &lt;/script&gt;</code></pre>
 
+      <h3>4.4 JavaScript moderno no front-end</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Conceito</th>
+              <th>Por que aparece no mercado</th>
+              <th>Aplicação prática</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>async</code>/<code>await</code></td>
+              <td>Facilita leitura de fluxos assíncronos e integração com APIs</td>
+              <td>Buscar dados de eventos, produtos, usuários ou notícias</td>
+            </tr>
+            <tr>
+              <td><code>fetch()</code></td>
+              <td>É a base de muitos projetos que consomem serviços web</td>
+              <td>Carregar cards de uma API pública ou enviar dados de formulário</td>
+            </tr>
+            <tr>
+              <td>Tratamento de erro</td>
+              <td>Interfaces profissionais precisam reagir quando algo falha</td>
+              <td>Exibir mensagem amigável se a requisição não funcionar</td>
+            </tr>
+            <tr>
+              <td>Manipulação de estado</td>
+              <td>Ajuda a manter a interface consistente após filtros, cliques e envios</td>
+              <td>Atualizar listas, esconder painéis ou alternar tema</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <pre><code>async function carregarOficinas() {
+  const lista = document.querySelector('#oficinas');
+
+  try {
+    const resposta = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
+    const dados = await resposta.json();
+
+    lista.innerHTML = dados.map((item) =&gt; `&lt;li&gt;${item.title}&lt;/li&gt;`).join('');
+  } catch (erro) {
+    lista.innerHTML = '&lt;li&gt;Não foi possível carregar as oficinas agora.&lt;/li&gt;';
+  }
+}</code></pre>
+      <p><strong>Leitura profissional:</strong> quem domina DOM, eventos, funções, tratamento de erros, controle básico de estado e integração com APIs já consegue desenvolver páginas dinâmicas muito próximas do que aparece em vagas de estágio e júnior.</p>
+
       <div class="callout success">
         <div class="icon">🔎</div>
         <div>
@@ -1220,6 +1298,30 @@ form.addEventListener('submit', (evento) =&gt; {
         </div>
       </div>
 
+      <h3>5.5 Integração com APIs, privacidade e confiança</h3>
+      <p>Em projetos profissionais, formulários normalmente enviam dados para APIs, planilhas automatizadas, CRMs, bancos de dados ou plataformas de autenticação. Isso exige clareza sobre o que será coletado, por que será coletado e como o usuário receberá retorno após o envio.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h4>Entrada</h4>
+          <p>Campos claros, obrigatoriedade objetiva e orientação para evitar erros de preenchimento.</p>
+        </div>
+        <div class="card">
+          <h4>Processamento</h4>
+          <p>Validação no cliente, validação no servidor e tratamento de erros sem expor detalhes técnicos ao usuário.</p>
+        </div>
+        <div class="card">
+          <h4>Retorno</h4>
+          <p>Mensagem de sucesso, protocolo ou instrução de próximo passo para gerar confiança na experiência.</p>
+        </div>
+      </div>
+      <div class="callout info">
+        <div class="icon">🛡️</div>
+        <div>
+          <strong>Boa prática profissional</strong>
+          Evite solicitar dados desnecessários. Em formulários escolares, peça apenas o que será realmente utilizado e explique como as informações serão tratadas.
+        </div>
+      </div>
+
       <div class="lab">
         <h4>Atividade prática: formulário de inscrição para minicurso</h4>
         <ul>
@@ -1337,6 +1439,56 @@ git push -u origin main</code></pre>
         </div>
       </div>
 
+      <h3>6.4 Matriz de competências para estágio e nível júnior</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Competência</th>
+              <th>O que demonstrar</th>
+              <th>Evidência no portfólio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML, CSS e JavaScript</td>
+              <td>Base sólida com páginas semânticas, responsivas e interativas</td>
+              <td>Landing page, formulário funcional e componentes reutilizáveis</td>
+            </tr>
+            <tr>
+              <td>Git e GitHub</td>
+              <td>Commits claros, histórico organizado e publicação online</td>
+              <td>Repositório com README, commits progressivos e link publicado</td>
+            </tr>
+            <tr>
+              <td>Acessibilidade e performance</td>
+              <td>Contraste, foco visível, texto alternativo e carregamento leve</td>
+              <td>Projeto que funciona bem no celular e sem erros básicos de usabilidade</td>
+            </tr>
+            <tr>
+              <td>Integração e depuração</td>
+              <td>Leitura de APIs, uso de DevTools e correção de problemas</td>
+              <td>Interface que trata erro e mostra dados vindos de serviço externo</td>
+            </tr>
+            <tr>
+              <td>Comunicação técnica</td>
+              <td>Explicar decisões de design, código e organização do projeto</td>
+              <td>Apresentação curta, documentação simples e defesa do projeto</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="lab">
+        <h4>Atividade prática: fluxo profissional de entrega</h4>
+        <ol>
+          <li>Crie um repositório para um projeto simples da turma.</li>
+          <li>Faça pelo menos três commits com mensagens descritivas.</li>
+          <li>Publique a página em GitHub Pages, Netlify ou Vercel.</li>
+          <li>Peça a um colega para testar o site e registrar um feedback curto.</li>
+        </ol>
+      </div>
+
       <div class="exercises">
         <h4>Exercícios do módulo</h4>
         <div class="ex-item">
@@ -1446,14 +1598,45 @@ git push -u origin main</code></pre>
           <li>Escreva uma breve documentação explicando as decisões do grupo.</li>
         </ol>
       </div>
+
+      <h3>7.4 Desafio final maior: portal institucional completo</h3>
+      <p>Para consolidar o curso em nível profissional, proponha um desafio final em equipe: criar um portal institucional para um evento, laboratório, empresa júnior ou campanha social. A entrega deve simular um projeto real, com briefing, cronograma, protótipo, implementação, publicação e apresentação.</p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Entregáveis obrigatórios</h4>
+          <ul>
+            <li>Mapa do site com pelo menos 4 seções principais.</li>
+            <li>Interface responsiva com identidade visual consistente.</li>
+            <li>Componente interativo em JavaScript.</li>
+            <li>Formulário funcional com feedback ao usuário.</li>
+            <li>Repositório versionado e página publicada.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Critérios de excelência</h4>
+          <ul>
+            <li>Boa leitura em celular, tablet e desktop.</li>
+            <li>Uso consciente de imagens, contraste e navegação por teclado.</li>
+            <li>Código organizado para manutenção por outra pessoa.</li>
+            <li>Apresentação oral clara, mostrando decisões técnicas.</li>
+            <li>Documentação curta com objetivos, equipe e próximos passos.</li>
+          </ul>
+        </div>
+      </div>
+      <ol class="timeline">
+        <li><strong>Checkpoint 1:</strong> definir problema, público e objetivos do portal.</li>
+        <li><strong>Checkpoint 2:</strong> aprovar wireframe e estrutura HTML.</li>
+        <li><strong>Checkpoint 3:</strong> revisar layout, interações e responsividade.</li>
+        <li><strong>Checkpoint 4:</strong> publicar, testar com colegas e preparar apresentação final.</li>
+      </ol>
     </div>
   </section>
 
   <section class="panel" id="mod8">
     <div class="panel-header">
       <div class="eyebrow">Módulo 8</div>
-      <h2>Biblioteca de estudos: livros, cursos e repositórios públicos</h2>
-      <p>Curadoria de recursos pesquisados na web para aprofundamento técnico contínuo em HTML, CSS e JavaScript.</p>
+      <h2>Biblioteca de estudos: livros, cursos, YouTube e referências de mercado</h2>
+      <p>Curadoria atualizada com documentação oficial, livros, cursos, canais e referências profissionais para aprofundamento contínuo em HTML, CSS, JavaScript e fluxo moderno de front-end.</p>
     </div>
     <div class="panel-body">
       <div class="callout info">
@@ -1461,6 +1644,14 @@ git push -u origin main</code></pre>
         <div>
           <strong>Como usar esta curadoria</strong>
           Combine uma fonte de consulta rápida, um curso estruturado e um repositório com projetos. Esse trio acelera a aprendizagem e ajuda a sair da teoria para a prática.
+        </div>
+      </div>
+
+      <div class="callout success">
+        <div class="icon">🧪</div>
+        <div>
+          <strong>Critério de seleção dos materiais</strong>
+          Esta curadoria prioriza documentação oficial, trilhas reconhecidas no mercado, cursos com projetos reais, canais que explicam fundamentos com clareza e referências usadas no dia a dia de equipes web.
         </div>
       </div>
 
@@ -1552,6 +1743,18 @@ git push -u origin main</code></pre>
               <td>Livro comercial</td>
               <td>Abordagem amigável para HTML, CSS, imagens e princípios da web.</td>
             </tr>
+            <tr>
+              <td>CSS Secrets</td>
+              <td>Lea Verou</td>
+              <td>Livro comercial</td>
+              <td>Mostra técnicas de CSS com visão prática e refinamento visual.</td>
+            </tr>
+            <tr>
+              <td>Don’t Make Me Think</td>
+              <td>Steve Krug</td>
+              <td>Livro comercial</td>
+              <td>Excelente para compreender usabilidade, clareza e experiência do usuário.</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -1604,6 +1807,70 @@ git push -u origin main</code></pre>
               <td><a href="https://www.cursoemvideo.com/cursos/" target="_blank" rel="noopener noreferrer">cursoemvideo.com</a></td>
               <td>Recurso em português bastante acessível para iniciantes.</td>
             </tr>
+            <tr>
+              <td>Web Dev for Beginners</td>
+              <td>Microsoft + GitHub</td>
+              <td><a href="https://github.com/microsoft/Web-Dev-For-Beginners" target="_blank" rel="noopener noreferrer">github.com/microsoft/Web-Dev-For-Beginners</a></td>
+              <td>Currículo aberto com 12 semanas de projetos e exercícios.</td>
+            </tr>
+            <tr>
+              <td>Meta Front-End Developer</td>
+              <td>Coursera</td>
+              <td><a href="https://www.coursera.org/professional-certificates/meta-front-end-developer" target="_blank" rel="noopener noreferrer">coursera.org</a></td>
+              <td>Trilha estruturada com foco em fundamentos, fluxo profissional e portfólio.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>8.4 Canais e playlists no YouTube</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Canal</th>
+              <th>Foco</th>
+              <th>Link</th>
+              <th>Como aproveitar melhor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Curso em Vídeo</td>
+              <td>Fundamentos em português</td>
+              <td><a href="https://www.youtube.com/@CursoemVideo" target="_blank" rel="noopener noreferrer">YouTube</a></td>
+              <td>Excelente para iniciar HTML, CSS, JavaScript e Git com linguagem acessível.</td>
+            </tr>
+            <tr>
+              <td>freeCodeCamp.org</td>
+              <td>Cursos longos e projetos</td>
+              <td><a href="https://www.youtube.com/@freecodecamp" target="_blank" rel="noopener noreferrer">YouTube</a></td>
+              <td>Use para revisões completas e projetos guiados de maior duração.</td>
+            </tr>
+            <tr>
+              <td>Kevin Powell</td>
+              <td>CSS moderno, layout e acessibilidade</td>
+              <td><a href="https://www.youtube.com/@KevinPowell" target="_blank" rel="noopener noreferrer">YouTube</a></td>
+              <td>Ótimo para evoluir em responsividade, refinamento visual e boas práticas.</td>
+            </tr>
+            <tr>
+              <td>Traversy Media</td>
+              <td>Projetos práticos e visão de mercado</td>
+              <td><a href="https://www.youtube.com/@TraversyMedia" target="_blank" rel="noopener noreferrer">YouTube</a></td>
+              <td>Ajuda a conectar fundamentos com aplicações reais e ferramentas atuais.</td>
+            </tr>
+            <tr>
+              <td>The Net Ninja</td>
+              <td>Playlists organizadas por tema</td>
+              <td><a href="https://www.youtube.com/@NetNinja" target="_blank" rel="noopener noreferrer">YouTube</a></td>
+              <td>Indicado para estudar um assunto por vez com sequência clara.</td>
+            </tr>
+            <tr>
+              <td>Web Dev Simplified</td>
+              <td>Explicações curtas e objetivas</td>
+              <td><a href="https://www.youtube.com/@WebDevSimplified" target="_blank" rel="noopener noreferrer">YouTube</a></td>
+              <td>Bom para reforçar conceitos que ficaram difíceis em aula.</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -1612,11 +1879,11 @@ git push -u origin main</code></pre>
         <div class="icon">▶️</div>
         <div>
           <strong>Trilha sugerida com as playlists indicadas</strong>
-          As playlists do Curso em Vídeo formam uma sequência didática consistente: <strong>Módulo 1</strong> para história da web, HTML básico e primeiras páginas; <strong>Módulo 2</strong> para design visual, tipografia e box model; <strong>Módulo 3</strong> para Git/GitHub, planos de fundo, tabelas e publicação; <strong>Módulo 4</strong> para formulários completos, iframes e media queries; e <strong>Módulo 5</strong> para recursos modernos como transições, animações, Flexbox e Grid. Use essa ordem para aprofundar cada parte desta apostila.
+          Comece por uma sequência estruturada em português, avance para cursos longos com projetos e use canais mais específicos para lapidar CSS, JavaScript e fluxo profissional. O ideal é assistir, reproduzir, modificar e publicar uma versão própria do que foi estudado.
         </div>
       </div>
 
-      <h3>8.4 Repositórios públicos para estudar código real</h3>
+      <h3>8.5 Repositórios públicos para estudar código real</h3>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1666,7 +1933,53 @@ git push -u origin main</code></pre>
         </table>
       </div>
 
-      <h3>8.5 Roteiro de aprofundamento em 6 semanas</h3>
+      <h3>8.6 Referências profissionais para acompanhar o mercado</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Referência</th>
+              <th>Tipo</th>
+              <th>Link</th>
+              <th>Aplicação para o estudante</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>roadmap.sh Frontend</td>
+              <td>Mapa de competências</td>
+              <td><a href="https://roadmap.sh/frontend" target="_blank" rel="noopener noreferrer">roadmap.sh/frontend</a></td>
+              <td>Ajuda a visualizar o que estudar agora e o que deixar para etapas futuras.</td>
+            </tr>
+            <tr>
+              <td>Can I use</td>
+              <td>Compatibilidade</td>
+              <td><a href="https://caniuse.com/" target="_blank" rel="noopener noreferrer">caniuse.com</a></td>
+              <td>Permite verificar se um recurso CSS ou JavaScript funciona nos navegadores-alvo.</td>
+            </tr>
+            <tr>
+              <td>Lighthouse</td>
+              <td>Qualidade técnica</td>
+              <td><a href="https://developer.chrome.com/docs/lighthouse/overview" target="_blank" rel="noopener noreferrer">developer.chrome.com</a></td>
+              <td>Útil para revisar desempenho, acessibilidade e boas práticas da página.</td>
+            </tr>
+            <tr>
+              <td>WCAG Overview</td>
+              <td>Acessibilidade</td>
+              <td><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer">w3.org/WAI</a></td>
+              <td>Introduz critérios usados como referência mundial para acessibilidade digital.</td>
+            </tr>
+            <tr>
+              <td>The A11Y Project</td>
+              <td>Guia prático</td>
+              <td><a href="https://www.a11yproject.com/" target="_blank" rel="noopener noreferrer">a11yproject.com</a></td>
+              <td>Transforma princípios de acessibilidade em checklists e exemplos objetivos.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>8.7 Roteiro de aprofundamento em 6 semanas</h3>
       <div class="grid grid-3">
         <div class="card"><h4>Semana 1</h4><p>Estude estrutura HTML e crie páginas simples com títulos, listas, links e imagens.</p></div>
         <div class="card"><h4>Semana 2</h4><p>Aprenda CSS básico: cores, tipografia, espaçamento e box model.</p></div>
@@ -1674,6 +1987,16 @@ git push -u origin main</code></pre>
         <div class="card"><h4>Semana 4</h4><p>Estude JavaScript básico: variáveis, condições, funções e eventos.</p></div>
         <div class="card"><h4>Semana 5</h4><p>Monte formulários com validação e scripts de interação.</p></div>
         <div class="card"><h4>Semana 6</h4><p>Finalize um projeto integrador, publique e documente em GitHub.</p></div>
+      </div>
+
+      <div class="lab">
+        <h4>Atividade prática: montar sua trilha profissional de estudos</h4>
+        <ol>
+          <li>Escolha um livro, um curso, um canal e um repositório da curadoria.</li>
+          <li>Defina um objetivo de 6 semanas com entregas semanais publicadas.</li>
+          <li>Monte uma planilha simples com tema estudado, prática realizada e link do resultado.</li>
+          <li>Revise ao final quais competências você já consegue demonstrar em portfólio.</li>
+        </ol>
       </div>
 
       <div class="callout success">
@@ -1708,8 +2031,8 @@ git push -u origin main</code></pre>
 
   <footer class="footer">
     <p><strong>Apostila de Desenvolvimento Web — Curso Técnico</strong></p>
-    <p>Conteúdo didático com foco em fundamentos, prática, acessibilidade, projeto integrador e continuidade dos estudos.</p>
-    <p style="margin-top:10px">Tecnologias centrais: HTML · CSS · JavaScript · Git/GitHub · DevTools · Publicação web</p>
+    <p>Conteúdo didático com foco em fundamentos, prática, acessibilidade, integração, projeto integrador e continuidade dos estudos.</p>
+    <p style="margin-top:10px">Tecnologias centrais: HTML · CSS · JavaScript · APIs · Git/GitHub · DevTools · Publicação web</p>
   </footer>
 </main>
 
